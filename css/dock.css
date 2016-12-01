@@ -1,0 +1,55 @@
+*{
+	margin: 0px;
+	padding:0px;
+}
+body {
+	font: 11px Arial, Helvetica, sans-serif;
+	padding: 0;
+	margin: 0;
+}
+img {
+	border: none;
+}
+
+.dock {
+	position: relative; 
+	height: 75px; 
+	text-align: center;
+}
+
+#dock {
+	width: 100%;
+	bottom: 0px;
+	position: absolute;
+	left: 0px;
+}
+.dock-container {
+	position: absolute;
+	height: 75px;
+	background: url(../images/dock-bg.gif);
+	padding-left: 20px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+a.dock-item {
+	display: block; 
+	font: bold 12px Arial, Helvetica, sans-serif;
+	width: 40px; 
+	color: #000; 
+	bottom: 0px; 
+	position: absolute;
+	text-align: center;
+	text-decoration: none;
+}
+
+.dock-item span {
+	display: none;
+	font-size: 15px;
+	text-align: center;
+}
+.dock-item img {
+	border: 0; 
+	margin: 5px 10px 5px;
+	width: 90%; 
+}
