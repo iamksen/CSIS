@@ -27,7 +27,7 @@ img {
 .dock-container {
 	position: absolute;
 	height: 73px;
-	background: url(dock-bg2.png);
+	background: url(../images/dock-bg2.png);
 	padding-left: 20px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
