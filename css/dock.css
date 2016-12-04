@@ -13,23 +13,25 @@ img {
 
 .dock {
 	position: relative; 
-	height: 75px; 
+	height: 73px; 
 	text-align: center;
+	z-index: 70;
 }
 
 #dock {
 	width: 100%;
 	bottom: 0px;
-	position: absolute;
+	position: fixed;
 	left: 0px;
 }
 .dock-container {
 	position: absolute;
-	height: 75px;
-	background: url(../images/dock-bg.gif);
+	height: 73px;
+	background: url(dock-bg2.png);
 	padding-left: 20px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
+	z-index: 300;
 }
 
 a.dock-item {
@@ -43,6 +45,10 @@ a.dock-item {
 	text-decoration: none;
 }
 
+.currentItem {
+	bottom:10px;
+}
+
 .dock-item span {
 	display: none;
 	font-size: 15px;
@@ -51,5 +57,5 @@ a.dock-item {
 .dock-item img {
 	border: 0; 
 	margin: 5px 10px 5px;
-	width: 90%; 
+	width: 85%; 
 }
