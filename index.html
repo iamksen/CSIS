@@ -1,44 +1,161 @@
-<!DOCTYPE >
+<!DOCTYPE html>
+<html>
 <head>
-	<title>CSIS IIITA</title>
+	<title>CSIS-2016 IIITA</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
+	<link rel="stylesheet" type="text/css" href="css/dock.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.pagepiling.min.js"></script>
 	<script type="text/javascript" src="js/interface.js"></script>
-	<link href="css/dock.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/* plugin for horizontal scrolling	*/
+	    	$('#pagepiling').pagepiling({
+	          	direction: 'horizontal',
+	    		anchors: ['page1', 'page2', 'page3', 'page4','page5', 'page6', 'page7'],
+			    sectionsColor: ['black', '#ee005a', '#2C3E50', '#39C', 'yellow', '#2C3E50', 'yellow']
+			});
+	    });
+    </script>
 </head>
-
 <body>
-<!--
- <script type="text/javascript">
- 	for(var i = 0 ; i< 1000; i++){
- 		document.write(i+"</br>");
- 	}
- </script>
--->
-<!--dock -->
-<div class="dock" id="dock">
-    <div class="dock-container">
-	  <a class="dock-item" href="#">
-	  	<span>Home</span>
-	  	<img src="images/home.png" alt="home" />
-	  </a> 
-	  <a class="dock-item" href="#">
-	  	<span>Schedule</span>
-	  	<img src="images/schedule.png" alt="schedule" />
-	  </a> 
-	  <a class="dock-item" href="#">
-	  	<span>Sponsors</span>
-	  	<img src="images/sponsors.png" alt="sponsors" />
-	  </a> 
-	  <a class="dock-item" href="#">
-	  	<span>Register</span>
-	  	<img src="images/register.png" alt="register" />
-	  </a> 
-	  <a class="dock-item" href="#">
-	  	<span>About Us</span>
-	  	<img src="images/aboutus.png" alt="about us" />
-	  </a>
-    </div>
-</div>
+	<!-- Main scrolling content -->
+	<div id="pagepiling">
+	    <div class="section" id="section1"> <!-- Linked with page1 -->
+	    	<div class="check">
+	    		<h1>Home Page</h1>
+			</div>
+	    </div>
+	    <div class="section" id="section2"> <!-- Linked with page2 -->
+	    	<div class="intro">
+	    		<h1>Schedule Page</h1>
+	    		<p>Comming Soon!</p>
+	    	</div>
+	    </div>
+	    <div class="section" id="section3"> <!-- Linked with page3 -->
+	    	<h1>Sponsors Page</h1>
+	    </div>
+	    <div class="section" id="section4"> <!-- Linked with page4 -->
+	    	<div class="intro">
+	    		<h1>Registration Page</h1>
+	    		<p>Coming Soon!</p>
+	    	</div>
+	    </div>
+	    <div class="section" id="section5"> <!-- Linked with page5 -->
+	    	<div class="intro">
+	    		<h1>About Us</h1>
+	    		<p>Nothing to show!</p>
+	    	</div>
+	    	
+	    	<div class="testing">
+	    		sdfs</br>
+	    		sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>
+	    		sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>
+	    		sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>
+	    		sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>
+	    	</div>
+	    </div>
+	    <div class="section" id="section6"> <!-- Linked with page6 -->
+	    	<!-- Main card holder class-->
+	    	<div class="cardHolder">
+	    		<!-- A card -->
+		    	<div class="card">
+		    		<img src='images/avatar.png' style="width:100%">
+		    		<div class="card-container">
+				    	<h4><b>ABC XYZ</b></h4> 
+				    	<p>Speaker for bla bla bla</p> 
+					</div>
+	    		</div>
+	    		<div class="card">
+		    		<img src='images/avatar.png' style="width:100%">
+		    		<div class="card-container">
+				    	<h4><b>ABC XYZ</b></h4> 
+				    	<p>Speaker for bla bla bla</p> 
+					</div>
+	    		</div>
+	    		<div class="card">
+		    		<img src='images/avatar.png' style="width:100%">
+		    		<div class="card-container">
+				    	<h4><b>ABC XYZ</b></h4> 
+				    	<p>Speaker for bla bla bla</p> 
+					</div>
+	    		</div>
+	    		<div class="card">
+		    		<img src='images/avatar.png' style="width:100%">
+		    		<div class="card-container">
+				    	<h4><b>ABC XYZ</b></h4> 
+				    	<p>Speaker for bla bla bla</p> 
+					</div>
+	    		</div>
+	    		<div class="card">
+		    		<img src='images/avatar.png' style="width:100%">
+		    		<div class="card-container">
+				    	<h4><b>ABC XYZ</b></h4> 
+				    	<p>Speaker for bla bla bla</p> 
+					</div>
+	    		</div>
+	    		<div class="card">
+		    		<img src='images/avatar.png' style="width:100%">
+		    		<div class="card-container">
+				    	<h4><b>ABC XYZ</b></h4> 
+				    	<p>Speaker for bla bla bla</p> 
+					</div>
+	    		</div>
+	    		<div class="card">
+		    		<img src='images/avatar.png' style="width:100%">
+		    		<div class="card-container">
+				    	<h4><b>ABC XYZ</b></h4> 
+				    	<p>Speaker for bla bla bla</p> 
+					</div>
+	    		</div>
+	    		<div class="card">
+		    		<img src='images/avatar.png' style="width:100%">
+		    		<div class="card-container">
+				    	<h4><b>ABC XYZ</b></h4> 
+				    	<p>Speaker for bla bla bla</p> 
+					</div>
+	    		</div>	
+	    	</div>
+	    </div>
+	    <div class="section" id="section7"> <!-- Linked with page7 -->
+	    	<h1>FAQs Page</h1>
+	    </div>
+	</div>
+
+	<!--dock -->
+	<div class="dock" id="dock">
+	    <div class="dock-container">
+		  <a class="dock-item" href="#page1">
+		  	<span>Home</span>
+		  	<img src="images/home.png" alt="home" />
+		  </a> 
+		  <a class="dock-item" href="#page2">
+		  	<span>Schedule</span>
+		  	<img src="images/schedule.png" alt="schedule" />
+		  </a> 
+		  <a class="dock-item" href="#page3">
+		  	<span>Sponsors</span>
+		  	<img src="images/sponsors.png" alt="sponsors" />
+		  </a> 
+		  <a class="dock-item"  href="#page4">
+		  	<span>Register</span>
+		  	<img src="images/register.png" alt="register" />
+		  </a> 
+		  <a class="dock-item" href="#page5">
+		  	<span>About Us</span>
+		  	<img src="images/aboutus.png" alt="about us" />
+		  </a>
+		  <a class="dock-item" href="#page6">
+		  	<span>Speakers</span>
+		  	<img src="images/speaker2.png" alt="speaker" />
+		  </a>
+		  <a class="dock-item" href="#page7">
+		  	<span>FAQs</span>
+		  	<img src="images/faq2.png" alt="faq" />
+		  </a>
+	    </div>
+	</div>
 
 <!--dock menu JS options -->
 <script type="text/javascript">
