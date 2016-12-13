@@ -30,8 +30,28 @@
 	<!-- Main scrolling content -->
 	<div id="pagepiling">
 	    <div class="section" id="section1"> <!-- Linked with page1 -->
-	    	<div class="check">
-	    		
+	    	<div class="homeBackground">
+	    		<div class="mainDialog">
+	    			<h1 style="color:white">CSIS'17</h1>
+	    			<p class="schedule_date" style="margin-top:10px;">24th March,2017 - 26th March, 2017</p>
+	    			<p class="schedule_address" style="margin-bottom:20px;">IIIT Allahabad, UttarPradesh, India</p>
+	    		</div>
+	    		<center>
+	    			<table cellspacing="0" style="margin-top:20px;">
+						<tr>
+							<td id="days"></td>
+							<td id="hours"></td>
+							<td id="minutes"></td>
+							<td id="seconds"></td>
+						</tr>
+						<tr class="counterData">
+							<td class="days">Days</td>
+							<td class="hours">Hours</td>
+							<td class="minutes">Minutes</td>
+							<td class="seconds">Seconds</td>
+						</tr>
+					</table>
+					</center>
 			</div>
 	    </div>
 	    <div class="section" id="section2"> <!-- Linked with page2 -->
@@ -44,7 +64,7 @@
 							<div class="events">
 								<ol>
 									<li><a href="#0" data-date="22/01/2017" class="selected">22 Jan</a></li>
-									<li><a href="#0" data-date="23/03/2017">23 Mar</a></li>
+									<li><a href="#0" data-date="24/03/2017">24 Mar</a></li>
 								</ol>
 								<span class="filling-line" aria-hidden="true"></span>
 							</div> <!-- .events -->
@@ -65,9 +85,9 @@
 								Registrations open for the symposium from 22nd January.
 								</p>
 							</li>
-							<li data-date="23/03/2017">
+							<li data-date="24/03/2017">
 								<h2 style="font-size:40px;">Symposium Date</h2>
-								<em style="font-size:15px;">March 23rd, 2017</em>
+								<em style="font-size:15px;">March 24rd, 2017</em>
 								<p style="font-size:25px;">	
 									 The event is tentatively scheduled to be held from 24-26 March 2017.
 								</p>
@@ -262,7 +282,7 @@
               answer.css('max-height', answer.height()+10); //+100
               answer.addClass('activeFaqAnswer');
             } else {
-              console.log("yes");
+              //console.log("yes");
               $('.faqElement').removeClass('flipButton');
               faqElement.addClass('flipButton');
               $('.activeFaqAnswer').css('max-height', '');
@@ -271,5 +291,45 @@
         });
       });
   </script>
+
+<!-- Function to handle countdown timer -->
+<script>
+	function countdown(){
+		var now = new Date();
+		var eventDate = new Date(2017, 03, 24);
+
+		var currentTiime = now.getTime();
+		var eventTime = eventDate.getTime();
+
+		var remTime = eventTime - currentTiime;
+
+		var s = Math.floor(remTime / 1000);
+		var m = Math.floor(s / 60);
+		var h = Math.floor(m / 60);
+		var d = Math.floor(h / 24);
+
+		h %= 24;
+		m %= 60;
+		s %= 60;
+
+		h = (h < 10) ? "0" + h : h;
+		m = (m < 10) ? "0" + m : m;
+		s = (s < 10) ? "0" + s : s;
+
+		var img = document.createElement("IMG");
+		img.src = 'images/countdown/1.png';
+
+		document.getElementById("days").textContent = d;
+		//document.getElementById("days").innerText = d;
+		//document.getElementById("days").innerHTML = '<img src='+ img.src +'>';
+		document.getElementById("hours").textContent = h;
+		document.getElementById("minutes").textContent = m;
+		document.getElementById("seconds").textContent = s;
+
+		setTimeout(countdown, 1000);
+	}
+	countdown();
+</script>
+
 </body>
 </html>
