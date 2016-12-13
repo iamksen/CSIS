@@ -6,7 +6,6 @@
 	<script src="js/jquery-2.1.4.js"></script>
 	<script src="js/main.js"></script> <!-- Resource jQuery -->
 	
-	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
 	<link rel="stylesheet" type="text/css" href="css/dock.css">
@@ -36,7 +35,7 @@
 			</div>
 	    </div>
 	    <div class="section" id="section2"> <!-- Linked with page2 -->
-	    	<div class="modifyintro">
+	    	<div class="schedulePage">
 	    		<h1 class="headings" style="color:black;">Schedule</h1>
 	    		<!-- horizontal timeline -->
 	    		<section class="cd-horizontal-timeline">
@@ -80,12 +79,23 @@
 	    </div>
 	    <div class="section" id="section3"> <!-- Linked with page3 -->
 	    	<div class="sonpsorPage">
-		    	<span class="headings" style='color:black;'><h1>Our Sponsors</h1></span>
-		    	<div class="sponser">
-			    	<img src='images/sponsers/CSIS.png' style="width:100%" >
-				</div>
-				<div class="sponser">
-			    	<img src='images/sponsers/upsection.png' style="width:100%"> 
+	    		<h1 class="headings" style='color:black;'>Our Sponsors</h1>
+			    <div class="sponsorContainer" style="margin-top:50px;">
+			    	<a href="http://www.ieeeup.org/">
+				    	<div class="sponsor">
+					    	<img src='images/sponsers/upsection.png'> 
+						</div>
+					</a>
+					<a href="https://www.computer.org/">
+						<div class="sponsor">
+					    	<img src='images/sponsers/csLogo.jpg' style="height:200px; width:300px;">
+						</div>
+					</a>
+					<a href="https://www.ieee.org/">
+						<div class="sponsor">
+					    	<img src='images/sponsers/ieee.png'> 
+						</div>
+					</a>
 				</div>
 			</div>
 	    </div>
@@ -95,16 +105,8 @@
 	    	</div>
 	    </div>
 	    <div class="section" id="section5"> <!-- Linked with page5 -->
-	    	<div class="intro">
-	    		<h1>About Us</h1>
-	    		<p>Nothing to show!</p>
-	    	</div>
-	    	
-	    	<div class="testing">
-	    		sdfs</br>
-	    		sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>
-	    		sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>
-	    		sdfs</br>sdfs</br>sdfs</br>sdfs
+	    	<div class="aboutusPage">
+	    		
 	    	</div>
 	    </div>
 	    <div class="section" id="section6"> <!-- Linked with page6 -->
@@ -113,66 +115,44 @@
 		    	<h1 class="headings">Speakers</h1> <!-- change cardHolder Height-->
 		    	<div class="cardHolder">
 		    		<!-- A card -->
-		    		<div class = "cardRow">
-				    	<div class = "card1">
-				    		<img src='images/speakers/karnick.png'>
-				    		<div class="card-container">
-						    	<h4>Prof. Harish Karnick</h4> 
-						    	<p>IIT Kanpur</p> 
-							</div>
-			    		</div>	
-			    		<div class = "card1">
-				    		<img src='images/avatar.png'>
-				    		<div class="card-container">
-						    	<h4>Mr. Davesh Singh</h4> 
-						    	<p>UIDAI</p> 
-							</div>
-			    		</div>
-			    		<div class = "card1">
-				    		<img src='images/speakers/sanyal.jpg'>
-				    		<div class="card-container">
-						    	<h4>Prof. Sudip Sanyal</h4> 
-						    	<p>IIIT Allahabad</p> 
-							</div>
-			    		</div>
-			    		<div class = "card1">
-				    		<img src='images/speakers/rkala.jpg'>
-				    		<div class="card-container">
-						    	<h4>Dr. Rahul Kala</h4> 
-						    	<p>IIIT Allahabad</p> 
-							</div>
-			    		</div>
+		    		<div class = "cardRow" style="margin-top:40px;">
+				    	<a href="https://in.linkedin.com/in/harish-karnick-388b1616">
+					    	<div class = "card1">
+					    		<img src='images/speakers/karnick.png'>
+					    		<div class="card-container">
+							    	<h4>Prof. Harish Karnick</h4> 
+							    	<p>IIT Kanpur</p> 
+								</div>
+				    		</div>	
+			    		</a>
+			    		<a href="https://in.linkedin.com/in/davesh-singh-16788139">
+				    		<div class = "card1">
+					    		<img src='images/avatar.png'>
+					    		<div class="card-container">
+							    	<h4>Mr. Davesh Singh</h4> 
+							    	<p>UIDAI</p> 
+								</div>
+				    		</div>
+			    		</a>
+				    		<a href="https://www.linkedin.com/in/sudip-sanyal-76439b100">
+				    		<div class = "card1">
+					    		<img src='images/speakers/sanyal.jpg'>
+					    		<div class="card-container">
+							    	<h4>Prof. Sudip Sanyal</h4> 
+							    	<p>IIIT Allahabad</p> 
+								</div>
+				    		</div>
+			    		</a>
+			    		<a href="https://in.linkedin.com/in/rahul-kala-3b918822">
+				    		<div class = "card1">
+					    		<img src='images/speakers/rkala.jpg'>
+					    		<div class="card-container">
+							    	<h4>Dr. Rahul Kala</h4> 
+							    	<p>IIIT Allahabad</p> 
+								</div>
+				    		</div>
+			    		</a>
 		    		</div> <!--End of cardRow-->
-		    		<div class = "cardRow">
-			    		<div class = "card1">
-				    		<img src='images/avatar.png'>
-				    		<div class="card-container">
-						    	<h4>Speakers' Name</h4> 
-						    	<p>ABC XYZ</p> 
-							</div>
-			    		</div>
-			    		<div class = "card1">
-				    		<img src='images/avatar.png'>
-				    		<div class="card-container">
-						    	<h4>Speakers' Name</h4> 
-						    	<p>ABC XYZ</p> 
-							</div>
-			    		</div>
-			    		<div class = "card1">
-				    		<img src='images/avatar.png'>
-				    		<div class="card-container">
-						    	<h4>Speakers' Name</h4> 
-						    	<p>ABC XYZ</p> 
-							</div>
-			    		</div>
-			    		<div class = "card1">
-				    		<img src='images/avatar.png'>
-				    		<div class="card-container">
-						    	<h4>Speakers' Name</h4> 
-						    	<p>ABC XYZ</p> 
-							</div>
-			    		</div>
-		    		</div><!--End of cardRow-->
 		    	</div>
 	    	</div> <!-- End of speakerBackground -->
 	    </div>
@@ -239,7 +219,7 @@
 		  	<span>FAQs</span>
 		  	<img src="images/faq.png" alt="faq" />
 		  </a>
-		  <a class="dock-item" style="text-decoration:none;" href="https://www.google.co.in/maps/place/Indian+Institute+of+Information+Technology+Allahabad/@25.4302153,81.7681652,16.75z/data=!4m5!3m4!1s0x399acac768944451:0x1f0c03a031f74c3f!8m2!3d25.4304161!4d81.770679?hl=en">
+		  <a class="dock-item" style="text-decoration:none;" href="https://www.google.co.in/maps/place/Indian+Institute+of+Information+Technology+Allahabad/@25.4302153,81.7681652,16.75z/data=!4m5!3m4!1s0x399acac768944451:0x1f0c03a031f74c3f!8m2!3d25.4304161!4d81.770679?hl=en" target="_blank">
 		  	<span>How to Reach</span>
 		  	<img src="images/maps.png" alt="maps" />
 		  </a>
@@ -276,12 +256,10 @@
             var question = faqElement.find('.faqQuestion');
             var answer = faqElement.find('.faqAnswer');
             if (!answer.hasClass('activeFaqAnswer')) {
-              $('.faqElement').removeClass('flipButton');
-              faqElement.addClass('flipButton');
               $('.activeFaqAnswer').css('max-height', '');
               $('.faqAnswer').removeClass('activeFaqAnswer');
               answer.css('max-height', 'none');
-              answer.css('max-height', answer.height() + 100);
+              answer.css('max-height', answer.height()+10); //+100
               answer.addClass('activeFaqAnswer');
             } else {
               console.log("yes");
