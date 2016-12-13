@@ -1,132 +1,268 @@
-(function() {
-    //console.log("hi");
-    var paper, circs, i, nowX, nowY, timer, props = {}, toggler = 0, elie, dx, dy, rad, cur, opa;
-    // Returns a random integer between min and max  
-    // Using Math.round() will give you a non-uniform distribution!  
-    function ran(min, max)  
-    {  
-        return Math.floor(Math.random() * (max - min + 1)) + min;  
-    } 
-    
-    function moveIt()
-    {
-        for(i = 0; i < circs.length; ++i)
-        {            
-            // Reset when time is at zero
-            if (! circs[i].time) 
-            {
-                circs[i].time  = ran(30, 100);
-                circs[i].deg   = ran(-179, 180);
-                circs[i].vel   = ran(1, 5);  
-                circs[i].curve = ran(0, 1);
-                circs[i].fade  = ran(0, 1);
-                circs[i].grow  = ran(-2, 2); 
-            }                
-            
-            // Get position
-            nowX = circs[i].attr("cx");
-            nowY = circs[i].attr("cy");   
-            // Calc movement
-            dx = circs[i].vel * Math.cos(circs[i].deg * Math.PI/180);
-            dy = circs[i].vel * Math.sin(circs[i].deg * Math.PI/180);
-            // Calc new position
-            nowX += dx;
-            nowY += dy;
-            
-            // Calc wrap around
-            var height = screen.height - 10;
-            var width = screen.width - 10;
-            if (nowX < 0) nowX = width + nowX;
-            else          nowX = nowX % width;            
-            if (nowY < 0) nowY = height + nowY;
-            else          nowY = nowY % height;
-            
-            // Render moved particle
-            circs[i].attr({cx: nowX, cy: nowY});
-            
-            // Calc growth
-            rad = circs[i].attr("r");
-            if (circs[i].grow > 0) circs[i].attr("r", Math.min(30, rad +  .1));
-            else                   circs[i].attr("r", Math.max(10,  rad -  .1));
-            
-                // Calc curve
-            if (circs[i].curve > 0) circs[i].deg = circs[i].deg + 2;
-            else                    circs[i].deg = circs[i].deg - 2;
-            
-                // Calc opacity
-            opa = circs[i].attr("fill-opacity");
-            if (circs[i].fade > 0) {
-                circs[i].attr("fill-opacity", Math.max(.3, opa -  .01));
-                circs[i].attr("stroke-opacity", Math.max(.3, opa -  .01)); 
-            } else {
-                circs[i].attr("fill-opacity", Math.min(1, opa +  .01));
-                circs[i].attr("stroke-opacity", Math.min(1, opa +  .01)); 
-            }
+jQuery(document).ready(function($){
+	var timelines = $('.cd-horizontal-timeline'),
+		eventsMinDistance = 150;  //To change the gap between to minimum dates
 
-            // Progress timer for particle
-            circs[i].time = circs[i].time - 1;
-            
-                // Calc damping
-            if (circs[i].vel < 1) circs[i].time = 0;
-            else circs[i].vel = circs[i].vel - .05;              
-       
-        } 
-        timer = setTimeout(moveIt, 60);
-    }
-    
-    window.onload = function () {
-        //console.log(screen.height);
-        //console.log(screen.width);
-        var height = screen.height-50;
-        var width = screen.width-50;
-        paper = Raphael("canvas", width, height);
-        circs = paper.set();
-        for (i = 0; i < 30; ++i) {
-            opa = ran(3,10)/10;
-            circs.push(paper.circle(ran(0,width), ran(0,height), ran(10,30)).attr({"fill-opacity": opa,
-                                                                           "stroke-opacity": opa}));
+	(timelines.length > 0) && initTimeline(timelines);
+
+	function initTimeline(timelines) {
+		timelines.each(function(){
+			var timeline = $(this),
+				timelineComponents = {};
+			//cache timeline components 
+			timelineComponents['timelineWrapper'] = timeline.find('.events-wrapper');
+			timelineComponents['eventsWrapper'] = timelineComponents['timelineWrapper'].children('.events');
+			timelineComponents['fillingLine'] = timelineComponents['eventsWrapper'].children('.filling-line');
+			timelineComponents['timelineEvents'] = timelineComponents['eventsWrapper'].find('a');
+			timelineComponents['timelineDates'] = parseDate(timelineComponents['timelineEvents']);
+			timelineComponents['eventsMinLapse'] = minLapse(timelineComponents['timelineDates']);
+			timelineComponents['timelineNavigation'] = timeline.find('.cd-timeline-navigation');
+			timelineComponents['eventsContent'] = timeline.children('.events-content');
+
+			//assign a left postion to the single events along the timeline
+			setDatePosition(timelineComponents, eventsMinDistance);
+			//assign a width to the timeline
+			var timelineTotWidth = setTimelineWidth(timelineComponents, eventsMinDistance);
+			//the timeline has been initialize - show it
+			timeline.addClass('loaded');
+
+			//detect click on the next arrow
+			timelineComponents['timelineNavigation'].on('click', '.next', function(event){
+				event.preventDefault();
+				updateSlide(timelineComponents, timelineTotWidth, 'next');
+			});
+			//detect click on the prev arrow
+			timelineComponents['timelineNavigation'].on('click', '.prev', function(event){
+				event.preventDefault();
+				updateSlide(timelineComponents, timelineTotWidth, 'prev');
+			});
+			//detect click on the a single event - show new event content
+			timelineComponents['eventsWrapper'].on('click', 'a', function(event){
+				event.preventDefault();
+				timelineComponents['timelineEvents'].removeClass('selected');
+				$(this).addClass('selected');
+				updateOlderEvents($(this));
+				updateFilling($(this), timelineComponents['fillingLine'], timelineTotWidth);
+				updateVisibleContent($(this), timelineComponents['eventsContent']);
+			});
+
+			//on swipe, show next/prev event content
+			timelineComponents['eventsContent'].on('swipeleft', function(){
+				var mq = checkMQ();
+				( mq == 'mobile' ) && showNewContent(timelineComponents, timelineTotWidth, 'next');
+			});
+			timelineComponents['eventsContent'].on('swiperight', function(){
+				var mq = checkMQ();
+				( mq == 'mobile' ) && showNewContent(timelineComponents, timelineTotWidth, 'prev');
+			});
+
+			//keyboard navigation
+			$(document).keyup(function(event){
+				if(event.which=='37' && elementInViewport(timeline.get(0)) ) {
+					showNewContent(timelineComponents, timelineTotWidth, 'prev');
+				} else if( event.which=='39' && elementInViewport(timeline.get(0))) {
+					showNewContent(timelineComponents, timelineTotWidth, 'next');
+				}
+			});
+		});
+	}
+
+	function updateSlide(timelineComponents, timelineTotWidth, string) {
+		//retrieve translateX value of timelineComponents['eventsWrapper']
+		var translateValue = getTranslateValue(timelineComponents['eventsWrapper']),
+			wrapperWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', ''));
+		//translate the timeline to the left('next')/right('prev') 
+		(string == 'next') 
+			? translateTimeline(timelineComponents, translateValue - wrapperWidth + eventsMinDistance, wrapperWidth - timelineTotWidth)
+			: translateTimeline(timelineComponents, translateValue + wrapperWidth - eventsMinDistance);
+	}
+
+	function showNewContent(timelineComponents, timelineTotWidth, string) {
+		//go from one event to the next/previous one
+		var visibleContent =  timelineComponents['eventsContent'].find('.selected'),
+			newContent = ( string == 'next' ) ? visibleContent.next() : visibleContent.prev();
+
+		if ( newContent.length > 0 ) { //if there's a next/prev event - show it
+			var selectedDate = timelineComponents['eventsWrapper'].find('.selected'),
+				newEvent = ( string == 'next' ) ? selectedDate.parent('li').next('li').children('a') : selectedDate.parent('li').prev('li').children('a');
+			
+			updateFilling(newEvent, timelineComponents['fillingLine'], timelineTotWidth);
+			updateVisibleContent(newEvent, timelineComponents['eventsContent']);
+			newEvent.addClass('selected');
+			selectedDate.removeClass('selected');
+			updateOlderEvents(newEvent);
+			updateTimelinePosition(string, newEvent, timelineComponents);
+		}
+	}
+
+	function updateTimelinePosition(string, event, timelineComponents) {
+		//translate timeline to the left/right according to the position of the selected event
+		var eventStyle = window.getComputedStyle(event.get(0), null),
+			eventLeft = Number(eventStyle.getPropertyValue("left").replace('px', '')),
+			timelineWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', '')),
+			timelineTotWidth = Number(timelineComponents['eventsWrapper'].css('width').replace('px', ''));
+		var timelineTranslate = getTranslateValue(timelineComponents['eventsWrapper']);
+
+        if( (string == 'next' && eventLeft > timelineWidth - timelineTranslate) || (string == 'prev' && eventLeft < - timelineTranslate) ) {
+        	translateTimeline(timelineComponents, - eventLeft + timelineWidth/2, timelineWidth - timelineTotWidth);
         }
-        circs.attr({fill: "#00DDAA", stroke: "#00DDAA"});
-        moveIt();
-        elie = document.getElementById("toggle");
-        elie.onclick = function() {
-            (toggler++ % 2) ? (function(){
-                    moveIt();
-                    elie.value = " Stop ";
-                }()) : (function(){
-                    clearTimeout(timer);
-                    elie.value = " Start ";
-                }());
+	}
+
+	function translateTimeline(timelineComponents, value, totWidth) {
+		var eventsWrapper = timelineComponents['eventsWrapper'].get(0);
+		value = (value > 0) ? 0 : value; //only negative translate value
+		value = ( !(typeof totWidth === 'undefined') &&  value < totWidth ) ? totWidth : value; //do not translate more than timeline width
+		setTransformValue(eventsWrapper, 'translateX', value+'px');
+		//update navigation arrows visibility
+		(value == 0 ) ? timelineComponents['timelineNavigation'].find('.prev').addClass('inactive') : timelineComponents['timelineNavigation'].find('.prev').removeClass('inactive');
+		(value == totWidth ) ? timelineComponents['timelineNavigation'].find('.next').addClass('inactive') : timelineComponents['timelineNavigation'].find('.next').removeClass('inactive');
+	}
+
+	function updateFilling(selectedEvent, filling, totWidth) {
+		//change .filling-line length according to the selected event
+		var eventStyle = window.getComputedStyle(selectedEvent.get(0), null),
+			eventLeft = eventStyle.getPropertyValue("left"),
+			eventWidth = eventStyle.getPropertyValue("width");
+		eventLeft = Number(eventLeft.replace('px', '')) + Number(eventWidth.replace('px', ''))/2;
+		var scaleValue = eventLeft/totWidth;
+		setTransformValue(filling.get(0), 'scaleX', scaleValue);
+	}
+
+	function setDatePosition(timelineComponents, min) {
+		for (i = 0; i < timelineComponents['timelineDates'].length; i++) { 
+		    var distance = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][i]),
+		    	distanceNorm = Math.round(distance/timelineComponents['eventsMinLapse']) + 2;
+		    timelineComponents['timelineEvents'].eq(i).css('left', distanceNorm*min+'px');
+		}
+	}
+
+	function setTimelineWidth(timelineComponents, width) {
+		var timeSpan = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][timelineComponents['timelineDates'].length-1]),
+			timeSpanNorm = timeSpan/timelineComponents['eventsMinLapse'],
+			timeSpanNorm = Math.round(timeSpanNorm) + 4,
+			totalWidth = timeSpanNorm*width;
+		timelineComponents['eventsWrapper'].css('width', totalWidth+'px');
+		updateFilling(timelineComponents['eventsWrapper'].find('a.selected'), timelineComponents['fillingLine'], totalWidth);
+		updateTimelinePosition('next', timelineComponents['eventsWrapper'].find('a.selected'), timelineComponents);
+	
+		return totalWidth;
+	}
+
+	function updateVisibleContent(event, eventsContent) {
+		var eventDate = event.data('date'),
+			visibleContent = eventsContent.find('.selected'),
+			selectedContent = eventsContent.find('[data-date="'+ eventDate +'"]'),
+			selectedContentHeight = selectedContent.height();
+
+		if (selectedContent.index() > visibleContent.index()) {
+			var classEnetering = 'selected enter-right',
+				classLeaving = 'leave-left';
+		} else {
+			var classEnetering = 'selected enter-left',
+				classLeaving = 'leave-right';
+		}
+
+		selectedContent.attr('class', classEnetering);
+		visibleContent.attr('class', classLeaving).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
+			visibleContent.removeClass('leave-right leave-left');
+			selectedContent.removeClass('enter-left enter-right');
+		});
+		eventsContent.css('height', selectedContentHeight+'px');
+	}
+
+	function updateOlderEvents(event) {
+		event.parent('li').prevAll('li').children('a').addClass('older-event').end().end().nextAll('li').children('a').removeClass('older-event');
+	}
+
+	function getTranslateValue(timeline) {
+		var timelineStyle = window.getComputedStyle(timeline.get(0), null),
+			timelineTranslate = timelineStyle.getPropertyValue("-webkit-transform") ||
+         		timelineStyle.getPropertyValue("-moz-transform") ||
+         		timelineStyle.getPropertyValue("-ms-transform") ||
+         		timelineStyle.getPropertyValue("-o-transform") ||
+         		timelineStyle.getPropertyValue("transform");
+
+        if( timelineTranslate.indexOf('(') >=0 ) {
+        	var timelineTranslate = timelineTranslate.split('(')[1];
+    		timelineTranslate = timelineTranslate.split(')')[0];
+    		timelineTranslate = timelineTranslate.split(',');
+    		var translateValue = timelineTranslate[4];
+        } else {
+        	var translateValue = 0;
         }
-    };
-}());
 
+        return Number(translateValue);
+	}
 
+	function setTransformValue(element, property, value) {
+		element.style["-webkit-transform"] = property+"("+value+")";
+		element.style["-moz-transform"] = property+"("+value+")";
+		element.style["-ms-transform"] = property+"("+value+")";
+		element.style["-o-transform"] = property+"("+value+")";
+		element.style["transform"] = property+"("+value+")";
+	}
 
-(function() {
-    document.onmousemove = handleMouseMove;
-    function handleMouseMove(event) {
-        var dot, eventDoc, doc, body, pageX, pageY;
+	//based on http://stackoverflow.com/questions/542938/how-do-i-get-the-number-of-days-between-two-dates-in-javascript
+	function parseDate(events) {
+		var dateArrays = [];
+		events.each(function(){
+			var singleDate = $(this),
+				dateComp = singleDate.data('date').split('T');
+			if( dateComp.length > 1 ) { //both DD/MM/YEAR and time are provided
+				var dayComp = dateComp[0].split('/'),
+					timeComp = dateComp[1].split(':');
+			} else if( dateComp[0].indexOf(':') >=0 ) { //only time is provide
+				var dayComp = ["2000", "0", "0"],
+					timeComp = dateComp[0].split(':');
+			} else { //only DD/MM/YEAR
+				var dayComp = dateComp[0].split('/'),
+					timeComp = ["0", "0"];
+			}
+			var	newDate = new Date(dayComp[2], dayComp[1]-1, dayComp[0], timeComp[0], timeComp[1]);
+			dateArrays.push(newDate);
+		});
+	    return dateArrays;
+	}
 
-        event = event || window.event; // IE-ism
+	function daydiff(first, second) {
+	    return Math.round((second-first));
+	}
 
-        // If pageX/Y aren't available and clientX/Y are,
-        // calculate pageX/Y - logic taken from jQuery.
-        // (This is to support old IE)
-        if (event.pageX == null && event.clientX != null) {
-            eventDoc = (event.target && event.target.ownerDocument) || document;
-            doc = eventDoc.documentElement;
-            body = eventDoc.body;
+	function minLapse(dates) {
+		//determine the minimum distance among events
+		var dateDistances = [];
+		for (i = 1; i < dates.length; i++) { 
+		    var distance = daydiff(dates[i-1], dates[i]);
+		    dateDistances.push(distance);
+		}
+		return Math.min.apply(null, dateDistances);
+	}
 
-            event.pageX = event.clientX +
-              (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
-              (doc && doc.clientLeft || body && body.clientLeft || 0);
-            event.pageY = event.clientY +
-              (doc && doc.scrollTop  || body && body.scrollTop  || 0) -
-              (doc && doc.clientTop  || body && body.clientTop  || 0 );
-        }
+	/*
+		How to tell if a DOM element is visible in the current viewport?
+		http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+	*/
+	function elementInViewport(el) {
+		var top = el.offsetTop;
+		var left = el.offsetLeft;
+		var width = el.offsetWidth;
+		var height = el.offsetHeight;
 
-        // Use event.pageX / event.pageY here
-        //console.log(event.pageX + ", " + event.pageY);
-    }
-})();
+		while(el.offsetParent) {
+		    el = el.offsetParent;
+		    top += el.offsetTop;
+		    left += el.offsetLeft;
+		}
+
+		return (
+		    top < (window.pageYOffset + window.innerHeight) &&
+		    left < (window.pageXOffset + window.innerWidth) &&
+		    (top + height) > window.pageYOffset &&
+		    (left + width) > window.pageXOffset
+		);
+	}
+
+	function checkMQ() {
+		//check if mobile or desktop device
+		return window.getComputedStyle(document.querySelector('.cd-horizontal-timeline'), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "");
+	}
+});

@@ -27,11 +27,33 @@ img {
 .dock-container {
 	position: absolute;
 	height: 73px;
-	background: url(../images/dock-bg2.png);
+	background: url(../images/dock-bg.png);
 	padding-left: 20px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	z-index: 300;
+}
+
+.dock-container > a > span {
+	background-color: #4D4D4D;
+	color:white;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	text-decoration: none;
+	border-radius: 10px;
+}
+
+.dock-container > a > span:after { /* Triangle below span elements */
+	content: '';
+	display: block;  
+	position: absolute;
+	width: 0;
+	height: 0;
+    left:50%;
+	margin-left: -15px;
+	border-top: 10px solid #4D4D4D;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
 }
 
 a.dock-item {
@@ -56,6 +78,6 @@ a.dock-item {
 }
 .dock-item img {
 	border: 0; 
-	margin: 5px 10px 5px;
+	margin: 5px 5px 5px 5px;
 	width: 85%; 
 }

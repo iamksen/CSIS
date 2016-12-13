@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CSIS-2016 IIITA</title>
+	<title>CSIS-2017 IIITA</title>	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="js/jquery-2.1.4.js"></script>
+	<script src="js/main.js"></script> <!-- Resource jQuery -->
+	
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
 	<link rel="stylesheet" type="text/css" href="css/dock.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/jquery.pagepiling.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">		
+	
+  	<script type="text/javascript" src="js/jquery.pagepiling.min.js"></script>
 	<script type="text/javascript" src="js/interface.js"></script>
-	<script type="text/javascript">
+
+    <script type="text/javascript">
 		$(document).ready(function() {
 			/* plugin for horizontal scrolling	*/
 	    	$('#pagepiling').pagepiling({
 	          	direction: 'horizontal',
 	    		anchors: ['page1', 'page2', 'page3', 'page4','page5', 'page6', 'page7'],
-			    sectionsColor: ['black', '#ee005a', '#2C3E50', '#39C', 'yellow', '#2C3E50', 'yellow']
+			    sectionsColor: ['black', 'white', 'white', 'white', 'white', '#262626', '#262626']
 			});
 	    });
     </script>
@@ -24,22 +32,66 @@
 	<div id="pagepiling">
 	    <div class="section" id="section1"> <!-- Linked with page1 -->
 	    	<div class="check">
-	    		<h1>Home Page</h1>
+	    		
 			</div>
 	    </div>
 	    <div class="section" id="section2"> <!-- Linked with page2 -->
-	    	<div class="intro">
-	    		<h1>Schedule Page</h1>
-	    		<p>Comming Soon!</p>
-	    	</div>
+	    	<div class="modifyintro">
+	    		<h1 class="headings" style="color:black;">Schedule</h1>
+	    		<!-- horizontal timeline -->
+	    		<section class="cd-horizontal-timeline">
+					<div class="timeline">
+						<div class="events-wrapper">
+							<div class="events">
+								<ol>
+									<li><a href="#0" data-date="22/01/2017" class="selected">22 Jan</a></li>
+									<li><a href="#0" data-date="23/03/2017">23 Mar</a></li>
+								</ol>
+								<span class="filling-line" aria-hidden="true"></span>
+							</div> <!-- .events -->
+						</div> <!-- .events-wrapper -->
+							
+						<ul class="cd-timeline-navigation">
+							<li><a href="#0" class="prev inactive">Prev</a></li>
+							<li><a href="#0" class="next">Next</a></li>
+						</ul> <!-- .cd-timeline-navigation -->
+					</div> <!-- .timeline -->
+
+					<div class="events-content">
+						<ol>
+							<li class="selected" data-date="22/01/2017">
+								<h2 style="font-size:40px;">Registration</h2>
+								<em style="font-size:15px;">January 22nd, 2017</em>
+								<p style="font-size:25px;">	
+								Registrations open for the symposium from 22nd January.
+								</p>
+							</li>
+							<li data-date="23/03/2017">
+								<h2 style="font-size:40px;">Symposium Date</h2>
+								<em style="font-size:15px;">March 23rd, 2017</em>
+								<p style="font-size:25px;">	
+									 The event is tentatively scheduled to be held from 24-26 March 2017.
+								</p>
+							</li>
+						</ol>
+					</div> <!-- .events-content -->
+				</section>	
+			</div>	    		<!-- horizontal timeline -->
 	    </div>
 	    <div class="section" id="section3"> <!-- Linked with page3 -->
-	    	<h1>Sponsors Page</h1>
+	    	<div class="sonpsorPage">
+		    	<span class="headings" style='color:black;'><h1>Our Sponsors</h1></span>
+		    	<div class="sponser">
+			    	<img src='images/sponsers/CSIS.png' style="width:100%" >
+				</div>
+				<div class="sponser">
+			    	<img src='images/sponsers/upsection.png' style="width:100%"> 
+				</div>
+			</div>
 	    </div>
 	    <div class="section" id="section4"> <!-- Linked with page4 -->
-	    	<div class="intro">
-	    		<h1>Registration Page</h1>
-	    		<p>Coming Soon!</p>
+	    	<div class="registerPage">
+	    		<div class="coming_soon">Coming Soon...</div>
 	    	</div>
 	    </div>
 	    <div class="section" id="section5"> <!-- Linked with page5 -->
@@ -52,107 +104,144 @@
 	    		sdfs</br>
 	    		sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>
 	    		sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>
-	    		sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>
-	    		sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>sdfs</br>
+	    		sdfs</br>sdfs</br>sdfs</br>sdfs
 	    	</div>
 	    </div>
 	    <div class="section" id="section6"> <!-- Linked with page6 -->
 	    	<!-- Main card holder class-->
-	    	<div class="cardHolder">
-	    		<!-- A card -->
-		    	<div class="card">
-		    		<img src='images/avatar.png' style="width:100%">
-		    		<div class="card-container">
-				    	<h4><b>ABC XYZ</b></h4> 
-				    	<p>Speaker for bla bla bla</p> 
-					</div>
-	    		</div>
-	    		<div class="card">
-		    		<img src='images/avatar.png' style="width:100%">
-		    		<div class="card-container">
-				    	<h4><b>ABC XYZ</b></h4> 
-				    	<p>Speaker for bla bla bla</p> 
-					</div>
-	    		</div>
-	    		<div class="card">
-		    		<img src='images/avatar.png' style="width:100%">
-		    		<div class="card-container">
-				    	<h4><b>ABC XYZ</b></h4> 
-				    	<p>Speaker for bla bla bla</p> 
-					</div>
-	    		</div>
-	    		<div class="card">
-		    		<img src='images/avatar.png' style="width:100%">
-		    		<div class="card-container">
-				    	<h4><b>ABC XYZ</b></h4> 
-				    	<p>Speaker for bla bla bla</p> 
-					</div>
-	    		</div>
-	    		<div class="card">
-		    		<img src='images/avatar.png' style="width:100%">
-		    		<div class="card-container">
-				    	<h4><b>ABC XYZ</b></h4> 
-				    	<p>Speaker for bla bla bla</p> 
-					</div>
-	    		</div>
-	    		<div class="card">
-		    		<img src='images/avatar.png' style="width:100%">
-		    		<div class="card-container">
-				    	<h4><b>ABC XYZ</b></h4> 
-				    	<p>Speaker for bla bla bla</p> 
-					</div>
-	    		</div>
-	    		<div class="card">
-		    		<img src='images/avatar.png' style="width:100%">
-		    		<div class="card-container">
-				    	<h4><b>ABC XYZ</b></h4> 
-				    	<p>Speaker for bla bla bla</p> 
-					</div>
-	    		</div>
-	    		<div class="card">
-		    		<img src='images/avatar.png' style="width:100%">
-		    		<div class="card-container">
-				    	<h4><b>ABC XYZ</b></h4> 
-				    	<p>Speaker for bla bla bla</p> 
-					</div>
-	    		</div>	
-	    	</div>
+	    	<div class="speakerPage">
+		    	<h1 class="headings">Speakers</h1> <!-- change cardHolder Height-->
+		    	<div class="cardHolder">
+		    		<!-- A card -->
+		    		<div class = "cardRow">
+				    	<div class = "card1">
+				    		<img src='images/speakers/karnick.png'>
+				    		<div class="card-container">
+						    	<h4>Prof. Harish Karnick</h4> 
+						    	<p>IIT Kanpur</p> 
+							</div>
+			    		</div>	
+			    		<div class = "card1">
+				    		<img src='images/avatar.png'>
+				    		<div class="card-container">
+						    	<h4>Mr. Davesh Singh</h4> 
+						    	<p>UIDAI</p> 
+							</div>
+			    		</div>
+			    		<div class = "card1">
+				    		<img src='images/speakers/sanyal.jpg'>
+				    		<div class="card-container">
+						    	<h4>Prof. Sudip Sanyal</h4> 
+						    	<p>IIIT Allahabad</p> 
+							</div>
+			    		</div>
+			    		<div class = "card1">
+				    		<img src='images/speakers/rkala.jpg'>
+				    		<div class="card-container">
+						    	<h4>Dr. Rahul Kala</h4> 
+						    	<p>IIIT Allahabad</p> 
+							</div>
+			    		</div>
+		    		</div> <!--End of cardRow-->
+		    		<div class = "cardRow">
+			    		<div class = "card1">
+				    		<img src='images/avatar.png'>
+				    		<div class="card-container">
+						    	<h4>Speakers' Name</h4> 
+						    	<p>ABC XYZ</p> 
+							</div>
+			    		</div>
+			    		<div class = "card1">
+				    		<img src='images/avatar.png'>
+				    		<div class="card-container">
+						    	<h4>Speakers' Name</h4> 
+						    	<p>ABC XYZ</p> 
+							</div>
+			    		</div>
+			    		<div class = "card1">
+				    		<img src='images/avatar.png'>
+				    		<div class="card-container">
+						    	<h4>Speakers' Name</h4> 
+						    	<p>ABC XYZ</p> 
+							</div>
+			    		</div>
+			    		<div class = "card1">
+				    		<img src='images/avatar.png'>
+				    		<div class="card-container">
+						    	<h4>Speakers' Name</h4> 
+						    	<p>ABC XYZ</p> 
+							</div>
+			    		</div>
+		    		</div><!--End of cardRow-->
+		    	</div>
+	    	</div> <!-- End of speakerBackground -->
 	    </div>
 	    <div class="section" id="section7"> <!-- Linked with page7 -->
-	    	<h1>FAQs Page</h1>
-	    </div>
-	</div>
+	    	<div class="faqPage">
+		    	<h1 class="headings" style="color:white;">FAQS</h1>
+		    	<div class="expandingFaq">
+			      <div class="faqElement">
+			        <h2 class="faqQuestion">
+			          What is CSIS?
+			        </h2>
+			        <p class="faqAnswer">
+			          CSIS stands for Computer Society India Symposium. It aims to bring together all the IEEE Computer Society chapters across the country and showcase the immense depth and complexity of the field that is Computer Science.
+			        </p>
+			      </div>
+			      <div class="faqElement">
+			        <h2 class="faqQuestion">
+			          What will happen during CSIS 2017?
+			        </h2>
+			        <p class="faqAnswer">
+			          This year’s theme is “Humans & Computers”. As such, you can expect to find a variety of talks, workshops and other events which will focus on CS/IT domains such as Human Computer Interaction, Machine Learning, Cyber Security and many more! Please check out our Workshops page for more information.
+			        </p>
+			      </div>
+			      <div class="faqElement">
+			        <h2 class="faqQuestion">
+			          Who all can register for this event and when will the registrations begin?
+			        </h2>
+			        <p class="faqAnswer">
+			          If you are a high school graduate, you are welcome to register for the symposium! To register for CSIS 2017, just click the register button down below. You can register for the symposium any time after 22nd January.
+			        </p>
+			      </div>
+			    </div>
+		    </div> <!-- End of faqPage -->
+		</div> <!-- End of Section7 -->
 
 	<!--dock -->
 	<div class="dock" id="dock">
 	    <div class="dock-container">
-		  <a class="dock-item" href="#page1">
+		  <a class="dock-item" style="text-decoration:none;" href="#page1">
 		  	<span>Home</span>
 		  	<img src="images/home.png" alt="home" />
 		  </a> 
-		  <a class="dock-item" href="#page2">
+		  <a class="dock-item" style="text-decoration:none;" href="#page2">
 		  	<span>Schedule</span>
 		  	<img src="images/schedule.png" alt="schedule" />
 		  </a> 
-		  <a class="dock-item" href="#page3">
+		  <a class="dock-item" style="text-decoration:none;" href="#page3">
 		  	<span>Sponsors</span>
-		  	<img src="images/sponsors.png" alt="sponsors" />
+		  	<img src="images/sponsors1.png" alt="sponsors" />
 		  </a> 
-		  <a class="dock-item"  href="#page4">
+		  <a class="dock-item" style="text-decoration:none;" href="#page4">
 		  	<span>Register</span>
 		  	<img src="images/register.png" alt="register" />
 		  </a> 
-		  <a class="dock-item" href="#page5">
+		  <a class="dock-item" style="text-decoration:none;" href="#page5">
 		  	<span>About Us</span>
 		  	<img src="images/aboutus.png" alt="about us" />
 		  </a>
-		  <a class="dock-item" href="#page6">
+		  <a class="dock-item" style="text-decoration:none;" href="#page6">
 		  	<span>Speakers</span>
-		  	<img src="images/speaker2.png" alt="speaker" />
+		  	<img src="images/speaker.png" alt="speaker" />
 		  </a>
-		  <a class="dock-item" href="#page7">
+		  <a class="dock-item" style="text-decoration:none;" href="#page7">
 		  	<span>FAQs</span>
-		  	<img src="images/faq2.png" alt="faq" />
+		  	<img src="images/faq.png" alt="faq" />
+		  </a>
+		  <a class="dock-item" style="text-decoration:none;" href="https://www.google.co.in/maps/place/Indian+Institute+of+Information+Technology+Allahabad/@25.4302153,81.7681652,16.75z/data=!4m5!3m4!1s0x399acac768944451:0x1f0c03a031f74c3f!8m2!3d25.4304161!4d81.770679?hl=en">
+		  	<span>How to Reach</span>
+		  	<img src="images/maps.png" alt="maps" />
 		  </a>
 	    </div>
 	</div>
@@ -164,7 +253,7 @@
 		{
 			$('#dock').Fisheye(
 				{
-					maxWidth: 70,
+					maxWidth: 95,
 					items: 'a',
 					itemsText: 'span',
 					container: '.dock-container',
@@ -179,5 +268,30 @@
 	);
 </script>
 
+<!-- Script for handling FAQs -->
+<script type="text/javascript">
+      $(document).ready(function() {
+          $('.faqElement').click(function() {
+            var faqElement = $(this);
+            var question = faqElement.find('.faqQuestion');
+            var answer = faqElement.find('.faqAnswer');
+            if (!answer.hasClass('activeFaqAnswer')) {
+              $('.faqElement').removeClass('flipButton');
+              faqElement.addClass('flipButton');
+              $('.activeFaqAnswer').css('max-height', '');
+              $('.faqAnswer').removeClass('activeFaqAnswer');
+              answer.css('max-height', 'none');
+              answer.css('max-height', answer.height() + 100);
+              answer.addClass('activeFaqAnswer');
+            } else {
+              console.log("yes");
+              $('.faqElement').removeClass('flipButton');
+              faqElement.addClass('flipButton');
+              $('.activeFaqAnswer').css('max-height', '');
+              $('.faqAnswer').removeClass('activeFaqAnswer');
+            }
+        });
+      });
+  </script>
 </body>
 </html>
