@@ -28,22 +28,36 @@
     font-size: 20px;
 }
 
-#seconds, #minutes, #hours, #days {
-    font-size: 25px;
-    color:white;
+ul#countdown {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    display: block;
     text-align: center;
-    padding-top:10px;
-    background-color: #be1a39;
 }
 
-.counterData td {
-   font-size: 15px;
-   padding-left: 10px;
-   padding-right: 10px;
-}
-.days, .hours, .minutes, .seconds {
-    background-color: #be1a39;
+ul#countdown li {
+    background: #be1a39;
+    display: inline-block;
+    margin: 10px 1px;
+    padding-top: 20px;
+    width: 120px;
+    height: 100px;
     color: white;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+ul#countdown li span {
+    font-family: 'Orbitron', sans-serif;
+}
+ul#countdown li p {
+    font-family: "Economica", "sans-serif";
+}
+
+#days, #hours, #minutes, #seconds {
+    font-size: 35px;
+    padding-top: 20px;
     padding-bottom: 10px;
 }
 .schedulePage {
@@ -52,11 +66,60 @@
     overflow: hidden;
 }
 
+/* AboutUs Page Style */
 .aboutusPage{
     width:100%;
     height: 100%;
     overflow: hidden;
 }
+
+.cardRow2 {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.card2 {
+    text-align: center;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    position: inline-block;
+    text-align:center;
+    transition: 0.9s;
+    width: 180px;
+    height: 180px;
+    margin-left: 20px;
+    margin-top: 8px;
+    float: left;
+}
+
+.card2 > img {
+    max-width: 100%;
+    max-height: 100%;
+    height: 200px;
+}
+
+.card2:hover {
+    opacity: 1;
+    box-shadow: 10px 12px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card2-container {
+    position: relative;
+    top:-35px;
+    padding: 1px 2px 1px 2px;
+    background-color: white;
+    color:black;
+    opacity: 0.7;
+}
+
+.card2-container > h4 {
+    font-size: 15px;
+}
+.card2-container > p {
+    font-size: 13px;
+}
+/* End of team cards */
+
 .cardHolder {
     width: 100%;
 	height: 100%;
@@ -77,7 +140,7 @@
 
 .card1 {
     text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
     position: inline-block;
     text-align:center;
     transition: 0.9s;
@@ -127,7 +190,7 @@
 .headings:after {
     content: "";
     display: block;
-    width: 100px;
+    width: 150px;
     height: 3px;
     background-color: #fac42b;
     margin: auto;
