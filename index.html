@@ -6,6 +6,7 @@
 	<script src="js/jquery-2.1.4.js"></script>
 	<script src="js/main.js"></script> <!-- Resource jQuery -->
 	
+	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
 	<link rel="stylesheet" type="text/css" href="css/dock.css">
@@ -20,8 +21,8 @@
 			/* plugin for horizontal scrolling	*/
 	    	$('#pagepiling').pagepiling({
 	          	direction: 'horizontal',
-	    		anchors: ['page1', 'page2', 'page3', 'page4','page5', 'page6', 'page7'],
-			    sectionsColor: ['black', 'white', 'white', 'white', 'white', '#262626', '#262626']
+	    		anchors: ['home', 'schedule', 'sponsors', 'registration','speakers', 'aboutus', 'faqs'],
+			    sectionsColor: ['black', 'white', 'white', 'white', '#262626', 'white', '#262626']
 			});
 	    });
     </script>
@@ -29,7 +30,7 @@
 <body>
 	<!-- Main scrolling content -->
 	<div id="pagepiling">
-	    <div class="section" id="section1"> <!-- Linked with page1 -->
+	    <div class="section" id="section1"> <!-- Linked with Home Page -->
 	    	<div class="homeBackground">
 	    		<div class="mainDialog">
 	    			<h1 style="color:white">CSIS'17</h1>
@@ -37,24 +38,28 @@
 	    			<p class="schedule_address" style="margin-bottom:20px;">IIIT Allahabad, UttarPradesh, India</p>
 	    		</div>
 	    		<center>
-	    			<table cellspacing="0" style="margin-top:20px;">
-						<tr>
-							<td id="days"></td>
-							<td id="hours"></td>
-							<td id="minutes"></td>
-							<td id="seconds"></td>
-						</tr>
-						<tr class="counterData">
-							<td class="days">Days</td>
-							<td class="hours">Hours</td>
-							<td class="minutes">Minutes</td>
-							<td class="seconds">Seconds</td>
-						</tr>
-					</table>
-					</center>
+	    			<ul id="countdown">
+	    				<li>
+	    					<span id="days"></span>
+	    					<p class="days">DAYS</p>
+	    				</li>
+	    				<li>
+	    					<span id="hours"></span>
+	    					<p class="hours">HOURS</p>
+	    				</li>
+	    				<li>
+	    					<span id="minutes"></span>
+	    					<p class="minutes">MINUTES</p>
+	    				</li>
+	    				<li>
+	    					<span id="seconds"></span>
+	    					<p class="seconds">SECONDS</p>
+	    				</li>
+	    			</ul>
+				</center>
 			</div>
 	    </div>
-	    <div class="section" id="section2"> <!-- Linked with page2 -->
+	    <div class="section" id="section2"> <!-- Linked with Schedule Page -->
 	    	<div class="schedulePage">
 	    		<h1 class="headings" style="color:black;">Schedule</h1>
 	    		<!-- horizontal timeline -->
@@ -97,7 +102,7 @@
 				</section>	
 			</div>	    		<!-- horizontal timeline -->
 	    </div>
-	    <div class="section" id="section3"> <!-- Linked with page3 -->
+	    <div class="section" id="section3"> <!-- Linked with Sponsors Page -->
 	    	<div class="sonpsorPage">
 	    		<h1 class="headings" style='color:black;'>Our Sponsors</h1>
 			    <div class="sponsorContainer" style="margin-top:50px;">
@@ -119,17 +124,12 @@
 				</div>
 			</div>
 	    </div>
-	    <div class="section" id="section4"> <!-- Linked with page4 -->
+	    <div class="section" id="section4"> <!-- Linked with Registration Page -->
 	    	<div class="registerPage">
 	    		<div class="coming_soon">Coming Soon...</div>
 	    	</div>
 	    </div>
-	    <div class="section" id="section5"> <!-- Linked with page5 -->
-	    	<div class="aboutusPage">
-	    		
-	    	</div>
-	    </div>
-	    <div class="section" id="section6"> <!-- Linked with page6 -->
+	    <div class="section" id="section6"> <!-- Linked with Speakers Page -->
 	    	<!-- Main card holder class-->
 	    	<div class="speakerPage">
 		    	<h1 class="headings">Speakers</h1> <!-- change cardHolder Height-->
@@ -176,7 +176,109 @@
 		    	</div>
 	    	</div> <!-- End of speakerBackground -->
 	    </div>
-	    <div class="section" id="section7"> <!-- Linked with page7 -->
+
+	    <div class="section" id="section5"> <!-- Linked with AboutUs Page -->
+	    	<div class="aboutusPage">
+	    		<h1 class="headings" style="color:black;">Team</h1> <!-- change cardHolder Height-->
+		    	<div class="cardHolder">
+		    		<div class = "cardRow2" style="margin-top:10px;">
+				    	<div class = "card2">
+				    		<img src='images/avatar.png'>
+				    		<div class="card2-container">
+						    	<h4>Megha Ben</h4> 
+						    	<p>IEEE CS R-10 Ambassador</p> 
+							</div>
+			    		</div>
+			    		<div class = "card2">
+				    		<img src='images/avatar.png'>
+				    		<div class="card2-container">
+						    	<h4>Shivam</h4> 
+						    	<p>IEEE CSSR UP India Council</p> 
+							</div>
+			    		</div>
+			    		<div class = "card2">
+				    		<img src='images/avatar.png'>
+				    		<div class="card2-container" style="margin-top:-15px;">
+						    	<h4>Jay Tibrewal</h4> 
+						    	<p>Vice Chair IEEE CS SB Chapter, IIIT Allahabad</p> 
+							</div>
+			    		</div>
+			    		<div class = "card2">
+				    		<img src='images/avatar.png'>
+				    		<div class="card2-container">
+						    	<h4>Daniel James</h4> 
+						    	<p>Core Team Member</p> 
+							</div>
+			    		</div>
+			    		<div class = "card2">
+				    		<img src='images/avatar.png'>
+				    		<div class="card2-container">
+						    	<h4>Sudhakar Mishra</h4> 
+						    	<p>Core Team Member</p> 
+							</div>
+			    		</div>
+			    		<div class = "card2">
+				    		<img src='images/avatar.png'>
+				    		<div class="card2-container">
+						    	<h4>Vinod Kumar Jatav</h4> 
+						    	<p>Core Team Member</p> 
+							</div>
+			    		</div>
+			    		<div class = "card2">
+				    		<img src='images/avatar.png'>
+				    		<div class="card2-container">
+						    	<h4>Pratik Mangalore</h4> 
+						    	<p>Core Team Member</p> 
+							</div>
+			    		</div>
+			    		<div class = "card2">
+				    		<img src='images/avatar.png'>
+				    		<div class="card2-container">
+						    	<h4>Sulyab T. V</h4> 
+						    	<p>Core Team Member</p> 
+							</div>
+			    		</div>
+			    		<div class = "card2">
+				    		<img src='images/avatar.png'>
+				    		<div class="card2-container">
+						    	<h4>Swapnaneel Nandy</h4> 
+						    	<p>Core Team Member</p> 
+							</div>
+			    		</div>
+			    		<div class = "card2">
+				    		<img src='images/avatar.png'>
+				    		<div class="card2-container">
+						    	<h4>Sandeep Kumar Singh</h4> 
+						    	<p>Core Team Member</p> 
+							</div>
+			    		</div>
+						<div class = "card2">
+				    		<img src='images/avatar.png'>
+				    		<div class="card2-container">
+						    	<h4>Sandeep Kumar Singh</h4> 
+						    	<p>Core Team Member</p> 
+							</div>
+			    		</div>
+			    		<div class = "card2">
+				    		<img src='images/avatar.png'>
+				    		<div class="card2-container">
+						    	<h4>Mansi Choudhary</h4> 
+						    	<p>Core Team Member</p> 
+							</div>
+			    		</div>			 
+			    		<div class = "card2">
+				    		<img src='images/avatar.png'>
+				    		<div class="card2-container">
+						    	<h4>Aanandita Dhawan</h4> 
+						    	<p>Core Team Member</p> 
+							</div>
+			    		</div>
+		    		</div> <!--End of cardRow-->
+		    	</div>
+	    	</div> <!-- End of aboutusPage -->
+	    </div>
+
+	    <div class="section" id="section7"> <!-- Linked with Faqs Page -->
 	    	<div class="faqPage">
 		    	<h1 class="headings" style="color:white;">FAQS</h1>
 		    	<div class="expandingFaq">
@@ -211,31 +313,31 @@
 	<!--dock -->
 	<div class="dock" id="dock">
 	    <div class="dock-container">
-		  <a class="dock-item" style="text-decoration:none;" href="#page1">
+		  <a class="dock-item" style="text-decoration:none;" href="#home">
 		  	<span>Home</span>
 		  	<img src="images/home.png" alt="home" />
 		  </a> 
-		  <a class="dock-item" style="text-decoration:none;" href="#page2">
+		  <a class="dock-item" style="text-decoration:none;" href="#schedule">
 		  	<span>Schedule</span>
 		  	<img src="images/schedule.png" alt="schedule" />
 		  </a> 
-		  <a class="dock-item" style="text-decoration:none;" href="#page3">
+		  <a class="dock-item" style="text-decoration:none;" href="#sponsors">
 		  	<span>Sponsors</span>
 		  	<img src="images/sponsors1.png" alt="sponsors" />
 		  </a> 
-		  <a class="dock-item" style="text-decoration:none;" href="#page4">
+		  <a class="dock-item" style="text-decoration:none;" href="#registration">
 		  	<span>Register</span>
 		  	<img src="images/register.png" alt="register" />
 		  </a> 
-		  <a class="dock-item" style="text-decoration:none;" href="#page5">
-		  	<span>About Us</span>
-		  	<img src="images/aboutus.png" alt="about us" />
-		  </a>
-		  <a class="dock-item" style="text-decoration:none;" href="#page6">
+		  <a class="dock-item" style="text-decoration:none;" href="#speakers">
 		  	<span>Speakers</span>
 		  	<img src="images/speaker.png" alt="speaker" />
 		  </a>
-		  <a class="dock-item" style="text-decoration:none;" href="#page7">
+		  <a class="dock-item" style="text-decoration:none;" href="#aboutus">
+		  	<span>About Us</span>
+		  	<img src="images/aboutus.png" alt="about us" />
+		  </a>
+		  <a class="dock-item" style="text-decoration:none;" href="#faqs">
 		  	<span>FAQs</span>
 		  	<img src="images/faq.png" alt="faq" />
 		  </a>
