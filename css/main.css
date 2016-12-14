@@ -17,7 +17,7 @@
     padding: 30px 20px 20px 20px;
     color:white;
     width: 500px;
-    margin: 100px auto 0 auto;
+    margin: 150px auto 0 auto;
     border-radius: 10px;
     opacity: 0.6;
 }
@@ -85,8 +85,8 @@ ul#countdown li p {
     position: inline-block;
     text-align:center;
     transition: 0.9s;
-    width: 180px;
-    height: 180px;
+    width: 165px;
+    height: 165px;
     margin-left: 20px;
     margin-top: 8px;
     float: left;

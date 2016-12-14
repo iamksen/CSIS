@@ -3,16 +3,15 @@
 <head>
 	<title>CSIS-2017 IIITA</title>	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="js/jquery-2.1.4.js"></script>
-	<script src="js/main.js"></script> <!-- Resource jQuery -->
-	
+		
 	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-	<link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
-	<link rel="stylesheet" type="text/css" href="css/dock.css">
-
-	<link rel="stylesheet" type="text/css" href="css/main.css">		
+	<link rel="stylesheet" href="css/jquery.pagepiling.css" />
+	<link rel="stylesheet" href="css/dock.css"> <!-- Stylesheet for dock -->
+	<link rel="stylesheet" href="css/main.css">		
 	
+	<script src="js/jquery-2.1.4.js"></script>
+	<script src="js/main.js"></script> <!-- Resource jQuery -->
   	<script type="text/javascript" src="js/jquery.pagepiling.min.js"></script>
 	<script type="text/javascript" src="js/interface.js"></script>
 
@@ -30,14 +29,16 @@
 <body>
 	<!-- Main scrolling content -->
 	<div id="pagepiling">
-	    <div class="section" id="section1"> <!-- Linked with Home Page -->
-	    	<div class="homeBackground">
-	    		<div class="mainDialog">
+	    <div class="section" id="section1"> <!-- Home Page -->
+	    	<div class="homeBackground"> <!-- HomePage Background Image style -->
+	    		<img src="images/logos/CSIS.png" style="width:350px; margin-left:10px; float:left" />
+	    		<img src="images/logos/iiita.png" style="width:160px; margin-right:10px; float:right;" />
+	    		<div class="mainDialog"> <!-- Style for Caption Box -->
 	    			<h1 style="color:white">CSIS'17</h1>
 	    			<p class="schedule_date" style="margin-top:10px;">24th March,2017 - 26th March, 2017</p>
 	    			<p class="schedule_address" style="margin-bottom:20px;">IIIT Allahabad, UttarPradesh, India</p>
 	    		</div>
-	    		<center>
+	    		<center> <!-- CountDown Timer -->
 	    			<ul id="countdown">
 	    				<li>
 	    					<span id="days"></span>
@@ -59,7 +60,7 @@
 				</center>
 			</div>
 	    </div>
-	    <div class="section" id="section2"> <!-- Linked with Schedule Page -->
+	    <div class="section" id="section2"> <!-- Schedule Page -->
 	    	<div class="schedulePage">
 	    		<h1 class="headings" style="color:black;">Schedule</h1>
 	    		<!-- horizontal timeline -->
@@ -72,14 +73,14 @@
 									<li><a href="#0" data-date="24/03/2017">24 Mar</a></li>
 								</ol>
 								<span class="filling-line" aria-hidden="true"></span>
-							</div> <!-- .events -->
-						</div> <!-- .events-wrapper -->
+							</div> <!-- End of events -->
+						</div> <!-- End of events-wrapper -->
 							
 						<ul class="cd-timeline-navigation">
 							<li><a href="#0" class="prev inactive">Prev</a></li>
 							<li><a href="#0" class="next">Next</a></li>
-						</ul> <!-- .cd-timeline-navigation -->
-					</div> <!-- .timeline -->
+						</ul> <!-- End cd-timeline-navigation -->
+					</div> <!-- End of timeline -->
 
 					<div class="events-content">
 						<ol>
@@ -98,11 +99,12 @@
 								</p>
 							</li>
 						</ol>
-					</div> <!-- .events-content -->
-				</section>	
-			</div>	    		<!-- horizontal timeline -->
-	    </div>
-	    <div class="section" id="section3"> <!-- Linked with Sponsors Page -->
+					</div> <!-- End of events-content -->
+				</section> <!-- End of horizontal timeline -->	
+			</div>	    		
+	    </div> <!-- End of Schedule Page -->
+
+	    <div class="section" id="section3"> <!-- Sponsors Page -->
 	    	<div class="sonpsorPage">
 	    		<h1 class="headings" style='color:black;'>Our Sponsors</h1>
 			    <div class="sponsorContainer" style="margin-top:50px;">
@@ -255,14 +257,14 @@
 						<div class = "card2">
 				    		<img src='images/avatar.png'>
 				    		<div class="card2-container">
-						    	<h4>Sandeep Kumar Singh</h4> 
+						    	<h4>Mansi Choudhary</h4> 
 						    	<p>Core Team Member</p> 
 							</div>
 			    		</div>
 			    		<div class = "card2">
 				    		<img src='images/avatar.png'>
 				    		<div class="card2-container">
-						    	<h4>Mansi Choudhary</h4> 
+						    	<h4>Prakhar Chaturvedi</h4> 
 						    	<p>Core Team Member</p> 
 							</div>
 			    		</div>			 
@@ -418,8 +420,8 @@
 		m = (m < 10) ? "0" + m : m;
 		s = (s < 10) ? "0" + s : s;
 
-		var img = document.createElement("IMG");
-		img.src = 'images/countdown/1.png';
+		//var img = document.createElement("IMG");
+		//img.src = 'images/countdown/1.png';
 
 		document.getElementById("days").textContent = d;
 		//document.getElementById("days").innerText = d;
