@@ -5,6 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<link rel="stylesheet" href="css/jquery.pagepiling.css" />
 	<link rel="stylesheet" href="css/dock.css"> <!-- Stylesheet for dock -->
@@ -20,8 +24,8 @@
 			/* plugin for horizontal scrolling	*/
 	    	$('#pagepiling').pagepiling({
 	          	direction: 'horizontal',
-	    		anchors: ['home', 'schedule', 'sponsors', 'registration','speakers', 'aboutus', 'faqs'],
-			    sectionsColor: ['black', 'white', 'white', 'white', '#262626', 'white', '#262626']
+	    		anchors: ['home', 'schedule', 'sponsors', 'registration','speakers', 'aboutcsis', 'team', 'faqs'],
+			    sectionsColor: ['black', 'white', 'white', 'white', '#262626', 'white', 'white', '#262626']
 			});
 	    });
     </script>
@@ -31,8 +35,10 @@
 	<div id="pagepiling">
 	    <div class="section" id="section1"> <!-- Home Page -->
 	    	<div class="homeBackground"> <!-- HomePage Background Image style -->
-	    		<img src="images/logos/CSIS.png" style="width:350px; margin-left:10px; float:left" />
-	    		<img src="images/logos/iiita.png" style="width:160px; margin-right:10px; float:right;" />
+	    		<a href="#">
+	    		<img src="images/logos/Logo_main.png" style="width:400px; margin-left:10px; float:left" /></a>
+	    		<a href="http://www.iiita.ac.in/">
+	    		<img src="images/logos/iiita.png" style="width:135px; margin-right:10px; float:right;" /></a>
 	    		<div class="mainDialog"> <!-- Style for Caption Box -->
 	    			<h1 style="color:white">CSIS'17</h1>
 	    			<p class="schedule_date" style="margin-top:10px;">24th March,2017 - 26th March, 2017</p>
@@ -107,23 +113,30 @@
 	    <div class="section" id="section3"> <!-- Sponsors Page -->
 	    	<div class="sonpsorPage">
 	    		<h1 class="headings" style='color:black;'>Our Sponsors</h1>
-			    <div class="sponsorContainer" style="margin-top:50px;">
+			    <div class="sponsorContainer" style="margin-top:30px;">
 			    	<a href="http://www.ieeeup.org/">
 				    	<div class="sponsor">
-					    	<img src='images/sponsers/upsection.png'> 
+					    	<img src='images/sponsers/upsection.png' style="height:150px; width:150px;"> 
 						</div>
 					</a>
 					<a href="https://www.computer.org/">
 						<div class="sponsor">
-					    	<img src='images/sponsers/csLogo.jpg' style="height:200px; width:300px;">
+					    	<img src='images/sponsers/csLogo.jpg' style="height:150px; width:200px;">
 						</div>
 					</a>
-					<a href="https://www.ieee.org/">
+					<a href="http://signalprocessingsociety.org/">
 						<div class="sponsor">
-					    	<img src='images/sponsers/ieee.png'> 
+					    	<img src='images/sponsers/signal.gif' style="height:150px; width:230px;">
 						</div>
 					</a>
 				</div>
+				</br></br>
+				<center>
+					<h1 class="headings" style='color:black; font-size:35px;'>Education Partner</h1>
+					<a href="http://www.wileyindia.com/">
+						<img src='images/sponsers/wiley_logo.png' class="education_partner"> 
+					</a>
+				</center>
 			</div>
 	    </div>
 	    <div class="section" id="section4"> <!-- Linked with Registration Page -->
@@ -131,7 +144,7 @@
 	    		<div class="coming_soon">Coming Soon...</div>
 	    	</div>
 	    </div>
-	    <div class="section" id="section6"> <!-- Linked with Speakers Page -->
+	    <div class="section" id="section5"> <!-- Linked with Speakers Page -->
 	    	<!-- Main card holder class-->
 	    	<div class="speakerPage">
 		    	<h1 class="headings">Speakers</h1> <!-- change cardHolder Height-->
@@ -179,108 +192,65 @@
 	    	</div> <!-- End of speakerBackground -->
 	    </div>
 
-	    <div class="section" id="section5"> <!-- Linked with AboutUs Page -->
+	    <div class="section" id="section6"> <!-- Linked with About CSIS Page -->
+	    	<div class="aboutusPage">
+	    		<h1 class="headings" style="color:black; font-size:35px;">About CSIS</h1> <!-- change cardHolder Height-->
+	    		</br>
+	    		<div class="aboutcsiscontent">
+		    	<p>
+	    		The IEEE Computer Society India Symposium (CSIS) 2017 is to be held at IIIT Allahabad in the last week of March 2017. It will be jointly conducted by the IEEE Computer Society India Council SAC, IEEE SP/C Joint Chapter, UP Section and IEEE Student Branch, IIIT Allahabad. 
+	    		</p>
+	    		<p>
+The main scope of this symposium is to bring together professionals, speakers, experts and other academicians so that the students can interact with and learn from them. The theme of the event is “Humans & Computers”. The symposium will include talks, workshops, and events on a wide array of CS/IT domains such as Human Computer Interaction, Machine Learning, Network Security, Cognitive Science and much more. As a platform to bring all the Computer Society chapters of India together, IEEE CSIS 2017 focuses on improving the future activities of all the different chapters of Computer Society all over India as well as to cast a focus on the immense depth of computer science. 
+				</p>
+				<p>
+The IEEE CSIS 2017 will be a three-day event and will provide the students and young professionals with an opportunity to interact with the esteemed speakers and professionals from all over India. Technical talks on currently flourishing fields and workshops thereafter based on the same will nurture the creative minds and open them to a new world.  The IEEE CSIS 2017 Team cordially invites you to grace the symposium with your presence and give a talk on any subject of your choice which aligns with the theme of the event. You are also invited to conduct a workshop on the same topic. The CSIS team will gladly provide you with the resources and personnel for the same. We look forward to your participation in the IEEE CSIS 2017.
+			</p>
+			</div> <!--End of aboutcsiscontent -->
+	    	</div> <!-- End of aboutusPage -->
+	    </div>
+
+	    <div class="section" id="section7"> <!-- Linked with Team Page -->
 	    	<div class="aboutusPage">
 	    		<h1 class="headings" style="color:black;">Team</h1> <!-- change cardHolder Height-->
 		    	<div class="cardHolder">
-		    		<div class = "cardRow2" style="margin-top:10px;">
-				    	<div class = "card2">
-				    		<img src='images/avatar.png'>
-				    		<div class="card2-container">
-						    	<h4>Megha Ben</h4> 
-						    	<p>IEEE CS R-10 Ambassador</p> 
-							</div>
-			    		</div>
-			    		<div class = "card2">
-				    		<img src='images/avatar.png'>
-				    		<div class="card2-container">
-						    	<h4>Shivam</h4> 
-						    	<p>IEEE CSSR UP India Council</p> 
-							</div>
-			    		</div>
-			    		<div class = "card2">
-				    		<img src='images/avatar.png'>
-				    		<div class="card2-container" style="margin-top:-15px;">
-						    	<h4>Jay Tibrewal</h4> 
-						    	<p>Vice Chair IEEE CS SB Chapter, IIIT Allahabad</p> 
-							</div>
-			    		</div>
-			    		<div class = "card2">
-				    		<img src='images/avatar.png'>
-				    		<div class="card2-container">
-						    	<h4>Daniel James</h4> 
-						    	<p>Core Team Member</p> 
-							</div>
-			    		</div>
-			    		<div class = "card2">
-				    		<img src='images/avatar.png'>
-				    		<div class="card2-container">
-						    	<h4>Sudhakar Mishra</h4> 
-						    	<p>Core Team Member</p> 
-							</div>
-			    		</div>
-			    		<div class = "card2">
-				    		<img src='images/avatar.png'>
-				    		<div class="card2-container">
-						    	<h4>Vinod Kumar Jatav</h4> 
-						    	<p>Core Team Member</p> 
-							</div>
-			    		</div>
-			    		<div class = "card2">
-				    		<img src='images/avatar.png'>
-				    		<div class="card2-container">
-						    	<h4>Pratik Mangalore</h4> 
-						    	<p>Core Team Member</p> 
-							</div>
-			    		</div>
-			    		<div class = "card2">
-				    		<img src='images/avatar.png'>
-				    		<div class="card2-container">
-						    	<h4>Sulyab T. V</h4> 
-						    	<p>Core Team Member</p> 
-							</div>
-			    		</div>
-			    		<div class = "card2">
-				    		<img src='images/avatar.png'>
-				    		<div class="card2-container">
-						    	<h4>Swapnaneel Nandy</h4> 
-						    	<p>Core Team Member</p> 
-							</div>
-			    		</div>
-			    		<div class = "card2">
-				    		<img src='images/avatar.png'>
-				    		<div class="card2-container">
-						    	<h4>Sandeep Kumar Singh</h4> 
-						    	<p>Core Team Member</p> 
-							</div>
-			    		</div>
-						<div class = "card2">
-				    		<img src='images/avatar.png'>
-				    		<div class="card2-container">
-						    	<h4>Mansi Choudhary</h4> 
-						    	<p>Core Team Member</p> 
-							</div>
-			    		</div>
-			    		<div class = "card2">
-				    		<img src='images/avatar.png'>
-				    		<div class="card2-container">
-						    	<h4>Prakhar Chaturvedi</h4> 
-						    	<p>Core Team Member</p> 
-							</div>
-			    		</div>			 
-			    		<div class = "card2">
-				    		<img src='images/avatar.png'>
-				    		<div class="card2-container">
-						    	<h4>Aanandita Dhawan</h4> 
-						    	<p>Core Team Member</p> 
-							</div>
-			    		</div>
+		    		<div class = "cardRow2" style="margin-top:40px;">
+		    			<a href="https://in.linkedin.com/in/meghaben">
+					    	<div class = "card2">
+					    		<img src='images/team/megha.jpg'>
+					    		<div class="card2-container">
+							    	<h4>Megha Ben</h4> 
+							    	<p>IEEE CS R-10 Ambassador</p>
+							    	<p>Contact No. +91-9048127456</p> 
+								</div>
+				    		</div>
+			    		</a>
+			    		<a href="https://www.facebook.com/shivam.abhilash">
+				    		<div class = "card2">
+					    		<img src='images/team/shivam.jpg' style="width:200px;">
+					    		<div class="card2-container">
+							    	<h4>Shivam</h4> 
+							    	<p>IEEE CSSR UP India Council</p> 
+							    	<p>Contact No. +91-7839942679</p>
+								</div>
+				    		</div>
+			    		</a>
+			    		<a href="https://www.facebook.com/jtibrewal">
+				    		<div class = "card2">
+					    		<img src='images/team/jay.jpg' style="width:200px;">
+					    		<div class="card2-container">
+							    	<h4>Jay Tibrewal</h4> 
+							    	<p>Vice Chair IEEE CS SB Chapter, IIIT Allahabad</p> 
+							    	<p>Contact No. +91-919455776469</p>
+								</div>
+				    		</div>
+			    		</a>
 		    		</div> <!--End of cardRow-->
 		    	</div>
 	    	</div> <!-- End of aboutusPage -->
 	    </div>
 
-	    <div class="section" id="section7"> <!-- Linked with Faqs Page -->
+	    <div class="section" id="section8"> <!-- Linked with Faqs Page -->
 	    	<div class="faqPage">
 		    	<h1 class="headings" style="color:white;">FAQS</h1>
 		    	<div class="expandingFaq">
@@ -333,11 +303,15 @@
 		  </a> 
 		  <a class="dock-item" style="text-decoration:none;" href="#speakers">
 		  	<span>Speakers</span>
-		  	<img src="images/speaker.png" alt="speaker" />
+		  	<img src="images/speaker3.png" alt="speaker" />
 		  </a>
-		  <a class="dock-item" style="text-decoration:none;" href="#aboutus">
-		  	<span>About Us</span>
+		  <a class="dock-item" style="text-decoration:none;" href="#aboutcsis">
+		  	<span>About CSIS</span>
 		  	<img src="images/aboutus.png" alt="about us" />
+		  </a>
+		  <a class="dock-item" style="text-decoration:none;" href="#team">
+		  	<span>Team</span>
+		  	<img src="images/speaker.png" alt="about us" />
 		  </a>
 		  <a class="dock-item" style="text-decoration:none;" href="#faqs">
 		  	<span>FAQs</span>
