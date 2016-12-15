@@ -4,7 +4,7 @@
     overflow: hidden;
 }
 .homeBackground {
-	background: url(../images/homebg.jpg);
+	background: url(../images/yamuna_bridge.jpg);
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -103,12 +103,15 @@ ul#countdown li p {
     margin-left: 20px;
     margin-top: 8px;
     float: left;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
 }
 
 .card2 > img {
     max-width: 100%;
     max-height: 100%;
     height: 200px;
+    border-radius: 100px;
 }
 
 .card2:hover {
@@ -179,7 +182,7 @@ ul#countdown li p {
 
 .card-container {
     position: relative;
-    top:-43px;
+    top:-45px;
     padding: 1px 2px 1px 2px;
     background-color: white;
     color:black;
@@ -220,11 +223,52 @@ ul#countdown li p {
     height: 100%;
     overflow: hidden;
 }
+
+/* Style for coming soon page */
 .coming_soon {
-    font-size: 60px;
-    text-align: center;
-    margin-top: 100px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  font-size: 70px;
 }
+
+.O {
+  -webkit-animation: O-rotate 5s linear infinite;
+  animation: O-rotate 5s linear infinite;
+  position: relative;
+}
+.O::before {
+  content: "";
+  position: absolute;
+  top: -.5px;
+  left: 3.5px;
+}
+.O.left {
+  -webkit-transform-origin: 40px 5px;
+  transform-origin: 40px 5px;
+    color: #fecb16;
+}
+.O.right {
+  -webkit-transform-origin: -20px 5px;
+  transform-origin: -20px 5px;
+    color: #fecb16;
+}
+span.space{
+    margin: 0px 10px;
+}
+
+@-webkit-keyframes O-rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+  }
+}
+
+@keyframes O-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+/* End of coming soon page */
 
 .sonpsorPage {
     width: 100%;
