@@ -35,10 +35,11 @@
 	<div id="pagepiling">
 	    <div class="section" id="section1"> <!-- Home Page -->
 	    	<div class="homeBackground"> <!-- HomePage Background Image style -->
-	    		<a href="#">
-	    		<img src="images/logos/Logo_main.png" style="width:400px; margin-left:10px; float:left" /></a>
 	    		<a href="http://www.iiita.ac.in/">
-	    		<img src="images/logos/iiita.png" style="width:135px; margin-right:10px; float:right;" /></a>
+	    		<img src="images/logos/iiita.png" style="width:110px; margin-left:20px; float:left;" />
+	    		</a>
+	    		<a href="#">
+	    		<img src="images/logos/CSISLogo.png" style="width:380px; margin-right:20px; float:right" /></a>
 	    		<div class="mainDialog"> <!-- Style for Caption Box -->
 	    			<h1 style="color:white">CSIS'17</h1>
 	    			<p class="schedule_date" style="margin-top:10px;">24th March,2017 - 26th March, 2017</p>
@@ -141,7 +142,16 @@
 	    </div>
 	    <div class="section" id="section4"> <!-- Linked with Registration Page -->
 	    	<div class="registerPage">
-	    		<div class="coming_soon">Coming Soon...</div>
+	    		<h1 class="headings" style="color:black;">Registration</h1>
+	    		<div class="coming_soon">
+		            C
+		            <div class="O left">O</div>
+		            ming
+		            <span class="space"></span>
+		            S
+		            <div class="O right">O</div>
+		            on...
+		        </div> 
 	    	</div>
 	    </div>
 	    <div class="section" id="section5"> <!-- Linked with Speakers Page -->
@@ -403,7 +413,6 @@ The IEEE CSIS 2017 will be a three-day event and will provide the students and y
 		document.getElementById("hours").textContent = h;
 		document.getElementById("minutes").textContent = m;
 		document.getElementById("seconds").textContent = s;
-
 		setTimeout(countdown, 1000);
 	}
 	countdown();
