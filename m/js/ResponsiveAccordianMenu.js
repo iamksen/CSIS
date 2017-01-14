@@ -19,11 +19,11 @@ $(window).load(function() {
 		var thisContent = $('#'+divID).find('.expandedContent')
 		if ($(thisContent).is(':visible')) {
 			thisContent.slideUp("slow");
-			$('#'+divID).find('.header .expand img').attr('src', 'images/plus.png');
+			$('#'+divID).find('.header .expand img').attr('src', 'images/down.png');
 		}
 		else {
 			content.not(thisContent).slideUp("slow", function() {
-				$('#'+divID).parent().find('.header .expand img').attr('src', 'images/plus.png');
+				$('#'+divID).parent().find('.header .expand img').attr('src', 'images/up.png');
 			});
 			thisContent.slideDown("slow", function() {
 				// scroll to selected div
@@ -36,7 +36,7 @@ $(window).load(function() {
 				$('#SelectMenu option[value="'+divID+'"]').addClass("selected");
 				
 				//change + icon to -
-				$('#'+divID).find('.header .expand img').attr('src', 'images/minus.png');
+				$('#'+divID).find('.header .expand img').attr('src', 'images/up.png');
 			});
 		}
 	}	

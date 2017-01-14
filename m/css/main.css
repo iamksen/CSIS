@@ -12,9 +12,10 @@
     overflow: hidden;
 }
 .heading{
-    font-family: 'Amarante';
+     font-family: 'Orbitron', sans-serif;
     font-size:40px;
     color:black;
+    font-weight:bold;
 }
 .logo{
     position:relative;
@@ -57,7 +58,7 @@ ul#countdown {
 ul#countdown li {
     font-family: "Orbitron";
     font-weight: 400;
-    background: #93C4E4;
+    background: #097AD7;
      opacity: 0.8;
     display: inline-block;
     margin: 10px 1px;
