@@ -1,0 +1,82 @@
+/* drop down menu styles */
+.styled {
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+	background: url(dropdown-icon.png) no-repeat 100%  #1a8cff;
+}
+.styled select {
+	border: none;
+	background: transparent;
+	padding: 5px;
+	height: 50px;
+	color: #fff;
+	font-family:Georgia,Tahoma,sans-serif;
+	-webkit-appearance: none;
+	width: 100%;
+	text-indent: 5px;
+	font-size: 18px;
+	font-style:italic;
+	-moz-appearance: none;
+	text-indent:0.01px;
+	text-overflow: '';
+}
+.styled select option {
+	background-color:#fff;
+	color:#7961aa;
+}
+.styled .selected { /* needed for FF and IE */
+	color: #fff;
+	background-color:#7961aa;
+}
+/* IE hack */
+@media screen{
+.styled {
+	background: #7961aa;
+}
+}
+/* subheader styles */
+h3.header {
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	font-size: 16px;
+	min-height: 49px;
+	position:relative;
+}
+.headerColumn1 {
+	font-weight: normal;
+	width: auto;
+	float: left;
+	margin: 0 54px 5px 5px; line-height:44px;
+	color: white;
+}
+.headerColumn2 {
+	width: 44px;
+	right: 0;
+	float: left;
+	margin: 0 5px 5px 0;
+	position: absolute;
+
+}
+/* expanded content styles */
+.expandContent {
+	max-width: 100%;
+	font-size:13px;
+	clear: left;
+	font-family:Times New Roman,sans-serif;
+	margin-top: 5px;
+	color:black;
+	font-weight:bolder;
+}
+.expandedContent {
+	max-width: 100%;
+	clear: left;
+	margin: 5px 5px 10px 5px;
+	font-size: 16px;
+}
+.expandedContentClearFloat {
+	width: 100%;
+	clear: left;
+	
+}

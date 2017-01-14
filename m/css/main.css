@@ -1,0 +1,407 @@
+.homePage {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.homeBackground {
+	background: url(../images/yamuna_bridge.jpg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 100%;
+    overflow: hidden;
+}
+.heading{
+    font-family: 'Amarante';
+    font-size:40px;
+    color:black;
+}
+.logo{
+    position:relative;
+    max-width:50px;
+    height:auto;
+    left:-45%;
+    top:-5%;
+    margin:2px;
+    padding:2px;
+}
+.team{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)!important}  /*team card for mobile based website*/
+
+.mainDialog {
+    background: rgba(0,0,0,0.5);
+    padding: 30px 20px 20px 20px;
+    color:white;
+    width: 500px;
+    margin: 150px auto 0 auto;
+    border-radius: 10px;
+}
+.mainDialog h1{
+    font-size: 40px;
+    font-family: 'Fira sans', sans-serif;
+}
+.schedule_date, .schedule_address{
+    font-size: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+ul#countdown {
+    font-family: "Orbitron";
+    font-weight: 400;
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    display: block;
+    text-align: center;
+}
+
+ul#countdown li {
+    font-family: "Orbitron";
+    font-weight: 400;
+    background: #93C4E4;
+     opacity: 0.8;
+    display: inline-block;
+    margin: 10px 1px;
+    padding-top: 20px;
+    width: 120px;
+    height: 100px;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+ul#countdown li span {
+    font-family: "Orbitron-Light", "sans-serif";
+}
+ul#countdown li p {
+    font-family: "Economica", "sans-serif";
+}
+
+#days, #hours, #minutes, #seconds {
+    font-size: 35px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.schedulePage {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* About CSIS content*/
+.aboutcsiscontent > p {
+    width: 1000px;
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px auto;
+    font-family: 'Lora', serif;
+}
+
+/* End of aboutCSIS content */
+
+/* Team Page Style */
+.aboutusPage{
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.cardRow2 {
+   width: 700px;
+   height: 250px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.card2 {
+    text-align: center;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    position: inline-block;
+    text-align:center;
+    transition: 0.9s;
+    width: 200px;
+    height: 270px;
+    margin-left: 20px;
+    margin-top: 8px;
+    float: left;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+
+.card2 > img {
+    max-width: 100%;
+    max-height: 100%;
+    height: 200px;
+    border-radius: 100px;
+}
+
+.card2:hover {
+    opacity: 1;
+    box-shadow: 10px 12px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card2-container {
+    position: relative;
+    /*top:-35px;*/
+    padding: 1px 2px 1px 2px;
+    background-color: white;
+    color:black;
+    opacity: 0.7;
+}
+
+.card2-container > h4 {
+    font-size: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.card2-container > p {
+    font-size: 13px;
+    font-family: 'Lora', serif;
+}
+/* End of team cards */
+
+.cardHolder {
+    width: 100%;
+	height: 100%;
+}
+
+.speakerPage {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.cardRow {
+   width: 1000px;
+   height: 230px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.card1 {
+    text-align: center;
+    box-shadow: 0 2px 4px 0 rgba(1,1,1,0.2);
+    position: inline-block;
+    text-align:center;
+    transition: 0.9s;
+    width: 200px;
+    height: 200px;
+    margin-left: 30px;
+    margin-top: 10px;
+    float: left;
+}
+
+.card1 > img {
+    max-width: 100%;
+    max-height: 100%;
+    height: 200px;
+}
+
+.card1:hover {
+    opacity: 1;
+    box-shadow: 10px 12px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-container {
+    position: relative;
+    top:-45px;
+    padding: 1px 2px 1px 2px;
+    background-color: white;
+    color:black;
+    opacity: 0.7;
+}
+
+.card-container > h4 {
+    font-size: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.card-container > p {
+    font-size: 15px;
+    font-family: 'Lora', serif;
+}
+
+.headings{
+    font-size: 45px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+
+.headings:after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 3px;
+    background-color: #fac42b;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.registerPage {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Style for coming soon page */
+.coming_soon {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  font-size: 70px;
+}
+
+.O {
+  -webkit-animation: O-rotate 5s linear infinite;
+  animation: O-rotate 5s linear infinite;
+  position: relative;
+}
+.O::before {
+  content: "";
+  position: absolute;
+  top: -.5px;
+  left: 3.5px;
+}
+.O.left {
+  -webkit-transform-origin: 40px 5px;
+  transform-origin: 40px 5px;
+    color: #fecb16;
+}
+.O.right {
+  -webkit-transform-origin: -20px 5px;
+  transform-origin: -20px 5px;
+    color: #fecb16;
+}
+span.space{
+    margin: 0px 10px;
+}
+
+@-webkit-keyframes O-rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+  }
+}
+
+@keyframes O-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+/* End of coming soon page */
+
+.sonpsorPage {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.sponsorContainer{
+    width: 800px;
+    height:200px;
+    margin: 0 auto 0 auto;
+}
+
+.sponsor{ 
+    transition: 0.5s;
+    float: left;
+    margin: 5px 20px 5px 20px;
+    padding: 15px;
+}
+
+.sponsor > img {
+    width:200px;
+    max-height: 200px;
+}
+
+.education_partner {
+    margin-top: 10px;
+    width: 300px;
+}
+.education_partner:hover{
+    width: 310px;
+}
+
+.events> ol > li >a:link {
+    font-size: 20px;
+    line-height: 40px;
+    text-decoration: none;
+}
+.events > ol >li >a:visited{
+    text-decoration: none;
+}
+.evnents > ol >li >a:hover {
+    text-decoration: none;
+}
+.events > ol >li >a:active{
+    text-decoration: none;
+}
+
+.events-content > ol > li > h2 {
+    position: relative;
+    font-size: 35px;
+}
+
+.faqPage {
+    height: 100%;
+    overflow: hidden;
+}
+
+.expandingFaq {
+    width: 60%;
+    margin: 40px auto 0 auto;
+}
+
+.faqElement {
+    margin-top: 10px;
+    position: relative;    
+}
+
+.faqElement:after {
+    font-family: 'Arial';
+    content: "+";
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.faqQuestion {
+    font-size: 30px;
+    font-family: 'Roboto Condensed', sans-serif;
+    cursor: pointer;
+    margin: 0;
+    padding: 10px 40px 10px 10px;
+    background-color: #fac42b;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.faqAnswer {
+    margin: 0;
+    max-height: 0;
+    overflow-y: hidden;
+    font-size: 20px;
+    font-family: 'Lora', serif;
+    padding: 5px 5px 0px 5px;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+}
+.activeFaqAnswer {
+    background-color: white;
+    font-size: 20px;
+    font-family: 'Lora', serif;
+    padding: 5px 5px 10px 5px;   
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+     -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+}
+#spo1{
+    padding: 10px;
+}
+#spo2{
+    padding: 10px;
+}
