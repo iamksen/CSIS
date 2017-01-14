@@ -24,11 +24,29 @@
 			/* plugin for horizontal scrolling	*/
 	    	$('#pagepiling').pagepiling({
 	          	direction: 'horizontal',
-	    		anchors: ['home', 'schedule', 'sponsors', 'registration','speakers', 'team', 'aboutcsis', 'faqs'],
-			    sectionsColor: ['black', 'white', 'white', 'white', '#262626', 'white', 'white', '#262626']
+	    		anchors: ['home', 'aboutcsis', 'schedule', 'speakers', 'registration','sponsors', 'team', 'faqs'],
+			    sectionsColor: ['black', 'white', 'white', '#262626', 'white', '#2b333b', 'white', '#154360']
 			});
 	    });
     </script>
+
+    <!-- To redirect to mobile website -->
+	<script type="text/javascript">
+		function check_for_mobile() {
+			var width = window.innerWidth
+			var height = window.innerHeight;
+			//console.log("width " + width + " height:" + height);
+			
+			if( width <= 950 || height <= 550 ){
+				window.location = "http://ieeecsis.org/m/index.html";
+				//console.log("In mobile");
+			} else {
+				//console.log("In Browser");
+			}
+		}
+		check_for_mobile();
+	</script>
+
 </head>
 <body>
 	<!-- Main scrolling content -->
@@ -39,12 +57,12 @@
 	    		<img src="images/logos/iiita.png" style="width:110px; margin-left:20px; float:left;" />
 	    		</a>
 	    		<a href="#">
-	    		<img src="images/logos/CSISLogo.png" style="width:380px; margin-right:20px; float:right" /></a>
+	    		<img src="images/sponsers/csis_tata_capital.png" style="width:380px; margin-right:20px; float:right" /></a>
 	    		<div class="mainDialog"> <!-- Style for Caption Box -->
 	    			<h1 style="color:white">CSIS'17</h1>
-	    			<p class="schedule_date" style="margin-top:10px;">24th March,2017 - 26th March, 2017</p>
+	    			<p class="schedule_date" style="margin-top:10px;">17th March,2017 - 19th March, 2017</p>
 	    			<p class="schedule_address" style="margin-bottom:20px;">IIIT Allahabad, UttarPradesh, India</p>
-	    		</div>
+	    		
 	    		<center> <!-- CountDown Timer -->
 	    			<ul id="countdown">
 	    				<li>
@@ -65,8 +83,28 @@
 	    				</li>
 	    			</ul>
 				</center>
+				</div>
 			</div>
 	    </div>
+
+	     <div class="section" id="section7"> <!-- Linked with About CSIS Page -->
+	    	<div class="aboutusPage">
+	    		<h1 class="headings" style="color:black; font-size:35px;">About CSIS</h1> <!-- change cardHolder Height-->
+	    		</br>
+	    		<div class="aboutcsiscontent">
+		    	<p>
+	    		The IEEE Computer Society India Symposium (CSIS) 2017 is to be held at IIIT Allahabad in the last week of March 2017. It will be jointly conducted by the IEEE Computer Society India Council SAC, IEEE SP/C Joint Chapter, UP Section and IEEE Student Branch, IIIT Allahabad. 
+	    		</p>
+	    		<p>
+The main scope of this symposium is to bring together professionals, speakers, experts and other academicians so that the students can interact with and learn from them. The theme of the event is “Humans & Computers”. The symposium will include talks, workshops, and events on a wide array of CS/IT domains such as Human Computer Interaction, Machine Learning, Network Security, Cognitive Science and much more. As a platform to bring all the Computer Society chapters of India together, IEEE CSIS 2017 focuses on improving the future activities of all the different chapters of Computer Society all over India as well as to cast a focus on the immense depth of computer science. 
+				</p>
+				<p>
+The IEEE CSIS 2017 will be a three-day event and will provide the students and young professionals with an opportunity to interact with the esteemed speakers and professionals from all over India. Technical talks on currently flourishing fields and workshops thereafter based on the same will nurture the creative minds and open them to a new world.  The IEEE CSIS 2017 Team cordially invites you to grace the symposium with your presence and give a talk on any subject of your choice which aligns with the theme of the event. You are also invited to conduct a workshop on the same topic. The CSIS team will gladly provide you with the resources and personnel for the same. We look forward to your participation in the IEEE CSIS 2017.
+			</p>
+			</div> <!--End of aboutcsiscontent -->
+	    	</div> <!-- End of aboutusPage -->
+	    </div>
+
 	    <div class="section" id="section2"> <!-- Schedule Page -->
 	    	<div class="schedulePage">
 	    		<h1 class="headings" style="color:black;">Schedule</h1>
@@ -76,8 +114,9 @@
 						<div class="events-wrapper">
 							<div class="events">
 								<ol>
-									<li><a href="#0" data-date="22/01/2017" class="selected">22 Jan</a></li>
-									<li><a href="#0" data-date="24/03/2017">24 Mar</a></li>
+									<li><a href="#0" data-date="14/01/2017" class="selected">14 Jan</a></li>
+									<li><a href="#0" data-date="22/01/2017">22 Jan</a></li>
+									<li><a href="#0" data-date="17/03/2017">17 Mar</a></li>
 								</ol>
 								<span class="filling-line" aria-hidden="true"></span>
 							</div> <!-- End of events -->
@@ -91,18 +130,26 @@
 
 					<div class="events-content">
 						<ol>
-							<li class="selected" data-date="22/01/2017">
+							<li class="selected" data-date="14/01/2017">
+								<h2 style="font-size:40px;">List of selected volunteers</h2>
+								<em style="font-size:15px;">January 14th, 2017</em>
+								<p style="font-size:25px;">	
+									Following is the attached list of shortlisted volunteers for CSIS'17
+								</p>
+								<p style="font-size:20px;"><a href="SHORTLISTEDVOLUNTEERS.pdf">Click here to see list</a></p>
+							</li>
+							<li data-date="22/01/2017">
 								<h2 style="font-size:40px;">Registration</h2>
 								<em style="font-size:15px;">January 22nd, 2017</em>
 								<p style="font-size:25px;">	
 								Registrations open for the symposium from 22nd January.
 								</p>
 							</li>
-							<li data-date="24/03/2017">
+							<li data-date="17/03/2017">
 								<h2 style="font-size:40px;">Symposium Date</h2>
-								<em style="font-size:15px;">March 24rd, 2017</em>
+								<em style="font-size:15px;">March 17rd, 2017</em>
 								<p style="font-size:25px;">	
-									 The event is tentatively scheduled to be held from 24-26 March 2017.
+									 The event is tentatively scheduled to be held from 17-19 March 2017.
 								</p>
 							</li>
 						</ol>
@@ -111,56 +158,13 @@
 			</div>	    		
 	    </div> <!-- End of Schedule Page -->
 
-	    <div class="section" id="section3"> <!-- Sponsors Page -->
-	    	<div class="sonpsorPage">
-	    		<h1 class="headings" style='color:black;'>Our Sponsors</h1>
-			    <div class="sponsorContainer" style="margin-top:30px;">
-			    	<a href="http://www.ieeeup.org/">
-				    	<div class="sponsor">
-					    	<img src='images/sponsers/upsection.png' style="height:150px; width:150px;"> 
-						</div>
-					</a>
-					<a href="https://www.computer.org/">
-						<div class="sponsor">
-					    	<img src='images/sponsers/csLogo.jpg' style="height:150px; width:200px;">
-						</div>
-					</a>
-					<a href="http://signalprocessingsociety.org/">
-						<div class="sponsor">
-					    	<img src='images/sponsers/signal.gif' style="height:150px; width:230px;">
-						</div>
-					</a>
-				</div>
-				</br></br>
-				<center>
-					<h1 class="headings" style='color:black; font-size:35px;'>Education Partner</h1>
-					<a href="http://www.wileyindia.com/">
-						<img src='images/sponsers/wiley_logo.png' class="education_partner"> 
-					</a>
-				</center>
-			</div>
-	    </div>
-	    <div class="section" id="section4"> <!-- Linked with Registration Page -->
-	    	<div class="registerPage">
-	    		<h1 class="headings" style="color:black;">Registration</h1>
-	    		<div class="coming_soon">
-		            C
-		            <div class="O left">O</div>
-		            ming
-		            <span class="space"></span>
-		            S
-		            <div class="O right">O</div>
-		            on...
-		        </div> 
-	    	</div>
-	    </div>
 	    <div class="section" id="section5"> <!-- Linked with Speakers Page -->
 	    	<!-- Main card holder class-->
 	    	<div class="speakerPage">
 		    	<h1 class="headings">Speakers</h1> <!-- change cardHolder Height-->
 		    	<div class="cardHolder">
 		    		<!-- A card -->
-		    		<div class = "cardRow" style="margin-top:40px;">
+		    		<div class = "cardRow" style="margin-top:10px;">
 				    	<a href="https://in.linkedin.com/in/harish-karnick-388b1616">
 					    	<div class = "card1">
 					    		<img src='images/speakers/karnick.png'>
@@ -198,71 +202,213 @@
 				    		</div>
 			    		</a>
 		    		</div> <!--End of cardRow-->
-		    	</div>
-	    	</div> <!-- End of speakerBackground -->
-	    </div>
 
-	    <div class="section" id="section6"> <!-- Linked with Team Page -->
-	    	<div class="aboutusPage">
-	    		<h1 class="headings" style="color:black;">Team</h1> <!-- change cardHolder Height-->
-		    	<div class="cardHolder">
-		    		<div class = "cardRow2" style="margin-top:40px;">
-		    			<a href="https://in.linkedin.com/in/meghaben">
-					    	<div class = "card2">
-					    		<img src='images/team/megha.jpg'>
-					    		<div class="card2-container">
-							    	<h4>Megha Ben</h4> 
-							    	<p>IEEE CS R-10 Ambassador</p>
-							    	<p>Contact No. +91-9048127456</p> 
+		    		<div class = "cardRow">
+				    	<a href="https://in.linkedin.com/in/santoshcas">
+				    		<div class = "card1">
+					    		<img src='images/speakers/santosh.jpg' style="width:300px;">
+					    		<div class="card-container">
+							    	<h4>Santosh Sharma</h4> 
+							    	<p></p> 
 								</div>
 				    		</div>
 			    		</a>
-			    		<a href="https://www.facebook.com/shivam.abhilash">
-				    		<div class = "card2">
-					    		<img src='images/team/shivam.jpg' style="width:200px;">
-					    		<div class="card2-container">
-							    	<h4>Shivam</h4> 
-							    	<p>IEEE CSSR UP India Council</p> 
-							    	<p>Contact No. +91-7839942679</p>
+			    		<a href="#">
+				    		<div class = "card1">
+					    		<img src='images/speakers/senthil.png' style="width:300px;">
+					    		<div class="card-container">
+							    	<h4>Mr. Senthil Kumar</h4> 
+							    	<p></p> 
 								</div>
 				    		</div>
 			    		</a>
-			    		<a href="https://www.facebook.com/jtibrewal">
-				    		<div class = "card2">
-					    		<img src='images/team/jay.jpg' style="width:240px;">
-					    		<div class="card2-container">
-							    	<h4>Jay Tibrewal</h4> 
-							    	<p>Vice Chair IEEE CS SB Chapter, IIIT Allahabad</p> 
-							    	<p>Contact No. +91-919455776469</p>
+			    		<a href="#">
+				    		<div class = "card1">
+					    		<img src='images/speakers/KRamakrishna.jpg' style="width:300px;">
+					    		<div class="card-container">
+							    	<h4>Ramakrishna Kappagantu</h4> 
+							    	<p>Immediate Past R10 Director</p> 
 								</div>
 				    		</div>
 			    		</a>
 		    		</div> <!--End of cardRow-->
 		    	</div>
-	    	</div> <!-- End of aboutusPage -->
+	    	</div> <!-- End of speakerBackground -->
 	    </div>
 
-	    <div class="section" id="section7"> <!-- Linked with About CSIS Page -->
+	    <div class="section" id="section4"> <!-- Linked with Registration Page -->
+	    	<div class="registerPage">
+	    		<h1 class="headings" style="color:black;">Registration</h1>
+	    		<div class="coming_soon">
+		            C
+		            <div class="O left">O</div>
+		            ming
+		            <span class="space"></span>
+		            S
+		            <div class="O right">O</div>
+		            on...
+		        </div> 
+	    	</div>
+	    </div>
+
+	    <div class="section" id="section3"> <!-- Sponsors Page -->
+	    	<div class="sonpsorPage">
+	    		<h1 class="headings">Our Sponsors</h1>
+	    		<div class="title_sponsors">
+		    		<div class="sponsor_header">
+		    			<h1>Title Sponsor<h1>
+		    		</div>
+		    		<img src="images/sponsers/tata_capital_logo.jpg" style="width:350px;" />
+		    	</div>
+	    		<div class="otherSponsors">
+	    			<div class="major_sponsors">
+			    		<div class="sponsor_header">
+			    			<h1>Major Sponsors<h1>
+			    		</div>
+			    		<img src='images/sponsers/upsection.png' style="height:100px; width:100px;">
+			    		<img src='images/sponsers/csLogo.jpg' style="height:100px; width:150px;">
+						<img src='images/sponsers/signal.gif' style="height:120px; width:210px;">
+		    		</div>
+		    		<div class="education_partner">
+			    		<div class="sponsor_header">
+			    			<h1>Education Partner<h1>
+			    		</div>
+			    		<img src="images/sponsers/wiley_logo.png" style="width:200px; margin-top:40px;">
+		    		</div>
+		    	</div>
+	    	
+			</div>
+	    </div>
+
+	    <!-- End of sponsers page  -->
+	    
+	    <div class="section" id="section6"> <!-- Linked with Team Page -->
 	    	<div class="aboutusPage">
-	    		<h1 class="headings" style="color:black; font-size:35px;">About CSIS</h1> <!-- change cardHolder Height-->
-	    		</br>
-	    		<div class="aboutcsiscontent">
-		    	<p>
-	    		The IEEE Computer Society India Symposium (CSIS) 2017 is to be held at IIIT Allahabad in the last week of March 2017. It will be jointly conducted by the IEEE Computer Society India Council SAC, IEEE SP/C Joint Chapter, UP Section and IEEE Student Branch, IIIT Allahabad. 
-	    		</p>
-	    		<p>
-The main scope of this symposium is to bring together professionals, speakers, experts and other academicians so that the students can interact with and learn from them. The theme of the event is “Humans & Computers”. The symposium will include talks, workshops, and events on a wide array of CS/IT domains such as Human Computer Interaction, Machine Learning, Network Security, Cognitive Science and much more. As a platform to bring all the Computer Society chapters of India together, IEEE CSIS 2017 focuses on improving the future activities of all the different chapters of Computer Society all over India as well as to cast a focus on the immense depth of computer science. 
-				</p>
-				<p>
-The IEEE CSIS 2017 will be a three-day event and will provide the students and young professionals with an opportunity to interact with the esteemed speakers and professionals from all over India. Technical talks on currently flourishing fields and workshops thereafter based on the same will nurture the creative minds and open them to a new world.  The IEEE CSIS 2017 Team cordially invites you to grace the symposium with your presence and give a talk on any subject of your choice which aligns with the theme of the event. You are also invited to conduct a workshop on the same topic. The CSIS team will gladly provide you with the resources and personnel for the same. We look forward to your participation in the IEEE CSIS 2017.
-			</p>
-			</div> <!--End of aboutcsiscontent -->
+	    		<div class="cardHolder">
+		    		<!-- for mentors-->
+		    		<div style="width:60%; height:100%; float:left;"> 
+		    			<center><h1 style="margin-top:20px;">Mentors</h1></center>
+		    			<div class = "cardRow2" style="margin-top:20px;">
+			    			<a href="#">
+						    	<div class = "card2">
+						    		<img src='images/team/snsingh.jpg'>
+						    		<div class="card2-container">
+								    	<h4>Prof. S.N. Singth</h4> 
+								    	<p>Chair Elect IEEE India Council</p>
+									</div>
+					    		</div>
+				    		</a>
+				    		<a href="#">
+						    	<div class = "card2">
+						    		<img src='images/team/ramkumar.JPG'>
+						    		<div class="card2-container">
+								    	<h4>Prof. J. Ramkumar</h4> 
+								    	<p>Chairperson IEEE UP Section</p>
+									</div>
+					    		</div>
+				    		</a>
+			    			<a href="#">
+						    	<div class = "card2">
+						    		<img src='images/team/us_tiwari.jpg'>
+						    		<div class="card2-container">
+								    	<h4>Prof. U.S. Tiwary</h4> 
+								    	<p>Chairperson IEEE SP/C Joint Chapter UP Section</p>
+									</div>
+					    		</div>
+				    		</a>
+				    		<a href="#">
+						    	<div class = "card2">
+						    		<img src='images/team/shekhar_verma.jpg'>
+						    		<div class="card2-container">
+								    	<h4>Prof. Shekhar Verma</h4> 
+								    	<p>Faculty Advisor IEEE CS Chapter IIIT Allahabad</p>
+									</div>
+					    		</div>
+				    		</a>
+				    	</div>
+			    		<div class = "cardRow2" style="margin-top:20px;">
+				    		<a href="#">
+						    	<div class = "card2">
+						    		<img src='images/team/kumar_vaibhav.jpg'>
+						    		<div class="card2-container">
+								    	<h4>Dr. Kumar Vaibhav Srivastav</h4> 
+								    	<p>IIT Kanpur</p>
+									</div>
+					    		</div>
+				    		</a>
+				    		<a href="#">
+						    	<div class = "card2">
+						    		<img src='images/team/rajat_singh.jpg'>
+						    		<div class="card2-container">
+								    	<h4>Dr. Rajat Singh</h4> 
+								    	<p>Faculty Counselor IEEE Student Branch IIITA</p>
+									</div>
+					    		</div>
+				    		</a>
+				    		<a href="#">
+						    	<div class = "card2">
+						    		<img src='images/team/sksingh.jpg'>
+						    		<div class="card2-container">
+								    	<h4>Dr. Satish Singh</h4> 
+								    	<p>Secretary IEEE SP/C Joint Chapter UP Section</p>
+									</div>
+					    		</div>
+				    		</a>
+				    		<a href="#">
+						    	<div class = "card2">
+						    		<img src='images/team/amit_dhar.jpg'>
+						    		<div class="card2-container">
+								    	<h4>Dr. Amit Dhar</h4> 
+								    	<p>IIIT Allahabad</p>
+									</div>
+					    		</div>
+				    		</a>
+				    	</div>
+			    	</div>
+		    		<!-- for team members -->
+		    		<div style="width:40%; height:100%; float:right; margin-top:100px;">
+		    			<center><h1>Event Coordinators</h1></center>
+		    			<div class = "cardRow2" style="margin-top:20px;">
+		    			<a href="https://www.facebook.com/shivam.abhilash">
+				    		<div class = "card2">
+					    		<img src='images/team/megha.jpg' >
+					    		<div class="card2-container">
+							    	<h4 class="card-title">Megha Ben</h4>
+                            		<p>IEEE CS R-10 Ambassador</p>
+                            		<p>+91-9048127456</p>
+								</div>
+				    		</div>
+			    		</a>
+		    			<a href="https://www.facebook.com/shivam.abhilash">
+				    		<div class = "card2">
+					    		<img src='images/team/shivam.jpg' >
+					    		<div class="card2-container">
+							    	<h4>Shivam</h4> 
+							    	<p>IEEE CSSR UP India Council</p> 
+							    	<p>+91-7839942679</p>
+								</div>
+				    		</div>
+			    		</a>
+		    			<a href="https://www.facebook.com/jtibrewal">
+				    		<div class = "card2" style="height:210px;">
+					    		<img src='images/team/jay.jpg' >
+					    		<div class="card2-container">
+							    	<h4>Jay Tibrewal</h4> 
+							    	<p>Vice Chair IEEE CS SB Chapter, IIIT Allahabad</p> 
+							    	<p>+91-919455776469</p>
+								</div>
+				    		</div>
+			    		</a>
+		    		</div>
+		    		</div>
+		    	</div>
+
 	    	</div> <!-- End of aboutusPage -->
 	    </div>
 
 	    <div class="section" id="section8"> <!-- Linked with Faqs Page -->
 	    	<div class="faqPage">
-		    	<h1 class="headings" style="color:white;">FAQS</h1>
+		    	<h1 class="headings" style="color:white;">FAQs</h1>
 		    	<div class="expandingFaq">
 			      <div class="faqElement">
 			        <h2 class="faqQuestion">
@@ -299,29 +445,29 @@ The IEEE CSIS 2017 will be a three-day event and will provide the students and y
 		  	<span>Home</span>
 		  	<img src="images/home.png" alt="home" />
 		  </a> 
+		  <a class="dock-item" style="text-decoration:none;" href="#aboutcsis">
+		  	<span>About CSIS</span>
+		  	<img src="images/team3.png" alt="about csis" />
+		  </a>
 		  <a class="dock-item" style="text-decoration:none;" href="#schedule">
 		  	<span>Schedule</span>
 		  	<img src="images/schedule.png" alt="schedule" />
-		  </a> 
-		  <a class="dock-item" style="text-decoration:none;" href="#sponsors">
-		  	<span>Sponsors</span>
-		  	<img src="images/sponsors1.png" alt="sponsors" />
-		  </a> 
-		  <a class="dock-item" style="text-decoration:none;" href="#registration">
-		  	<span>Register</span>
-		  	<img src="images/register.png" alt="register" />
 		  </a> 
 		  <a class="dock-item" style="text-decoration:none;" href="#speakers">
 		  	<span>Speakers</span>
 		  	<img src="images/speaker5.png" alt="speaker" />
 		  </a>
+		  <a class="dock-item" style="text-decoration:none;" href="#registration">
+		  	<span>Register</span>
+		  	<img src="images/register.png" alt="register" />
+		  </a> 
+		  <a class="dock-item" style="text-decoration:none;" href="#sponsors">
+		  	<span>Sponsors</span>
+		  	<img src="images/sponsors1.png" alt="sponsors" />
+		  </a> 
 		  <a class="dock-item" style="text-decoration:none;" href="#team">
 		  	<span>Team</span>
 		  	<img src="images/speaker.png" alt="team" />
-		  </a>
-		  <a class="dock-item" style="text-decoration:none;" href="#aboutcsis">
-		  	<span>About CSIS</span>
-		  	<img src="images/team3.png" alt="about csis" />
 		  </a>
 		  <a class="dock-item" style="text-decoration:none;" href="https://www.google.co.in/maps/place/Indian+Institute+of+Information+Technology+Allahabad/@25.4302153,81.7681652,16.75z/data=!4m5!3m4!1s0x399acac768944451:0x1f0c03a031f74c3f!8m2!3d25.4304161!4d81.770679?hl=en" target="_blank">
 		  	<span>How to Reach</span>
@@ -384,13 +530,12 @@ The IEEE CSIS 2017 will be a three-day event and will provide the students and y
 <script>
 	function countdown(){
 		var now = new Date();
-		var eventDate = new Date(2017, 03, 24);
+		var eventDate = new Date("2017-03-17");
 
-		var currentTiime = now.getTime();
+		var currentTime = now.getTime();
 		var eventTime = eventDate.getTime();
 
-		var remTime = eventTime - currentTiime;
-
+		var remTime = eventTime - currentTime;
 		var s = Math.floor(remTime / 1000);
 		var m = Math.floor(s / 60);
 		var h = Math.floor(m / 60);
@@ -416,6 +561,24 @@ The IEEE CSIS 2017 will be a three-day event and will provide the students and y
 		setTimeout(countdown, 1000);
 	}
 	countdown();
+</script>
+
+<!-- To redirect to mobile website -->
+<script type="text/javascript">
+	function check_for_mobile() {
+		var width = window.innerWidth
+		var height = window.innerHeight;
+		//console.log("width " + width + " height:" + height);
+		
+		if( width <= 950 || height <= 550 ){
+			window.location = "http://ieeecsis.org/m/index.html";
+			//console.log("In Bmobile");
+		} else {
+			//console.log("In BBrowser");
+		}
+		setTimeout(check_for_mobile, 5000); //check in every 10 seconds
+	}
+	check_for_mobile();
 </script>
 
 </body>

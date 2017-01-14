@@ -16,17 +16,20 @@
     background: rgba(0,0,0,0.5);
     padding: 30px 20px 20px 20px;
     color:white;
-    width: 500px;
+    width: 600px;
     margin: 150px auto 0 auto;
     border-radius: 10px;
 }
 .mainDialog h1{
     font-size: 40px;
     font-family: 'Fira sans', sans-serif;
+    text-align: center;
 }
+
 .schedule_date, .schedule_address{
     font-size: 20px;
     font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
 }
 
 ul#countdown {
@@ -38,7 +41,7 @@ ul#countdown {
 }
 
 ul#countdown li {
-    background: #be1a39;
+    background: rgba(245, 176, 55, 0); /* making it transparent */
     display: inline-block;
     margin: 10px 1px;
     padding-top: 20px;
@@ -87,9 +90,8 @@ ul#countdown li p {
 
 .cardRow2 {
    width: 700px;
-   height: 250px;
-   margin-left: auto;
-   margin-right: auto;
+   height: 220px;
+   margin: 0 auto;
 }
 
 .card2 {
@@ -98,20 +100,20 @@ ul#countdown li p {
     position: inline-block;
     text-align:center;
     transition: 0.9s;
-    width: 200px;
-    height: 270px;
-    margin-left: 20px;
-    margin-top: 8px;
+    width: 160px;
+    height: 205px;
+    margin-left: 10px;
+    margin-top: 10px;
     float: left;
-    border-top-left-radius: 100px;
-    border-top-right-radius: 100px;
+    border-top-right-radius: 80px;
+    border-top-left-radius: 80px;
 }
 
 .card2 > img {
-    max-width: 100%;
-    max-height: 100%;
-    height: 200px;
-    border-radius: 100px;
+    width: 150px;
+    height: 150px;
+    border-radius: 85px;
+    border: 5px solid #bebfc5;
 }
 
 .card2:hover {
@@ -129,11 +131,11 @@ ul#countdown li p {
 }
 
 .card2-container > h4 {
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'Roboto Condensed', sans-serif;
 }
 .card2-container > p {
-    font-size: 13px;
+    font-size: 12px;
     font-family: 'Lora', serif;
 }
 /* End of team cards */
@@ -214,8 +216,69 @@ ul#countdown li p {
     height: 3px;
     background-color: #fac42b;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 10px;
+}
+
+/* for making box for sponsors*/
+.title_sponsors {
+    text-align: center;
+    position: inline-block;
+    text-align:center;
+    transition: 0.9s;
+    width: 500px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.sponsor_header {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #AFA3A3;
+    color: black;
+}
+
+.major_sponsors {
+    text-align: center;
+    position: inline-block;
+    text-align:center;
+    transition: 0.9s;
+    width: 650px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    float: left;
+}
+
+.major_sponsors > img {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.education_partner {
+    text-align: center;
+    position: inline-block;
+    text-align:center;
+    transition: 0.9s;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    float: right;
+}
+
+.otherSponsors {
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 10px;
 }
 
 .registerPage {
@@ -293,14 +356,6 @@ span.space{
     max-height: 200px;
 }
 
-.education_partner {
-    margin-top: 10px;
-    width: 300px;
-}
-.education_partner:hover{
-    width: 310px;
-}
-
 .events> ol > li >a:link {
     font-size: 20px;
     line-height: 40px;
@@ -336,14 +391,13 @@ span.space{
     position: relative;    
 }
 
-.faqElement:after {
+.faqElement:before {
     font-family: 'Arial';
-    content: "+";
+    content: "Q";
     position: absolute;
-    top: 0;
-    right: 10px;
-    font-size: 40px;
-    font-weight: bold;
+    top: 5px;
+    left: 10px;
+    font-size: 35px;
     cursor: pointer;
 }
 
@@ -352,7 +406,7 @@ span.space{
     font-family: 'Roboto Condensed', sans-serif;
     cursor: pointer;
     margin: 0;
-    padding: 10px 40px 10px 10px;
+    padding: 10px 40px 10px 50px;
     background-color: #fac42b;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
