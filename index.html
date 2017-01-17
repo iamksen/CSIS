@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>CSIS-2017 IIITA</title>	
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
@@ -12,12 +13,12 @@
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<link rel="stylesheet" href="css/jquery.pagepiling.css" />
 	<link rel="stylesheet" href="css/dock.css"> <!-- Stylesheet for dock -->
-	<link rel="stylesheet" href="css/main.css">		
+	<link rel="stylesheet" href="css/main.css">	<!-- Main stylesheet -->	
 	
 	<script src="js/jquery-2.1.4.js"></script>
 	<script src="js/main.js"></script> <!-- Resource jQuery -->
-  	<script type="text/javascript" src="js/jquery.pagepiling.min.js"></script>
-	<script type="text/javascript" src="js/interface.js"></script>
+  	<script type="text/javascript" src="js/jquery.pagepiling.min.js"></script> <!-- For horizontal scroll -->
+	<script type="text/javascript" src="js/interface.js"></script> <!-- For dock -->
 
     <script type="text/javascript">
 		$(document).ready(function() {
@@ -36,7 +37,6 @@
 			var width = window.innerWidth
 			var height = window.innerHeight;
 			//console.log("width " + width + " height:" + height);
-			
 			if( width <= 950 || height <= 550 ){
 				window.location = "http://ieeecsis.org/m/index.html";
 				//console.log("In mobile");
@@ -46,70 +46,73 @@
 		}
 		check_for_mobile();
 	</script>
-
 </head>
 <body>
 	<!-- Main scrolling content -->
 	<div id="pagepiling">
 	    <div class="section" id="section1"> <!-- Home Page -->
-	    	<div class="homeBackground"> <!-- HomePage Background Image style -->
-	    		<a href="http://www.iiita.ac.in/">
-	    		<img src="images/logos/iiita.png" style="width:110px; margin-left:20px; float:left;" />
-	    		</a>
-	    		<a href="#">
-	    		<img src="images/sponsers/csis_tata_capital.png" style="width:380px; margin-right:20px; float:right" /></a>
-	    		<div class="mainDialog"> <!-- Style for Caption Box -->
-	    			<h1 style="color:white">CSIS'17</h1>
-	    			<p class="schedule_date" style="margin-top:10px;">17th March,2017 - 19th March, 2017</p>
-	    			<p class="schedule_address" style="margin-bottom:20px;">IIIT Allahabad, UttarPradesh, India</p>
-	    		
-	    		<center> <!-- CountDown Timer -->
-	    			<ul id="countdown">
-	    				<li>
-	    					<span id="days"></span>
-	    					<p class="days">DAYS</p>
-	    				</li>
-	    				<li>
-	    					<span id="hours"></span>
-	    					<p class="hours">HOURS</p>
-	    				</li>
-	    				<li>
-	    					<span id="minutes"></span>
-	    					<p class="minutes">MINUTES</p>
-	    				</li>
-	    				<li>
-	    					<span id="seconds"></span>
-	    					<p class="seconds">SECONDS</p>
-	    				</li>
-	    			</ul>
-				</center>
-				</div>
-			</div>
+	    	<div class="homePage">
+		    	<div class="homeBackground" style="background-size:100% 100%;"> <!-- HomePage Background Image style -->
+		    		<a href="http://www.iiita.ac.in/"> <!-- Logo for IIITA -->
+		    		<img src="images/logos/iiita.png" style="width:110px; margin-left:20px; float:left;" />
+		    		</a>
+		    		<a href="#"> <!-- Logo of CSIS with tatacapital -->
+		    		<img src="images/sponsers/csis_tata_capital.png" style="width:380px; margin-right:20px; float:right" />
+		    		</a>
+
+		    		<div class="mainDialog"> <!-- Style for Caption Box -->
+		    			<h1 style="color:white">CSIS'17</h1>
+		    			<p class="schedule_date" style="margin-top:10px;">17th March,2017 - 19th March, 2017</p>
+		    			<p class="schedule_address" style="margin-bottom:20px;">IIIT Allahabad, UttarPradesh, India</p>
+		    		
+		    		<center> <!-- CountDown Timer -->
+		    			<ul id="countdown">
+		    				<li>
+		    					<span id="days"></span>
+		    					<p class="days">DAYS</p>
+		    				</li>
+		    				<li>
+		    					<span id="hours"></span>
+		    					<p class="hours">HOURS</p>
+		    				</li>
+		    				<li>
+		    					<span id="minutes"></span>
+		    					<p class="minutes">MINUTES</p>
+		    				</li>
+		    				<li>
+		    					<span id="seconds"></span>
+		    					<p class="seconds">SECONDS</p>
+		    				</li>
+		    			</ul>
+					</center>
+					</div>
+				</div><!-- End of homeBackground -->
+			</div> <!-- End of homePage -->
 	    </div>
 
-	     <div class="section" id="section7"> <!-- Linked with About CSIS Page -->
+	     <div class="section" id="section2"> <!-- Linked with About CSIS Page -->
 	    	<div class="aboutusPage">
 	    		<h1 class="headings" style="color:black; font-size:35px;">About CSIS</h1> <!-- change cardHolder Height-->
 	    		</br>
-	    		<div class="aboutcsiscontent">
-		    	<p>
-	    		The IEEE Computer Society India Symposium (CSIS) 2017 is to be held at IIIT Allahabad in the last week of March 2017. It will be jointly conducted by the IEEE Computer Society India Council SAC, IEEE SP/C Joint Chapter, UP Section and IEEE Student Branch, IIIT Allahabad. 
-	    		</p>
-	    		<p>
-The main scope of this symposium is to bring together professionals, speakers, experts and other academicians so that the students can interact with and learn from them. The theme of the event is &quot;Humans & Computers&quot;. The symposium will include talks, workshops, and events on a wide array of CS/IT domains such as Human Computer Interaction, Machine Learning, Network Security, Cognitive Science and much more. As a platform to bring all the Computer Society chapters of India together, IEEE CSIS 2017 focuses on improving the future activities of all the different chapters of Computer Society all over India as well as to cast a focus on the immense depth of computer science. 
+	    		<div class="aboutcsiscontent"> <!-- Content of About CSIS page -->
+			    	<p style="text-align:justify">
+		    		The IEEE Computer Society India Symposium (CSIS) 2017 is to be held at IIIT Allahabad in the last week of March 2017. It will be jointly conducted by the IEEE Computer Society India Council SAC, IEEE SP/C Joint Chapter, UP Section and IEEE Student Branch, IIIT Allahabad. 
+		    		</p>
+		    		<p style="text-align:justify">
+	The main scope of this symposium is to bring together professionals, speakers, experts and other academicians so that the students can interact with and learn from them. The theme of the event is &quot;Humans & Computers&quot;. The symposium will include talks, workshops, and events on a wide array of CS/IT domains such as Human Computer Interaction, Machine Learning, Network Security, Cognitive Science and much more. As a platform to bring all the Computer Society chapters of India together, IEEE CSIS 2017 focuses on improving the future activities of all the different chapters of Computer Society all over India as well as to cast a focus on the immense depth of computer science. 
+					</p>
+					<p style="text-align:justify">
+	The IEEE CSIS 2017 will be a three-day event and will provide the students and young professionals with an opportunity to interact with the esteemed speakers and professionals from all over India. Technical talks on currently flourishing fields and workshops thereafter based on the same will nurture the creative minds and open them to a new world.  The IEEE CSIS 2017 Team cordially invites you to grace the symposium with your presence and give a talk on any subject of your choice which aligns with the theme of the event. You are also invited to conduct a workshop on the same topic. The CSIS team will gladly provide you with the resources and personnel for the same. We look forward to your participation in the IEEE CSIS 2017.
 				</p>
-				<p>
-The IEEE CSIS 2017 will be a three-day event and will provide the students and young professionals with an opportunity to interact with the esteemed speakers and professionals from all over India. Technical talks on currently flourishing fields and workshops thereafter based on the same will nurture the creative minds and open them to a new world.  The IEEE CSIS 2017 Team cordially invites you to grace the symposium with your presence and give a talk on any subject of your choice which aligns with the theme of the event. You are also invited to conduct a workshop on the same topic. The CSIS team will gladly provide you with the resources and personnel for the same. We look forward to your participation in the IEEE CSIS 2017.
-			</p>
 			</div> <!--End of aboutcsiscontent -->
 	    	</div> <!-- End of aboutusPage -->
-	    </div>
+	    </div> <!-- End of section2 -->
 
-	    <div class="section" id="section2"> <!-- Schedule Page -->
+	    <div class="section" id="section3"> <!-- Schedule Page -->
 	    	<div class="schedulePage">
 	    		<h1 class="headings" style="color:black;">Schedule</h1>
 	    		<!-- horizontal timeline -->
-	    		<section class="cd-horizontal-timeline">
+	    		<section class="cd-horizontal-timeline"> <!-- Horizontal timeline -->
 					<div class="timeline">
 						<div class="events-wrapper">
 							<div class="events">
@@ -158,7 +161,7 @@ The IEEE CSIS 2017 will be a three-day event and will provide the students and y
 			</div>	    		
 	    </div> <!-- End of Schedule Page -->
 
-	    <div class="section" id="section5"> <!-- Linked with Speakers Page -->
+	    <div class="section" id="section4"> <!-- Linked with Speakers Page -->
 	    	<!-- Main card holder class-->
 	    	<div class="speakerPage">
 		    	<h1 class="headings">Speakers</h1> <!-- change cardHolder Height-->
@@ -236,7 +239,7 @@ The IEEE CSIS 2017 will be a three-day event and will provide the students and y
 	    	</div> <!-- End of speakerBackground -->
 	    </div>
 
-	    <div class="section" id="section4"> <!-- Linked with Registration Page -->
+	    <div class="section" id="section5"> <!-- Linked with Registration Page -->
 	    	<div class="registerPage">
 	    		<h1 class="headings" style="color:black;">Registration</h1>
 	    		<div class="coming_soon">
@@ -248,10 +251,10 @@ The IEEE CSIS 2017 will be a three-day event and will provide the students and y
 		            <div class="O right">O</div>
 		            on...
 		        </div> 
-	    	</div>
-	    </div>
+	    	</div> <!-- end of registerPage -->
+	    </div> <!-- End of Registration Page  -->
 
-	    <div class="section" id="section3"> <!-- Sponsors Page -->
+	    <div class="section" id="section6"> <!-- Sponsors Page -->
 	    	<div class="sonpsorPage">
 	    		<h1 class="headings">Our Sponsors</h1>
 	    		<div class="title_sponsors">
@@ -277,12 +280,10 @@ The IEEE CSIS 2017 will be a three-day event and will provide the students and y
 		    		</div>
 		    	</div>
 	    	
-			</div>
-	    </div>
+			</div> <!-- End of sonpsorPage -->
+	    </div> <!-- End of Sponsor Page -->
 
-	    <!-- End of sponsers page  -->
-	    
-	    <div class="section" id="section6"> <!-- Linked with Team Page -->
+	    <div class="section" id="section7"> <!-- Linked with Team Page -->
 	    	<div class="aboutusPage">
 	    		<div class="cardHolder">
 		    		<!-- for mentors-->
@@ -366,47 +367,48 @@ The IEEE CSIS 2017 will be a three-day event and will provide the students and y
 				    	</div>
 			    	</div>
 		    		<!-- for team members -->
-		    		<div style="width:40%; height:100%; float:right; margin-top:100px;">
+		    		<div style="width:40%; height:100%; float:right; margin-top:20px;">
 		    			<center><h1>Event Coordinators</h1></center>
 		    			<div class = "cardRow2" style="margin-top:20px;">
-		    			<a href="https://www.facebook.com/shivam.abhilash">
-				    		<div class = "card2">
-					    		<img src='images/team/megha.jpg' >
-					    		<div class="card2-container">
-							    	<h4 class="card-title">Megha Ben</h4>
-                            		<p>IEEE CS R-10 Ambassador</p>
-                            		<p>+91-9048127456</p>
-								</div>
-				    		</div>
-			    		</a>
-		    			<a href="https://www.facebook.com/shivam.abhilash">
-				    		<div class = "card2">
-					    		<img src='images/team/shivam.jpg' >
-					    		<div class="card2-container">
-							    	<h4>Shivam</h4> 
-							    	<p>IEEE CSSR UP India Council</p> 
-							    	<p>+91-7839942679</p>
-								</div>
-				    		</div>
-			    		</a>
-		    			<a href="https://www.facebook.com/jtibrewal">
-				    		<div class = "card2" style="height:210px;">
-					    		<img src='images/team/jay.jpg' >
-					    		<div class="card2-container">
-							    	<h4>Jay Tibrewal</h4> 
-							    	<p>Vice Chair IEEE CS SB Chapter, IIIT Allahabad</p> 
-							    	<p>+91-919455776469</p>
-								</div>
-				    		</div>
-			    		</a>
+			    			<a href="https://www.facebook.com/shivam.abhilash">
+					    		<div class = "card2">
+						    		<img src='images/team/megha.jpg' >
+						    		<div class="card2-container">
+								    	<h4 class="card-title">Megha Ben</h4>
+	                            		<p>IEEE CS R-10 Ambassador</p>
+	                            		<p>+91-9048127456</p>
+									</div>
+					    		</div>
+				    		</a>
+			    			<a href="https://www.facebook.com/shivam.abhilash">
+					    		<div class = "card2">
+						    		<img src='images/team/shivam.jpg' >
+						    		<div class="card2-container">
+								    	<h4>Shivam</h4> 
+								    	<p>IEEE CSSR UP India Council</p> 
+								    	<p>+91-7839942679</p>
+									</div>
+					    		</div>
+				    		</a>
+			    			<a href="https://www.facebook.com/jtibrewal">
+					    		<div class = "card2" style="height:210px;">
+						    		<img src='images/team/jay.jpg' >
+						    		<div class="card2-container">
+								    	<h4>Jay Tibrewal</h4> 
+								    	<p>Vice Chair IEEE CS SB Chapter, IIIT Allahabad</p> 
+								    	<p>+91-919455776469</p>
+									</div>
+					    		</div>
+				    		</a>
 		    		</div>
 		    		</div>
-		    	</div>
-
+		    	</div> <!-- End of cardHolder -->
 	    	</div> <!-- End of aboutusPage -->
-	    </div>
+	    </div> <!-- End of Team Page -->
 
-	    <div class="section" id="section8"> <!-- Linked with Faqs Page -->
+	    <!-- No seperate page for how to reach (map) -->
+
+	    <div class="section" id="section9"> <!-- Linked with Faqs Page -->
 	    	<div class="faqPage">
 		    	<h1 class="headings" style="color:white;">FAQs</h1>
 		    	<div class="expandingFaq">
@@ -530,7 +532,7 @@ The IEEE CSIS 2017 will be a three-day event and will provide the students and y
 <script>
 	function countdown(){
 		var now = new Date();
-		var eventDate = new Date("2017-03-17");
+		var eventDate = new Date("2017-03-17"); //Event date
 
 		var currentTime = now.getTime();
 		var eventTime = eventDate.getTime();
@@ -576,7 +578,7 @@ The IEEE CSIS 2017 will be a three-day event and will provide the students and y
 		} else {
 			//console.log("In BBrowser");
 		}
-		setTimeout(check_for_mobile, 5000); //check in every 10 seconds
+		setTimeout(check_for_mobile, 1000); //check in every 1 seconds
 	}
 	check_for_mobile();
 </script>
