@@ -15,6 +15,9 @@
 	<link rel="stylesheet" href="css/dock.css"> <!-- Stylesheet for dock -->
 	<link rel="stylesheet" href="css/main.css">	<!-- Main stylesheet -->	
 	
+	<link rel="stylesheet" href="css/speaker.css">
+	<script type="text/javascript" src="js/speaker.js"></script>
+
 	<script src="js/jquery-2.1.4.js"></script>
 	<script src="js/main.js"></script> <!-- Resource jQuery -->
   	<script type="text/javascript" src="js/jquery.pagepiling.min.js"></script> <!-- For horizontal scroll -->
@@ -57,7 +60,7 @@
 		    		<img src="images/logos/iiita.png" style="width:110px; margin-left:20px; float:left;" />
 		    		</a>
 		    		<a href="#"> <!-- Logo of CSIS with tatacapital -->
-		    		<img src="images/sponsers/csis_tata_capital.png" style="width:380px; margin-right:20px; float:right" />
+		    		<img src="images/logos/CSISLogo_with_tc.png" style="width:320px; margin-right:20px; float:right" />
 		    		</a>
 
 		    		<div class="mainDialog"> <!-- Style for Caption Box -->
@@ -165,80 +168,87 @@
 	    	<!-- Main card holder class-->
 	    	<div class="speakerPage">
 		    	<h1 class="headings">Speakers</h1> <!-- change cardHolder Height-->
-		    	<div class="cardHolder">
-		    		<!-- A card -->
-		    		<div class = "cardRow" style="margin-top:10px;">
-				    	<a href="https://in.linkedin.com/in/harish-karnick-388b1616">
-					    	<div class = "card1">
-					    		<img src='images/speakers/karnick.png'>
-					    		<div class="card-container">
-							    	<h4>Prof. Harish Karnick</h4> 
-							    	<p>IIT Kanpur</p> 
-								</div>
-				    		</div>	
-			    		</a>
-			    		<a href="https://in.linkedin.com/in/davesh-singh-16788139">
-				    		<div class = "card1">
-					    		<img src='images/speakers/davesh_singh.jpeg'>
-					    		<div class="card-container">
-							    	<h4>Mr. Davesh Singh</h4> 
-							    	<p>UIDAI</p> 
-								</div>
-				    		</div>
-			    		</a>
-				    		<a href="https://www.linkedin.com/in/sudip-sanyal-76439b100">
-				    		<div class = "card1">
-					    		<img src='images/speakers/sanyal.jpg'>
-					    		<div class="card-container">
-							    	<h4>Prof. Sudip Sanyal</h4> 
-							    	<p>IIIT Allahabad</p> 
-								</div>
-				    		</div>
-			    		</a>
-			    		<a href="https://in.linkedin.com/in/rahul-kala-3b918822">
-				    		<div class = "card1">
-					    		<img src='images/speakers/rahul_kala.png' style="width:300px;">
-					    		<div class="card-container">
-							    	<h4>Dr. Rahul Kala</h4> 
-							    	<p>IIIT Allahabad</p> 
-								</div>
-				    		</div>
-			    		</a>
-		    		</div> <!--End of cardRow-->
-
-		    		<div class = "cardRow">
-				    	<a href="https://in.linkedin.com/in/santoshcas">
-				    		<div class = "card1">
-					    		<img src='images/speakers/santosh.jpg' style="width:300px;">
-					    		<div class="card-container">
-							    	<h4>Santosh Sharma</h4> 
-							    	<p></p> 
-								</div>
-				    		</div>
-			    		</a>
-			    		<a href="#">
-				    		<div class = "card1">
-					    		<img src='images/speakers/senthil.png' style="width:300px;">
-					    		<div class="card-container">
-							    	<h4>Mr. Senthil Kumar</h4> 
-							    	<p></p> 
-								</div>
-				    		</div>
-			    		</a>
-			    		<a href="#">
-				    		<div class = "card1">
-					    		<img src='images/speakers/KRamakrishna.jpg' style="width:300px;">
-					    		<div class="card-container">
-							    	<h4>R. Kappagantu</h4> 
-							    	<p>Former R10 Director</p> 
-								</div>
-				    		</div>
-			    		</a>
-		    		</div> <!--End of cardRow-->
-		    	</div>
+		    	
+		    	<!-- New Code added -->
+		    	<div class="container demo-3">
+   					<ul class="grid cs-style-4">
+					<li>
+					    <figure>
+					    <div><img alt="Harish Karnick" src="images/speakers/karnick.png" height='200px' width='200px' /></div>
+						<figcaption>
+					       <h3>Prof. Harish Karnick</h3>
+							<span style="background: #2c3f52; color: #ed4e6e;">IIT Kanpur</span>
+							<a href="https://in.linkedin.com/in/harish-karnick-388b1616">Linked In</a>
+					      
+					    </figcaption>
+					    </figure>
+					</li>
+					<li>
+					    <figure>
+					    <div><img alt="Mr. Davesh Singh" src="images/speakers/davesh_singh.jpeg" height='200px' width='200px' /></div>
+						<figcaption>
+					    <h3>Mr. Davesh Singh</h3>
+						<span style="background: #2c3f52; color: #ed4e6e;">UIDAI</span>
+					    <a href="https://in.linkedin.com/in/davesh-singh-16788139">Linked In</a>
+					    </figcaption>
+					    </figure>
+					</li>
+					<li>
+					<figure>
+					<div><img alt="Prof. Sudip Sanyal" src="images/speakers/sanyal.jpg" height='200px' width='200px' /></div>
+						<figcaption>
+					    <h3>Prof. Sudip Sanyal</h3>
+						<span style="background: #2c3f52; color: #ed4e6e;">IIIT Allahabad</span>
+					    <a href="https://www.linkedin.com/in/sudip-sanyal-76439b100">Linked In</a>
+					    </figcaption>
+					    </figure>
+					</li>
+					<li>
+					    <figure>
+					    <div><img alt="Dr. Rahul Kala" src="images/speakers/rahul_kala.png" height='200px' width='200px' /></div>
+						<figcaption>
+					    <h3>Dr. Rahul Kala</h3>
+						<span style="background: #2c3f52; color: #ed4e6e;">IIIT Allahabad</span>
+					    <a href="https://in.linkedin.com/in/rahul-kala-3b918822">Linked In</a>
+					    </figcaption>
+					    </figure>
+					</li>
+					<li>
+					    <figure>
+					    <div><img alt="Santosh Sharma" src="images/speakers/santosh.jpg" height='200px' width='200px' /></div>
+						<figcaption>
+					    <h3>Santosh Sharma</h3>
+						<span style="background: #2c3f52; color: #ed4e6e;"></span>
+					    <a href="https://in.linkedin.com/in/santoshcas">Linked In</a>
+					    </figcaption>
+					    </figure>
+					</li>
+					<li>
+      					<figure>
+					    <div><img alt="Mr. Senthil Kumar" src="images/speakers/senthil.png" height='200px' width='200px' /></div>
+						<figcaption>
+					    <h3>Mr. Senthil Kumar</h3>
+						<span style="background: #2c3f52; color: #ed4e6e;"></span>
+					    <!---   <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;to=gajawadasuchetha@gmail.com&amp;tf=1">Connect on Mail</a>-->
+					    </figcaption>
+					    </figure>
+					</li>
+					<li>
+					    <figure>
+					    <div><img alt="R. Kappagantu" src="images/speakers/KRamakrishna.jpg" height='200px' width='200px'/></div>
+						<figcaption>
+					    <h3>R. Kappagantu</h3>
+						<span style="background: #2c3f52; color: #ed4e6e;">Former R10 Director</span>
+					     <!--  <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;to=gajawadasuchetha@gmail.com&amp;tf=1">Connect on Mail</a>-->
+					    </figcaption>
+					    </figure>
+					</li>
+					</ul>
+				</div><!-- End of container demo-3 -->
 	    	</div> <!-- End of speakerBackground -->
-	    </div>
+	    </div> <!-- End of Section4 -->
 
+	    <!-- End of new added code -->
 	    <div class="section" id="section5"> <!-- Linked with Registration Page -->
 	    	<div class="registerPage">
 	    		<h1 class="headings" style="color:black;">Registration</h1>
