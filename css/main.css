@@ -99,7 +99,9 @@ ul#countdown li p {
 
 .cardRow3 {
    width: 370px;
-   margin: 0 auto;
+   height: 210px;
+   text-align: center;
+   position: inline-block;
 }
 
 .card2 {
@@ -236,7 +238,6 @@ ul#countdown li p {
 
 /* for making box for sponsors*/
 .title_sponsors {
-    float: left;
     text-align: center;
     position: inline-block;
     text-align:center;
@@ -250,17 +251,15 @@ ul#countdown li p {
 }
 
 .coding_partner {
-    float: right;
     text-align: center;
     position: inline-block;
     text-align:center;
     transition: 0.9s;
-    width: 400px;
+    width: 300px;
     height: 200px;
-    margin: 0 auto;
-    margin-top: 20px;
     background-color: #fff;
     border-radius: 10px;
+    float: right;
 }
 
 .top_div { /* for group title and coding sponsors */
@@ -282,18 +281,17 @@ ul#countdown li p {
     text-align: center;
     position: inline-block;
     transition: 0.9s;
-    width: 650px;
+    width: 500px;
     height: 200px;
     margin: 0 auto;
-    margin-top: 10px;
     background-color: #fff;
     border-radius: 10px;
-    float: left;
+    
 }
 
 .major_sponsors > img {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 .education_partner {
@@ -301,20 +299,20 @@ ul#countdown li p {
     position: inline-block;
     text-align:center;
     transition: 0.9s;
-    width: 300px;
+    width: 275px;
     height: 200px;
     margin: 0 auto;
-    margin-top: 10px;
     background-color: #fff;
     border-radius: 10px;
-    float: right;
+    float: left;
 }
 
 .otherSponsors {
-    width: 1000px;
+    max-width: 1200px;
     height: 500px;
     margin: 0 auto;
-    margin-top: 10px;
+    text-align: center;
+    position: inline-block;
 }
 
 .registerPage {
