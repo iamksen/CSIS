@@ -274,7 +274,10 @@ ul#countdown li p {
     padding: 10px;
     margin-bottom: 5px;
     border-bottom: 1px solid #AFA3A3;
-    color: black;
+}
+
+.sponsor_header > h1 {
+    font-size: 1.3em;
 }
 
 .major_sponsors {
@@ -390,6 +393,9 @@ span.space{
     max-height: 200px;
 }
 
+.events > ol > li {
+    list-style: none;
+}
 .events> ol > li >a:link {
     font-size: 20px;
     line-height: 40px;

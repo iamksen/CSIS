@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 	var timelines = $('.cd-horizontal-timeline'),
-		eventsMinDistance = 80;  //To change the gap between to minimum dates
+		eventsMinDistance = 90;  //To change the gap between to minimum dates
 
 	(timelines.length > 0) && initTimeline(timelines);
 
