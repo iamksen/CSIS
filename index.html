@@ -28,8 +28,8 @@
 			/* plugin for horizontal scrolling	*/
 	    	$('#pagepiling').pagepiling({
 	          	direction: 'horizontal',
-	    		anchors: ['home', 'aboutcsis', 'schedule', 'speakers', 'registration','sponsors', 'team', 'faqs'],
-			    sectionsColor: ['black', 'white', 'white', '#262626', 'white', '#2b333b', 'white', '#154360']
+	    		anchors: ['home', 'aboutcsis', 'schedule', 'speakers', 'workshop', 'registration','sponsors', 'team', 'faqs'],
+			    sectionsColor: ['black', 'white', 'white', '#262626', '#262626', 'white', '#2b333b', 'white', '#154360']
 			});
 	    });
     </script>
@@ -41,7 +41,7 @@
 			var height = window.innerHeight;
 			//console.log("width " + width + " height:" + height);
 			if( width <= 950 || height <= 550 ){
-				window.location = "http://ieeecsis.org/m/index.html";
+				//window.location = "http://ieeecsis.org/m/index.html";
 				//console.log("In mobile");
 			} else {
 				//console.log("In Browser");
@@ -55,10 +55,14 @@
 	<div id="pagepiling">
 	    <div class="section" id="section1"> <!-- Home Page -->
 	    	<div class="homePage">
-		    	<div class="homeBackground" style="background-size:100% 100%;"> <!-- HomePage Background Image style -->
+	    		<div class="homeBackground" style="background-size:100% 100%;"> <!-- HomePage Background Image style -->
 		    		<a href="http://www.iiita.ac.in/"> <!-- Logo for IIITA -->
 		    		<img src="images/logos/iiita.png" style="width:110px; margin-left:20px; float:left;" />
 		    		</a>
+
+		    		<!-- Flag -->
+		    		<img src="images/flag.gif" style="height:150px; width=150px; left:100px; position:relative;">
+		    		
 		    		<a href="#"> <!-- Logo of CSIS with tatacapital -->
 		    		<img src="images/logos/CSISLogo_with_tc.png" style="width:320px; margin-right:20px; float:right" />
 		    		</a>
@@ -247,8 +251,75 @@
 				</div><!-- End of container demo-3 -->
 	    	</div> <!-- End of speakerBackground -->
 	    </div> <!-- End of Section4 -->
-
 	    <!-- End of new added code -->
+
+	    <div class="section" id="section10"> <!-- Linked with Speakers Page -->
+	    	<!-- Main card holder class-->
+	    	<div class="speakerPage">
+		    	<h1 class="headings">Workshops</h1> <!-- change cardHolder Height-->
+		    	
+		    	<!-- New Code added -->
+		    	<div class="container demo-3">
+   					<ul class="grid cs-style-4">
+						<li>
+						    <figure>
+						    <div><img alt="Harish Karnick" src="images/workshops/ml_supervised.png" height='200px' width='220px' /></div>
+							<figcaption style="width:100%;">
+						       <h3>Supervised Machine Learning</h3>
+								<a href="https://in.linkedin.com/in/harish-karnick-388b1616">-By Harish Karnick</a>      
+						    </figcaption>
+						    </figure>
+						</li>
+						<li>
+						    <figure>
+						    <div><img alt="Harish Karnick" src="images/workshops/ml.png" height='200px' width='220px' /></div>
+							<figcaption style="width:100%;">
+						       <h3>Unsupervised Machine Learning</h3>
+								<a href="https://www.linkedin.com/in/sudip-sanyal-76439b100">-By Sudip Sanyal</a>      
+						    </figcaption>
+						    </figure>
+						</li>
+						<li>
+						    <figure>
+						    <div><img alt="3D object recognition" src="images/workshops/3d.png" height='200px' width='220px' /></div>
+							<figcaption style="width:100%;">
+						       <h3>3D Object Recognition</h3>
+								<a href="https://in.linkedin.com/in/rahul-kala-3b918822">-By Rahul Kala</a>      
+						    </figcaption>
+						    </figure>
+						</li>
+						<li>
+						    <figure>
+						    <div><img alt="Harish Karnick" src="images/workshops/ns.png" height='200px' width='220px' /></div>
+							<figcaption style="width:100%;">
+						       <h3>Network Security</h3>
+								<a href="https://in.linkedin.com/in/davesh-singh-16788139">-By Davesh Singh</a>      
+						    </figcaption>
+						    </figure>
+						</li>
+						<li>
+						    <figure>
+						    <div><img alt="Harish Karnick" src="images/workshops/3dp.png" height='200px' width='220px' /></div>
+							<figcaption style="width:100%;">
+						       <h3>3D Printing</h3>
+								<a href="https://3dexter.com/">-By 3Dexter</a>      
+						    </figcaption>
+						    </figure>
+						</li>
+						<li>
+						    <figure>
+						    <div><img alt="Harish Karnick" src="images/workshops/dtb.png" height='200px' width='220px' /></div>
+							<figcaption style="width:100%;">
+						       <h3>Dissolve the Box Thinking</h3>
+								<a href="https://in.linkedin.com/in/santoshcas">-By Santosh Sharma</a>      
+						    </figcaption>
+						    </figure>
+						</li>
+					</ul>
+				</div><!-- End of container demo-3 -->
+	    	</div> <!-- End of speakerBackground -->
+	    </div> <!-- End of Section10 -->
+
 	    <div class="section" id="section5"> <!-- Linked with Registration Page -->
 	    	<div class="registerPage">
 	    		<h1 class="headings" style="color:black;">Registration</h1>
@@ -459,10 +530,18 @@
 			      </div>
 			      <div class="faqElement">
 			        <h2 class="faqQuestion">
-			          Who all can register for this event and when will the registrations begin?
+			          Who all can register for this event?
 			        </h2>
 			        <p class="faqAnswer">
-			          If you are a high school graduate, you are welcome to register for the symposium! To register for CSIS 2017, just click the register button down below. You can register for the symposium any time after 22nd January.
+			          If you are a high school graduate, you are welcome to register for the symposium!.
+			        </p>
+			      </div>
+			       <div class="faqElement">
+			        <h2 class="faqQuestion">
+			          When will registration starts and how can I register?
+			        </h2>
+			        <p class="faqAnswer">
+			          Registration will start from 28th January 2017. Registration link will be done on this website itself. You can pay through different e-wallets, debit card, credit card or netbanking banking.
 			        </p>
 			      </div>
 			    </div>
@@ -488,6 +567,12 @@
 		  	<span>Speakers</span>
 		  	<img src="images/speaker5.png" alt="speaker" />
 		  </a>
+		  
+		  <a class="dock-item" style="text-decoration:none;" href="#workshop">
+		  	<span>Workshop</span>
+		  	<img src="images/workshop_logo.png" alt="speaker" />
+		  </a>
+
 		  <a class="dock-item" style="text-decoration:none;" href="#registration">
 		  	<span>Register</span>
 		  	<img src="images/register.png" alt="register" />
@@ -602,7 +687,7 @@
 		//console.log("width " + width + " height:" + height);
 		
 		if( width <= 950 || height <= 550 ){
-			window.location = "http://ieeecsis.org/m/index.html";
+			//window.location = "http://ieeecsis.org/m/index.html";
 			//console.log("In Bmobile");
 		} else {
 			//console.log("In BBrowser");
