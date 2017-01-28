@@ -88,7 +88,7 @@ ul#countdown li p {
 /* Team Page Style */
 .aboutusPage{
     width:100%;
-    height: 100%;
+    height: 80%;
     overflow: hidden;
 }
 
@@ -96,13 +96,6 @@ ul#countdown li p {
    width: 950px;
    height: 210px;
    margin: 0 auto;
-}
-
-.cardRow3 {
-   width: 370px;
-   height: 210px;
-   text-align: center;
-   position: inline-block;
 }
 
 .card2 {
@@ -239,7 +232,6 @@ ul#countdown li p {
 
 /* for making box for sponsors*/
 .title_sponsors {
-    text-align: center;
     position: inline-block;
     text-align:center;
     transition: 0.9s;
@@ -376,6 +368,7 @@ span.space{
     height: 80%;
     overflow: hidden;
 }
+
 .sponsorContainer{
     width: 800px;
     height:200px;
