@@ -252,7 +252,7 @@ ul#countdown li p {
     height: 200px;
     background-color: #fff;
     border-radius: 10px;
-    float: right;
+    float: left;
 }
 
 .top_div { /* for group title and coding sponsors */
@@ -277,7 +277,7 @@ ul#countdown li p {
     text-align: center;
     position: inline-block;
     transition: 0.9s;
-    width: 500px;
+    width: 900px;
     height: 200px;
     margin: 0 auto;
     background-color: #fff;
@@ -286,8 +286,8 @@ ul#countdown li p {
 }
 
 .major_sponsors > img {
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 .education_partner {
@@ -303,8 +303,40 @@ ul#countdown li p {
     float: left;
 }
 
+.gold_sponsor {
+    text-align: center;
+    position: inline-block;
+    text-align:center;
+    transition: 0.9s;
+    width: 275px;
+    height: 200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.priting_partner {
+    text-align: center;
+    position: inline-block;
+    text-align:center;
+    transition: 0.9s;
+    width: 275px;
+    height: 200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    float: right;
+}
 .otherSponsors {
-    max-width: 1200px;
+    max-width: 1000px;
+    height: 230px;
+    margin: 0 auto;
+    text-align: center;
+    position: inline-block;
+}
+
+.otherSponsors1 {
+    max-width: 700px;
     height: 230px;
     margin: 0 auto;
     text-align: center;
