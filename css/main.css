@@ -80,7 +80,8 @@ ul#countdown li p {
     font-size: 20px;
     padding: 5px;
     margin: 5px auto;
-    font-family: 'Lora', serif;
+    font-family: 'Nunito', sans-serif;
+    text-align: justify;
 }
 
 /* End of aboutCSIS content */
@@ -448,7 +449,7 @@ span.space{
 }
 
 .expandingFaq {
-    width: 60%;
+    width: 80%;
     margin: 40px auto 0 auto;
 }
 

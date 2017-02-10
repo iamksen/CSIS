@@ -9,6 +9,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
 
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<link rel="stylesheet" href="css/jquery.pagepiling.css" />
@@ -99,7 +100,7 @@
 	    		<h1 class="headings" style="color:black; font-size:35px;">About CSIS</h1> <!-- change cardHolder Height-->
 	    		</br>
 	    		<div class="aboutcsiscontent"> <!-- Content of About CSIS page -->
-			    	<p style="text-align:justify">
+			    	<p>
 		    		The IEEE Computer Society India Symposium (CSIS) 2017 is to be held at IIIT Allahabad fron 17th - 19th March 2017. It will be jointly conducted by the IEEE Computer Society India Council SAC, IEEE SP/C Joint Chapter, UP Section and IEEE Student Branch, IIIT Allahabad.
 		    		</p>
 		    		<p style="text-align:justify">
@@ -172,14 +173,14 @@
 	    		<div style="width:1000px; margin:0 auto;">
 	    			<center>
 	    			<div style="margin-top:20px;">
-	    			<img class="tt" src="images/tracks/cs.jpg" data-id="divId1" style="width:200px; height:200px;"/>
+	    			<img class="tt" src="images/tracks/cs.jpg" data-id="divId1" id="one" style="width:200px; height:200px;"/>
 					<img class="tt" src="images/tracks/cs_ec.jpg" data-id="divId2"  style="width:200px; height:200px; margin-left:10px;"/>
 					<img class="tt" src="images/tracks/wie2.jpeg" data-id="divId3"  style="width:200px; height:200px; margin-left:10px;"/>
 					<img class="tt" src="images/tracks/yp1.jpeg" data-id="divId4"  style="width:200px; height:200px; margin-left:10px;"/>
 					</div>
 					</center>
 					<br/>
-					<div style="height:200px; width:840px; padding-top:30px; margin:0 auto; background:white; padding-left:40px; font-family:'Lora', serif; box-shadow: 0 10px 20px 0 rgba(0,0,0,1);">
+					<div id="outerbox" style="height:200px; width:840px; padding-top:30px; margin:0 auto; background:white; padding-left:40px; font-family:'Lora', serif; box-shadow: 0 10px 20px 0 rgba(0,0,0,1);">
 						<div id="divId0">
 							<b style="font-size:20px; margin-top:10px;">IEEE CSIS'17 contains the following four tracks: </b><br><br>
 							<ul style="list-style-type:square; list-style-position:inside;">
@@ -329,7 +330,16 @@
 					    <a href="https://3dexter.com/about-us/our-team/">Website</a></figcaption></figcaption>
 					    </figure>
 					</li>
-						<li>
+					<li>
+					    <figure>
+					    <div><img alt="moumita datta" src="images/speakers/moumitadatta.jpeg" height='200px' width='200px'/></div>
+						<figcaption style="width:70%;">
+					    <h3>Moumita Dutta</h3>
+						<span style="background: #2c3f52; color: #ed4e6e;">Project Manager of M.O.M., ISRO</span>
+					    <a href="http://www.vogue.in/content/the-women-of-isro/">Website</a></figcaption></figcaption>
+					    </figure>
+					</li>
+					<li>
 					    <figure>
 					    <div><img alt="Amitabha Bagchi" src="images/speakers/amitabha_bagchi.jpg" height='200px' width='200px'/></div>
 						<figcaption style="width:70%;">
@@ -459,7 +469,7 @@
 							<figcaption style="width:100%;">
 						       <h3 style="background: rgba(0,0,0,0.45); text-align:center; padding:5px; border-radius:5px;">Suraksha</h3>
 						       <p style="color:white; margin-top:10px;">
-						       This is a technical event, help geeks to learn and grow. The participants needed to search for an app in connection to Women safety and have to explore it.
+						       This is a technical event, help geeks to learn and grow. The participants are required to search for an app in connection to Women safety and have to explore it.
 						       </p>
 						    </figcaption>
 						    </figure>
@@ -554,7 +564,7 @@
 					</div>
 				</div>
 
-				<div class="otherSponsors1">
+				<div class="otherSponsors">
 					<a href="http://www.i3indyatechnologies.com/" style="color:#383844;">
 					<div class="coding_partner">
 			    		<div class="sponsor_header">
@@ -568,6 +578,13 @@
 							<h1>Registration Partner</h1>
 						</div>
 						<img src="images/sponsers/explara.png" style="width:280px; margin-top:50px" />
+					</div>
+					
+					<div class="gold_sponsor">
+						<div class="sponsor_header">
+							<h1>Other Sponsors</h1>
+						</div>
+						<img src="images/sponsers/silp.png" style="width:280px; height:100px;" />
 					</div>
 				</div>
 			</div> <!-- End of sonpsorPage -->
@@ -713,7 +730,7 @@
 	    <div class="section" id="section9"> <!-- Linked with Faqs Page -->
 	    	<div class="faqPage">
 		    	<h1 class="headings" style="color:white;">FAQs</h1>
-		    	<div class="expandingFaq">
+		    	<div class="expandingFaq" style="width:80%;">
 			      <div class="faqElement">
 			        <h2 class="faqQuestion">
 			          What is CSIS?
