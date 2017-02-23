@@ -68,11 +68,6 @@ ul#countdown li p {
     padding-top: 20px;
     padding-bottom: 10px;
 }
-.schedulePage {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
 
 /* About CSIS content*/
 .aboutcsiscontent > p {
@@ -83,16 +78,25 @@ ul#countdown li p {
     font-family: 'Nunito', sans-serif;
     text-align: justify;
 }
-
 /* End of aboutCSIS content */
 
-/* Team Page Style */
-.aboutusPage{
-    width:100%;
-    height: 80%;
-    overflow: hidden;
+/* For scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
 }
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+/* End of scrollbar style */
 
+/* Team Page Style */
 .cardRow2 {
    width: 950px;
    height: 210px;
@@ -150,12 +154,7 @@ ul#countdown li p {
 	height: 100%;
 }
 
-.speakerPage {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-
+/* Style for Speakers page */
 .cardRow {
    width: 1000px;
    height: 230px;
@@ -212,7 +211,7 @@ ul#countdown li p {
 }
 
 .headings{
-    font-size: 45px;
+    font-size: 40px;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: bold;
     text-align: center;
@@ -227,8 +226,8 @@ ul#countdown li p {
     height: 3px;
     background-color: #fac42b;
     margin: auto;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    margin-top: 1px;
+    margin-bottom: 3px;
 }
 
 /* for making box for sponsors*/
@@ -344,63 +343,23 @@ ul#countdown li p {
     position: inline-block;
 }
 
-.registerPage {
+/* Basic style for every page */
+.pagedata{
+    width:100%;
+    height: 90%;
+    overflow: hidden;
+}
+.pageholder{
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+}
+.pagecontainer {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-y: auto;
 }
-
-/* Style for coming soon page */
-.coming_soon {
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  font-size: 70px;
-}
-
-.O {
-  -webkit-animation: O-rotate 5s linear infinite;
-  animation: O-rotate 5s linear infinite;
-  position: relative;
-}
-.O::before {
-  content: "";
-  position: absolute;
-  top: -.5px;
-  left: 3.5px;
-}
-.O.left {
-  -webkit-transform-origin: 40px 5px;
-  transform-origin: 40px 5px;
-    color: #fecb16;
-}
-.O.right {
-  -webkit-transform-origin: -20px 5px;
-  transform-origin: -20px 5px;
-    color: #fecb16;
-}
-span.space{
-    margin: 0px 10px;
-}
-
-@-webkit-keyframes O-rotate {
-  to {
-    -webkit-transform: rotate(1turn);
-  }
-}
-
-@keyframes O-rotate {
-  to {
-    transform: rotate(1turn);
-  }
-}
-/* End of coming soon page */
-
-.sonpsorPage {
-    width: 100%;
-    height: 80%;
-    overflow: hidden;
-}
+/* End of basic style */
 
 .sponsorContainer{
     width: 800px;

@@ -15,14 +15,13 @@
 	<link rel="stylesheet" href="css/jquery.pagepiling.css" />
 	<link rel="stylesheet" href="css/dock.css"> <!-- Stylesheet for dock -->
 	<link rel="stylesheet" href="css/main.css">	<!-- Main stylesheet -->
-
 	<link rel="stylesheet" href="css/speaker.css"> <!-- Style for speaker page -->
-	<script type="text/javascript" src="js/speaker.js"></script>
-
+	
+	<script src="js/speaker.js"></script>
 	<script src="js/jquery-2.1.4.js"></script>
 	<script src="js/main.js"></script> <!-- Resource jQuery -->
-  	<script type="text/javascript" src="js/jquery.pagepiling.min.js"></script> <!-- For horizontal scroll -->
-	<script type="text/javascript" src="js/interface.js"></script> <!-- For dock -->
+  	<script src="js/jquery.pagepiling.min.js"></script> <!-- For horizontal scroll -->
+	<script src="js/interface.js"></script> <!-- For dock -->
 
     <script type="text/javascript">
 		$(document).ready(function() {
@@ -32,6 +31,9 @@
 	    		anchors: ['home', 'aboutcsis', 'schedule', 'tracks', 'speakers', 'workshop', 'events', 'registration','sponsors', 'team', 'faqs'],
 			    sectionsColor: ['black', 'white', 'white', '#262626', '#262626', '#262626', '#2b333b', 'white', '#2b333b', 'white', '#154360']
 			});
+
+			// stop scrolling through sections by using the mouse wheel/trackpad or touch gestures
+			$.fn.pagepiling.setAllowScrolling(false);
 	    });
     </script>
 
@@ -40,12 +42,9 @@
 		function check_for_mobile() {
 			var width = window.innerWidth
 			var height = window.innerHeight;
-			//console.log("width " + width + " height:" + height);
+			
 			if( width <= 950 || height <= 550 ){
 				window.location = "http://ieeecsis.org/m/index.html";
-				//console.log("In mobile");
-			} else {
-				//console.log("In Browser");
 			}
 		}
 		check_for_mobile();
@@ -58,11 +57,11 @@
 	    	<div class="homePage">
 	    		<div class="homeBackground" style="background-size:100% 100%;"> <!-- HomePage Background Image style -->
 		    		<a href="http://www.iiita.ac.in/"> <!-- Logo for IIITA -->
-		    		<img src="images/logos/iiita.png" style="width:110px; margin-left:20px; float:left;" />
+		    			<img src="images/logos/iiita.png" style="width:110px; margin-left:20px; float:left;"/>
 		    		</a>
 
 		    		<a href="#"> <!-- Logo of CSIS with tatacapital -->
-		    		<img src="images/logos/CSISLogo_with_tc.png" style="width:320px; margin-right:20px; float:right" />
+		    			<img src="images/logos/CSISLogo_with_tc.png" style="width:320px; margin-right:20px; float:right" />
 		    		</a>
 
 		    		<div class="mainDialog"> <!-- Style for Caption Box -->
@@ -70,170 +69,182 @@
 		    			<p class="schedule_date" style="margin-top:10px;">17th March,2017 - 19th March, 2017</p>
 		    			<p class="schedule_address" style="margin-bottom:20px;">IIIT Allahabad, UttarPradesh, India</p>
 
-		    		<center> <!-- CountDown Timer -->
-		    			<ul id="countdown">
-		    				<li>
-		    					<span id="days"></span>
-		    					<p class="days">DAYS</p>
-		    				</li>
-		    				<li>
-		    					<span id="hours"></span>
-		    					<p class="hours">HOURS</p>
-		    				</li>
-		    				<li>
-		    					<span id="minutes"></span>
-		    					<p class="minutes">MINUTES</p>
-		    				</li>
-		    				<li>
-		    					<span id="seconds"></span>
-		    					<p class="seconds">SECONDS</p>
-		    				</li>
-		    			</ul>
-					</center>
+			    		<center> <!-- CountDown Timer -->
+			    			<ul id="countdown">
+			    				<li>
+			    					<span id="days"></span>
+			    					<p class="days">DAYS</p>
+			    				</li>
+			    				<li>
+			    					<span id="hours"></span>
+			    					<p class="hours">HOURS</p>
+			    				</li>
+			    				<li>
+			    					<span id="minutes"></span>
+			    					<p class="minutes">MINUTES</p>
+			    				</li>
+			    				<li>
+			    					<span id="seconds"></span>
+			    					<p class="seconds">SECONDS</p>
+			    				</li>
+			    			</ul>
+						</center>
 					</div>
 				</div><!-- End of homeBackground -->
 			</div> <!-- End of homePage -->
-	    </div>
+	    </div> <!-- End of homepage Section -->
 
-	     <div class="section" id="section2"> <!-- Linked with About CSIS Page -->
-	    	<div class="aboutusPage">
+	    <div class="section" id="section2"> <!-- Linked with About CSIS Page -->
+	    	<div class="pagedata">
 	    		<h1 class="headings" style="color:black; font-size:35px;">About CSIS</h1> <!-- change cardHolder Height-->
-	    		</br>
-	    		<div class="aboutcsiscontent"> <!-- Content of About CSIS page -->
-			    	<p>
-		    		The IEEE Computer Society India Symposium (CSIS) 2017 is to be held at IIIT Allahabad fron 17th - 19th March 2017. It will be jointly conducted by the IEEE Computer Society India Council SAC, IEEE SP/C Joint Chapter, UP Section and IEEE Student Branch, IIIT Allahabad.
-		    		</p>
-		    		<p style="text-align:justify">
-	The main scope of this symposium is to bring together professionals, speakers, experts and other academicians so that the students can interact with and learn from them. The theme of the event is &quot;Humans & Computers&quot;. The symposium will include talks, workshops, and events on a wide array of CS/IT domains such as Human Computer Interaction, Machine Learning, Social and Complex Network: Behind the scenes, Cognitive Science and much more. As a platform to bring all the Computer Society chapters of India together, IEEE CSIS 2017 focuses on improving the future activities of all the different chapters of Computer Society all over India as well as to cast a focus on the immense depth of computer science.
-					</p>
-					<p style="text-align:justify">
-	The IEEE CSIS 2017 will be a three-day event and will provide the students and young professionals with an opportunity to interact with the esteemed speakers and professionals from all over India. Technical talks on currently flourishing fields and workshops thereafter based on the same will nurture the creative minds and open them to a new world. We look forward to your participation in IEEE CSIS'17.
-				</p>
-			</div> <!--End of aboutcsiscontent -->
+	    		<div class="pageholder">
+		    		<div class="pagecontainer">
+			    		<div class="aboutcsiscontent"> <!-- Content of About CSIS page -->
+							<p>
+				    			The IEEE Computer Society India Symposium (CSIS) 2017 is to be held at IIIT Allahabad from 17th - 19th March 2017. It will be jointly conducted by the IEEE Computer Society India Council SAC, IEEE SP/C Joint Chapter, UP Section and IEEE Student Branch, IIIT Allahabad.
+							</p>
+							<p style="text-align:justify">
+								The main scope of this symposium is to bring together professionals, speakers, experts and other academicians so that the students can interact with and learn from them. The theme of the event is &quot;Humans & Computers&quot;. The symposium will include talks, workshops, and events on a wide array of CS/IT domains such as Human Computer Interaction, Machine Learning, Social and Complex Network: Behind the scenes, Cognitive Science and much more. As a platform to bring all the Computer Society chapters of India together, IEEE CSIS 2017 focuses on improving the future activities of all the different chapters of Computer Society all over India as well as to cast a focus on the immense depth of computer science.
+							</p>
+							<p style="text-align:justify">
+								The IEEE CSIS 2017 will be a three-day event and will provide the students and young professionals with an opportunity to interact with the esteemed speakers and professionals from all over India. Technical talks on currently flourishing fields and workshops thereafter based on the same will nurture the creative minds and open them to a new world. We look forward to your participation in IEEE CSIS'17.
+							</p>
+						</div> <!--End of aboutcsiscontent -->
+					</div> <!-- End of pagecontainer -->
+				</div> <!-- End of pageholder -->
 	    	</div> <!-- End of aboutusPage -->
-	    </div> <!-- End of section2 -->
+	    </div> <!-- End of section2 About CSIS page -->
 
 	    <div class="section" id="section3"> <!-- Schedule Page -->
-	    	<div class="schedulePage">
+	    	<div class="pagedata">
 	    		<h1 class="headings" style="color:black;">Schedule</h1>
-	    		<!-- horizontal timeline -->
-	    		<section class="cd-horizontal-timeline"> <!-- Horizontal timeline -->
-					<div class="timeline">
-						<div class="events-wrapper">
-							<div class="events">
+	    		<div class="pageholder">
+			    	<div class="pagecontainer">
+			    		<!-- horizontal timeline -->
+			    		<section class="cd-horizontal-timeline"> <!-- Horizontal timeline -->
+							<div class="timeline">
+								<div class="events-wrapper">
+									<div class="events">
+										<ol>
+											<li><a href="#0" data-date="14/01/2017">14 Jan</a></li>
+											<li><a href="#0" data-date="28/01/2017" class="selected">28 Jan</a></li>
+											<li><a href="#0" data-date="17/03/2017">17 Mar</a></li>
+										</ol>
+										<span class="filling-line" aria-hidden="true"></span>
+									</div> <!-- End of events -->
+								</div> <!-- End of events-wrapper -->
+
+								<ul class="cd-timeline-navigation">
+									<li><a href="#0" class="prev inactive">Prev</a></li>
+									<li><a href="#0" class="next">Next</a></li>
+								</ul> <!-- End cd-timeline-navigation -->
+							</div> <!-- End of timeline -->
+
+							<div class="events-content">
 								<ol>
-									<li><a href="#0" data-date="14/01/2017">14 Jan</a></li>
-									<li><a href="#0" data-date="28/01/2017" class="selected">28 Jan</a></li>
-									<li><a href="#0" data-date="17/03/2017">17 Mar</a></li>
+									<li data-date="14/01/2017">
+										<h2 style="font-size:35px;">List of selected volunteers</h2>
+										<em style="font-size:15px;">January 14th, 2017</em>
+										<p style="font-size:25px;">
+											Following is the attached list of shortlisted volunteers for CSIS'17
+										</p>
+										<p style="font-size:20px;"><a href="shortlistedvolunteers.pdf">Click here to see list</a></p>
+									</li>
+									<li class="selected" data-date="28/01/2017">
+										<h2 style="font-size:35px;">Registrations</h2>
+										<em style="font-size:15px;">January 28th, 2017</em>
+										<p style="font-size:25px;">
+										Registrations have already begun!
+										</p>
+										<p style="font-size:20px;"><a href="#registration">Click here to register</a></p>
+									</li>
+									<li data-date="17/03/2017">
+										<h2 style="font-size:35px;">Symposium Launch</h2>
+										<em style="font-size:15px;">March 17th, 2017</em>
+										<p style="font-size:25px;">
+											 The event is scheduled to be held from 17-19 March 2017.
+										</p>
+									</li>
 								</ol>
-								<span class="filling-line" aria-hidden="true"></span>
-							</div> <!-- End of events -->
-						</div> <!-- End of events-wrapper -->
-
-						<ul class="cd-timeline-navigation">
-							<li><a href="#0" class="prev inactive">Prev</a></li>
-							<li><a href="#0" class="next">Next</a></li>
-						</ul> <!-- End cd-timeline-navigation -->
-					</div> <!-- End of timeline -->
-
-					<div class="events-content">
-						<ol>
-							<li data-date="14/01/2017">
-								<h2 style="font-size:35px;">List of selected volunteers</h2>
-								<em style="font-size:15px;">January 14th, 2017</em>
-								<p style="font-size:25px;">
-									Following is the attached list of shortlisted volunteers for CSIS'17
-								</p>
-								<p style="font-size:20px;"><a href="shortlistedvolunteers.pdf">Click here to see list</a></p>
-							</li>
-							<li class="selected" data-date="28/01/2017">
-								<h2 style="font-size:35px;">Registrations</h2>
-								<em style="font-size:15px;">January 28th, 2017</em>
-								<p style="font-size:25px;">
-								Registrations have already begun!
-								</p>
-								<p style="font-size:20px;"><a href="#registration">Click here to register</a></p>
-							</li>
-							<li data-date="17/03/2017">
-								<h2 style="font-size:35px;">Symposium Launch</h2>
-								<em style="font-size:15px;">March 17th, 2017</em>
-								<p style="font-size:25px;">
-									 The event is scheduled to be held from 17-19 March 2017.
-								</p>
-							</li>
-						</ol>
-					</div> <!-- End of events-content -->
-				</section> <!-- End of horizontal timeline -->
+							</div> <!-- End of events-content -->
+						</section> <!-- End of horizontal timeline -->
+					</div> <!-- End of pagecontainer -->
+				</div> <!-- End of pageholder -->
 			</div>
 	    </div> <!-- End of Schedule Page -->
 
 	    <div class="section" id="section13"> <!-- Track Page -->
-	    	<div class="schedulePage">
+	    	<div class="pagedata">
 	    		<h1 class="headings">Tracks</h1>
-	    		<div style="width:1000px; margin:0 auto;">
-	    			<center>
-	    			<div style="margin-top:20px;">
-	    			<img class="tt" src="images/tracks/cs.jpg" data-id="divId1" id="one" style="width:200px; height:200px;"/>
-					<img class="tt" src="images/tracks/cs_ec.jpg" data-id="divId2"  style="width:200px; height:200px; margin-left:10px;"/>
-					<img class="tt" src="images/tracks/wie2.jpeg" data-id="divId3"  style="width:200px; height:200px; margin-left:10px;"/>
-					<img class="tt" src="images/tracks/yp1.jpeg" data-id="divId4"  style="width:200px; height:200px; margin-left:10px;"/>
-					</div>
-					</center>
-					<br/>
-					<div id="outerbox" style="height:200px; width:840px; padding-top:30px; margin:0 auto; background:white; padding-left:40px; font-family:'Lora', serif; box-shadow: 0 10px 20px 0 rgba(0,0,0,1);">
-						<div id="divId0">
-							<b style="font-size:20px; margin-top:10px;">IEEE CSIS'17 contains the following four tracks: </b><br><br>
-							<ul style="list-style-type:square; list-style-position:inside;">
-								<li>Core Computer Science</li>
-								<li>Computer Science + Electronics</li>
-								<li>Women in Engineering (WIE) </li>
-								<li>Young Professionals</li>
-							</ul>
-						</div>
-						<div id="divId1" class="hideDivs">
-							<h1>Core Computer Science</h1>
-							The core computer science track will include workshops and events such as : <br>
-							<ul style="list-style-type:square; list-style-position:inside;">
-								<li>Talk and workshop on Unsupervised Machine Learning</li>
-								<li>Talk and workshop on 3D Object Recognition</li>
-								<li>Quizzero - A trivia extravaganza</li>
-								<li>Coding tutorial and competition</li>
-							</ul>
-						</div>
-						<div id="divId2" class="hideDivs">
-							<h1>Computer Science + Electronics</h1>
-							This track will include workshops and events such as: <br>
-							<ul style="list-style-type:square; list-style-position:inside;">
-								<li>Talk and workshop on Internet of Things</li>
-								<li>Talk and workshop on 3D Printing</li>
-								<li>Work Demonstration</li>
-							</ul>
-						</div>
-						<div id="divId3" class="hideDivs">
-							<h1>Women in Engineering (WIE)</h1>
-							This track will include talks and events such as: <br>
-							<ul style="list-style-type:square; list-style-position:inside;">
-								<li>Talk and workshop on building your own IoT development board with openwrt</li>
-								<li>Suraksha - An app for women safety </li>
-								<li>AdQueen</li>
-							</ul>
-						</div>
-						<div id="divId4" class="hideDivs">
-							<h1>Young Professionals</h1>
-							This track will include workshops and events such as: <br>
-							<ul style="list-style-type:square; list-style-position:inside;">
-								<li>Talk and workshop on "Dissolve the Box" paradigm of thought</li>
-								<li>Project Demonstration</li>
-							</ul>
-						</div>
-					</div>
-	    		</div>
+	    		<div class="pageholder">
+		    		<div class="pagecontainer">
+			    		<div style="width:1000px; margin:0 auto;">
+			    			<center>
+				    			<div style="margin-top:20px;">
+					    			<img class="tt" src="images/tracks/cs.jpg" data-id="divId1" id="one" style="width:200px; height:200px;"/>
+									<img class="tt" src="images/tracks/cs_ec.jpg" data-id="divId2"  style="width:200px; height:200px; margin-left:10px;"/>
+									<img class="tt" src="images/tracks/wie2.jpeg" data-id="divId3"  style="width:200px; height:200px; margin-left:10px;"/>
+									<img class="tt" src="images/tracks/yp1.jpeg" data-id="divId4"  style="width:200px; height:200px; margin-left:10px;"/>
+								</div>
+							</center>
+							<br/>
+							<div id="outerbox" style="height:200px; width:840px; padding-top:30px; margin:0 auto; background:white; padding-left:40px; font-family:'Lora', serif; box-shadow: 0 10px 20px 0 rgba(0,0,0,1);">
+								<div id="divId0">
+									<b style="font-size:20px; margin-top:10px;">IEEE CSIS'17 contains the following four tracks: </b><br><br>
+									<ul style="list-style-type:square; list-style-position:inside;">
+										<li>Core Computer Science</li>
+										<li>Computer Science + Electronics</li>
+										<li>Women in Engineering (WIE) </li>
+										<li>Young Professionals</li>
+									</ul>
+								</div>
+								<div id="divId1" class="hideDivs">
+									<h1>Core Computer Science</h1>
+									The core computer science track will include workshops and events such as : <br>
+									<ul style="list-style-type:square; list-style-position:inside;">
+										<li>Talk and workshop on Unsupervised Machine Learning</li>
+										<li>Talk and workshop on 3D Object Recognition</li>
+										<li>Quizzero - A trivia extravaganza</li>
+										<li>Coding tutorial and competition</li>
+									</ul>
+								</div>
+								<div id="divId2" class="hideDivs">
+									<h1>Computer Science + Electronics</h1>
+									This track will include workshops and events such as: <br>
+									<ul style="list-style-type:square; list-style-position:inside;">
+										<li>Talk and workshop on Internet of Things</li>
+										<li>Talk and workshop on 3D Printing</li>
+										<li>Work Demonstration</li>
+									</ul>
+								</div>
+								<div id="divId3" class="hideDivs">
+									<h1>Women in Engineering (WIE)</h1>
+									This track will include talks and events such as: <br>
+									<ul style="list-style-type:square; list-style-position:inside;">
+										<li>Talk and workshop on building your own IoT development board with openwrt</li>
+										<li>Suraksha - An app for women safety </li>
+										<li>AdQueen</li>
+									</ul>
+								</div>
+								<div id="divId4" class="hideDivs">
+									<h1>Young Professionals</h1>
+									This track will include workshops and events such as: <br>
+									<ul style="list-style-type:square; list-style-position:inside;">
+										<li>Talk and workshop on "Dissolve the Box" paradigm of thought</li>
+										<li>Project Demonstration</li>
+									</ul>
+								</div>
+							</div>
+			    		</div>
+	    			</div> <!-- End of pagecontainer -->
+				</div> <!-- End of pageholder -->
 	    		<style type="text/css">
 	    			.hideDivs{
 					    display:none; 
 					}
 	    		</style>
-	    		<script type="text/javascript">
+	    		<!-- Script to handle click on images -->
+	    		<script type="text/javascript"> 
 	    			$(".tt").on('click',function(){
 					   var hello = $(this).attr('data-id');
 					   $('.hideDivs').hide();
@@ -246,751 +257,725 @@
 
 	    <div class="section" id="section4"> <!-- Linked with Speakers Page -->
 	    	<!-- Main card holder class-->
-	    	<div class="speakerPage" id = "speakerID">
-		    	<h1 class="headings">Tentative Speakers</h1> <!-- change cardHolder Height-->
-
-		    	<!-- New Code added -->
-		    	<div class="container demo-3">
-   					<ul class="grid cs-style-4">
-					<li>
-					    <figure>
-					    <div><img alt="R. Kappagantu" src="images/speakers/KRamakrishna.jpg" height='200px' width='200px'/></div>
-						<figcaption>
-					    <h3>Dr. R. Kappagantu</h3>
-						<span style="background: #2c3f52; color: #ed4e6e;">Chair, IEEE R10 N&A</span>
-					    <a href="http://kramakrishna.com/">Website</a></figcaption>
-					    </figure>
-					</li>
-					<li>
-					    <figure>
-					    <div><img alt="M. M. Gore" src="images/speakers/mmg1.jpg" height='200px' width='200px' /></div>
-						<figcaption>
-					       <h3>Prof. M. M. Gore</h3>
-							<span style="background: #2c3f52; color: #ed4e6e;">MNNIT Allahabd</span>
-							<a href="http://www.mnnit.ac.in/index.php/department/engineering/csed/csedfp">Website</a>
-					    </figcaption>
-					    </figure>
-					</li>
-					<li>
-					<figure>
-					<div><img alt="Prof. Sudip Sanyal" src="images/speakers/sanyal.jpg" height='200px' width='200px' /></div>
-						<figcaption>
-					    <h3>Prof. Sudip Sanyal</h3>
-						<span style="background: #2c3f52; color: #ed4e6e;">IIIT Allahabad</span>
-					    <a href="https://www.linkedin.com/in/sudip-sanyal-76439b100">Linked In</a>
-					    </figcaption>
-					    </figure>
-					</li> 
-					<li>
-					    <figure>
-					    <div><img alt="Dr. Rahul Kala" src="images/speakers/rahul_kala.jpeg" height='200px' width='200px'/></div>
-						<figcaption>
-					    <h3>Dr. Rahul Kala</h3>
-						<span style="background: #2c3f52; color: #ed4e6e;">IIIT Allahabad</span>
-					    <a href="https://in.linkedin.com/in/rahul-kala-3b918822">Linked In</a>
-					    </figcaption>
-					    </figure>
-					</li>
-					<li>
-					    <figure>
-					    <div><img alt="Santosh Sharma" src="images/speakers/santosh.jpg" height='200px' width='200px' /></div>
-						<figcaption>
-					    <h3>Santosh Sharma</h3>
-						<span style="background: #2c3f52; color: #ed4e6e;">Author of Dissolve the Box</span>
-					    <a href="https://in.linkedin.com/in/santoshcas">Linked In</a>
-					    </figcaption>
-					    </figure>
-					</li>
-					<li>
-      					<figure>
-					    <div><img alt="Mr. Senthil Kumar" src="images/speakers/senthil.jpg" height='200px' width='200px' /></div>
-						<figcaption>
-					    <h3>Mr. Senthil Kumar</h3>
-						<span style="background: #2c3f52; color: #ed4e6e;"></span>
-					    <a href="https://www.linkedin.com/in/senthil-kumar-08088a19">Linked In</a>
-					    </figcaption>
-					    </figure>
-					</li>
-					<li>
-					    <figure>
-					    <div><img alt="Mr. Davesh Singh" src="images/speakers/davesh_singh.jpeg" height='200px' width='200px' /></div>
-						<figcaption>
-					    <h3>Mr. Davesh Singh</h3>
-						<span style="background: #2c3f52; color: #ed4e6e;">Assistant Director UIDAI</span>
-					    <a href="https://in.linkedin.com/in/davesh-singh-16788139">Linked In</a>
-					    </figcaption>
-					    </figure>
-					</li>
-					<li>
-					    <figure>
-					    <div><img alt="Raghav Sareen" src="images/speakers/Raghav_Sareen.jpg" height='200px' width='200px'/></div>
-						<figcaption style="width:70%;">
-					    <h3>Mr. Raghav Sareen</h3>
-						<span style="background: #2c3f52; color: #ed4e6e;">Product Development Director, 3Dexter</span>
-					    <a href="https://3dexter.com/about-us/our-team/">Website</a></figcaption></figcaption>
-					    </figure>
-					</li>
-					<li>
-					    <figure>
-					    <div><img alt="moumita datta" src="images/speakers/moumitadatta.jpeg" height='200px' width='200px'/></div>
-						<figcaption style="width:70%;">
-					    <h3>Moumita Dutta</h3>
-						<span style="background: #2c3f52; color: #ed4e6e;">Project Manager of M.O.M., ISRO</span>
-					    <a href="http://www.vogue.in/content/the-women-of-isro/">Website</a></figcaption></figcaption>
-					    </figure>
-					</li>
-					<li>
-					    <figure>
-					    <div><img alt="Amitabha Bagchi" src="images/speakers/amitabha_bagchi.jpg" height='200px' width='200px'/></div>
-						<figcaption style="width:70%;">
-					    <h3>Dr. Amitabha Bagchi</h3>
-						<span style="background: #2c3f52; color: #ed4e6e;">Associate Prof. IIT Delhi</span>
-					    <a href="http://www.cse.iitd.ac.in/~bagchi/">Website</a></figcaption></figcaption>
-					    </figure>
-					</li>
-					</ul>
-				</div><!-- End of container demo-3 -->
+	    	<div class="pagedata">
+		    	<h1 class="headings">Speakers</h1> <!-- change cardHolder Height-->
+		    	<div class="pageholder">
+		    		<div class="pagecontainer"> 
+				    	<div class="container demo-3">
+		   					<ul class="grid cs-style-4">
+								<li>
+								    <figure>
+								    <div><img alt="R. Kappagantu" src="images/speakers/KRamakrishna.jpg" height='200px' width='200px'/></div>
+									<figcaption>
+									    <h3>Dr. R. Kappagantu</h3>
+										<span style="background: #2c3f52; color: #ed4e6e;">Chair, IEEE R10 N&A</span>
+									    <a href="http://kramakrishna.com/">Website</a>
+								    </figcaption>
+								    </figure>
+								</li>
+								<li>
+								    <figure>
+								    <div><img alt="M. M. Gore" src="images/speakers/mmg1.jpg" height='200px' width='200px' /></div>
+									<figcaption>
+								       <h3>Prof. M. M. Gore</h3>
+										<span style="background: #2c3f52; color: #ed4e6e;">MNNIT Allahabd</span>
+										<a href="http://www.mnnit.ac.in/index.php/department/engineering/csed/csedfp">Website</a>
+								    </figcaption>
+								    </figure>
+								</li>
+								<li>
+									<figure>
+									<div><img alt="Prof. Sudip Sanyal" src="images/speakers/sanyal.jpg" height='200px' width='200px' /></div>
+										<figcaption>
+									    <h3>Prof. Sudip Sanyal</h3>
+										<span style="background: #2c3f52; color: #ed4e6e;">IIIT Allahabad</span>
+									    <a href="https://www.linkedin.com/in/sudip-sanyal-76439b100">Linked In</a>
+									    </figcaption>
+								    </figure>
+								</li>
+								<li>
+								    <figure>
+									<div><img alt="Dr. Rahul Kala" src="images/speakers/rahul_kala.jpeg" height='200px' width='200px'/></div>
+										<figcaption>
+									    <h3>Dr. Rahul Kala</h3>
+										<span style="background: #2c3f52; color: #ed4e6e;">IIIT Allahabad</span>
+									    <a href="https://in.linkedin.com/in/rahul-kala-3b918822">Linked In</a>
+									    </figcaption>
+								    </figure>
+								</li>
+								<br>
+								<li>
+								    <figure>
+								    <div><img alt="Santosh Sharma" src="images/speakers/santosh.jpg" height='200px' width='200px' /></div>
+										<figcaption>
+									    <h3>Santosh Sharma</h3>
+										<span style="background: #2c3f52; color: #ed4e6e;">Author of Dissolve the Box</span>
+									    <a href="https://in.linkedin.com/in/santoshcas">Linked In</a>
+									    </figcaption>
+								    </figure>
+								</li>
+								<li>
+			      					<figure>
+								    <div><img alt="Mr. Senthil Kumar" src="images/speakers/senthil.jpg" height='200px' width='200px' /></div>
+										<figcaption>
+									    <h3>Mr. Senthil Kumar</h3>
+										<span style="background: #2c3f52; color: #ed4e6e;"></span>
+									    <a href="https://www.linkedin.com/in/senthil-kumar-08088a19">Linked In</a>
+									    </figcaption>
+								    </figure>
+								</li>
+								<li>
+								    <figure>
+								    <div><img alt="Mr. Davesh Singh" src="images/speakers/davesh_singh.jpeg" height='200px' width='200px' /></div>
+										<figcaption>
+									    <h3>Mr. Davesh Singh</h3>
+										<span style="background: #2c3f52; color: #ed4e6e;">Assistant Director UIDAI</span>
+									    <a href="https://in.linkedin.com/in/davesh-singh-16788139">Linked In</a>
+									    </figcaption>
+								    </figure>
+								</li>
+								<li>
+								    <figure>
+								    <div><img alt="Raghav Sareen" src="images/speakers/Raghav_Sareen.jpg" height='200px' width='200px'/></div>
+										<figcaption style="width:70%;">
+									    <h3>Mr. Raghav Sareen</h3>
+										<span style="background: #2c3f52; color: #ed4e6e;">Product Development Director, 3Dexter</span>
+									    <a href="https://3dexter.com/about-us/our-team/">Website</a>
+									    </figcaption>
+								    </figure>
+								</li>
+								<br>
+								<li>
+								    <figure>
+								    <div><img alt="moumita datta" src="images/speakers/moumitadatta.jpeg" height='200px' width='200px'/></div>
+										<figcaption style="width:70%;">
+									    <h3>Moumita Dutta</h3>
+										<span style="background: #2c3f52; color: #ed4e6e;">Project Manager of M.O.M., ISRO</span>
+									    <a href="http://www.vogue.in/content/the-women-of-isro/">Website</a>
+									    </figcaption>
+								    </figure>
+								</li>
+								<li>
+								    <figure>
+								    <div><img alt="Amitabha Bagchi" src="images/speakers/amitabha_bagchi.jpg" height='200px' width='200px'/></div>
+										<figcaption style="width:70%;">
+									    <h3>Dr. Amitabha Bagchi</h3>
+										<span style="background: #2c3f52; color: #ed4e6e;">Associate Prof. IIT Delhi</span>
+									    <a href="http://www.cse.iitd.ac.in/~bagchi/">Website</a>
+									    </figcaption>
+								    </figure>
+								</li>
+							</ul>
+						</div><!-- End of container demo-3 -->
+					</div> <!-- End of pagecontainer -->
+				</div> <!-- End of pageholder -->
 	    	</div> <!-- End of speakerBackground -->
 	    </div> <!-- End of Section4 -->
 	    <!-- End of new added code -->
 
 	    <div class="section" id="section10"> <!-- Linked with Workshop Page -->
-	    	<!-- Main card holder class-->
-	    	<div class="speakerPage">
+	    	<div class="pagedata">
 		    	<h1 class="headings">Workshops</h1> <!-- change cardHolder Height-->
-
-		    	<!-- New Code added -->
-		    	<div class="container demo-3">
-   					<ul class="grid cs-style-4">
-						<li style="width:300px;">
-						    <figure>
-						    <div><img alt="Internet of Things" src="images/workshops/iot.jpg" height='200px' width='300px' /></div>
-							<figcaption style="width:100%;">
-						       <h3>Building your own IoT development board</h3>
-						       <a href="https://www.linkedin.com/in/senthil-kumar-08088a19">-By Mr. Senthil Kumar</a>
-						    </figcaption>
-						    </figure>
-						</li>
-						<li style="width:300px;">
-						    <figure>
-						    <div><img alt="Unsupervised Machine Learning" src="images/workshops/ml.png" height='200px' width='300px' /></div>
-							<figcaption style="width:100%;">
-						       <h3>Unsupervised Machine Learning</h3>
-								<a href="https://www.linkedin.com/in/sudip-sanyal-76439b100">-By Sudip Sanyal</a>
-						    </figcaption>
-						    </figure>
-						</li>
-						<li style="width:300px;">
-						    <figure>
-						    <div><img alt="3D Object Recognition" src="images/workshops/3d.png" height='200px' width='300px' /></div>
-							<figcaption style="width:100%;">
-						       <h3>3D Object Recognition</h3>
-								<a href="https://in.linkedin.com/in/rahul-kala-3b918822">-By Rahul Kala</a>
-						    </figcaption>
-						    </figure>
-						</li> 
-						<br/>
-						<li style="width:300px;">
-						    <figure>
-						    <div><img alt="3D Printing" src="images/workshops/3dp.png" height='200px' width='300px' /></div>
-							<figcaption style="width:100%;">
-						       <h3>3D Printing</h3>
-								<a href="https://3dexter.com/">-By 3Dexter</a>
-						    </figcaption>
-						    </figure>
-						</li>
-						<li style="width:300px;">
-						    <figure>
-						    <div><img alt="Dissolve the Box Thinking" src="images/workshops/dtb.png" height='200px' width='300px' /></div>
-							<figcaption style="width:100%;">
-						       <h3>Dissolve the Box Thinking</h3>
-								<a href="https://in.linkedin.com/in/santoshcas">-By Santosh Sharma</a>
-						    </figcaption>
-						    </figure>
-						</li>
-					</ul>
-				</div><!-- End of container demo-3 -->
+		    	<div class="pageholder">
+		    		<div class="pagecontainer">
+				    	<div class="container demo-3">
+		   					<ul class="grid cs-style-4">
+								<li style="width:300px;">
+								    <figure>
+								    <div><img alt="Internet of Things" src="images/workshops/iot.jpg" height='200px' width='300px' /></div>
+										<figcaption style="width:100%;">
+									       <h3>Building your own IoT development board</h3>
+									       <a href="https://www.linkedin.com/in/senthil-kumar-08088a19">-By Mr. Senthil Kumar</a>
+									    </figcaption>
+								    </figure>
+								</li>
+								<li style="width:300px;">
+								    <figure>
+								    <div><img alt="Unsupervised Machine Learning" src="images/workshops/ml.png" height='200px' width='300px' /></div>
+										<figcaption style="width:100%;">
+									       <h3>Unsupervised Machine Learning</h3>
+											<a href="https://www.linkedin.com/in/sudip-sanyal-76439b100">-By Sudip Sanyal</a>
+									    </figcaption>
+								    </figure>
+								</li>
+								<li style="width:300px;">
+								    <figure>
+								    <div><img alt="3D Object Recognition" src="images/workshops/3d.png" height='200px' width='300px' /></div>
+										<figcaption style="width:100%;">
+									       <h3>3D Object Recognition</h3>
+											<a href="https://in.linkedin.com/in/rahul-kala-3b918822">-By Rahul Kala</a>
+									    </figcaption>
+								    </figure>
+								</li> 
+								<br/>
+								<li style="width:300px;">
+								    <figure>
+								    <div><img alt="3D Printing" src="images/workshops/3dp.png" height='200px' width='300px' /></div>
+										<figcaption style="width:100%;">
+									       <h3>3D Printing</h3>
+											<a href="https://3dexter.com/">-By 3Dexter</a>
+									    </figcaption>
+								    </figure>
+								</li>
+								<li style="width:300px;">
+								    <figure>
+								    <div><img alt="Dissolve the Box Thinking" src="images/workshops/dtb.png" height='200px' width='300px' /></div>
+										<figcaption style="width:100%;">
+									       <h3>Dissolve the Box Thinking</h3>
+											<a href="https://in.linkedin.com/in/santoshcas">-By Santosh Sharma</a>
+									    </figcaption>
+								    </figure>
+								</li>
+							</ul>
+						</div><!-- End of container demo-3 -->
+					</div> <!-- End of pagecontainer -->
+				</div> <!-- End of pageholder -->
 	    	</div> <!-- End of speakerBackground -->
 	    </div> <!-- End of Section10 -->
 
 	    <div class="section" id="section11"> <!-- Linked with Workshop Page -->
-	    	<!-- Main card holder class-->
-	    	<div class="speakerPage">
+	    	<div class="pagedata">
 		    	<h1 class="headings">Events</h1> <!-- change cardHolder Height-->
-
-		    	<!-- New Code added -->
-		    	<div class="container demo-3">
-   					<ul class="grid cs-style-4">
-						<li style="width:300px;">
-						    <figure>
-						    <div><img alt="Quizzero" src="images/events/quiz1.jpeg" height='200px' width='300px' /></div>
-							<figcaption style="width:100%;">
-						       <h3 style="background: rgba(0,0,0,0.45); text-align:center; padding:5px; border-radius:5px;">Quizzero</h3>
-						       <p style="color:white; margin-top:10px;">Are you connoisseur of trivia? Do you consume facts and figure with aninsatiable hunger? Then This is your stage. IEEE CSIS'17 presents you with Quizzero, the ultimate test of your general knowledge.</p>
-						    </figcaption>
-						    </figure>
-						</li>
-						<li style="width:300px;">
-						    <figure>
-						    <div><img alt="Coding Competition" src="images/events/coding.jpg" height='200px' width='300px' /></div>
-							<figcaption style="width:100%;">
-						       <h3 style="background: rgba(0,0,0,0.45); text-align:center; padding:5px; border-radius:5px;">Coding Competition</h3>
-						       <p style="color:white; margin-top:10px;">
-						       A coding extravaganza where you can develop and show off your coding skills to win exciting prizes!
-						       </p>
-						    </figcaption>
-						    </figure>
-						</li>
-						<li style="width:300px;">
-						    <figure>
-						    <div><img alt="Work Demonstration" src="images/events/work.png" height='200px' width='300px' /></div>
-							<figcaption style="width:100%;">
-						       <h3 style="background: rgba(0,0,0,0.45); text-align:center; padding:5px; border-radius:5px;">Work Demonstration</h3>
-						       <p style="color:white; margin-top:10px;">
-						       	Work demonstration is an event where the you will be tested on the knowledge gained in the workshops and talks plus any prior knowledge in the field.
-						       </p>
-						    </figcaption>
-						    </figure>
-						</li> <br/>
-						<li style="width:300px;">
-						    <figure>
-						    <div><img alt="Project Demonstration" src="images/events/project.jpg" height='200px' width='300px' /></div>
-							<figcaption style="width:100%;">
-						       <h3 style="background: rgba(0,0,0,0.45); text-align:center; padding:5px; border-radius:5px;">Project Demonstration</h3>
-						       <p style="color:white; margin-top:10px;">
-						       It is a three phase event. You have to come up with some ideas and demonstrate you project through posters, hardware models and pdfs. This is the stage to showcase your creativity.
-						       </p>
-						    </figcaption>
-						    </figure>
-						</li>
-						<li style="width:300px;">
-						    <figure>
-						    <div><img alt="Suraksha" src="images/events/surksha.jpg" height='200px' width='300px' /></div>
-							<figcaption style="width:100%;">
-						       <h3 style="background: rgba(0,0,0,0.45); text-align:center; padding:5px; border-radius:5px;">Suraksha</h3>
-						       <p style="color:white; margin-top:10px;">
-						       This is a technical event, help geeks to learn and grow. The participants are required to search for an app in connection to Women safety and have to explore it.
-						       </p>
-						    </figcaption>
-						    </figure>
-						</li> 
-						<li style="width:300px;">
-						     <figure>
-						    <div><img alt="AdQueen" src="images/events/ad.jpeg" height='200px' width='300px' /></div>
-							<figcaption style="width:100%;">
-						       <h3 style="background: rgba(0,0,0,0.45); text-align:center; padding:5px; border-radius:5px;">AdQueen</h3>
-						       <p style="color:white; margin-top:10px;">
-						       This will be a non-tech event. You will be given a prop on the spot and you have to speak/act/improvise using that prop.
-						       </p>
-						    </figcaption>
-						    </figure>
-						</li> 
-						<br/>
-					</ul>
-				</div><!-- End of container demo-3 -->
+		    	<div class="pageholder">
+		    		<div class="pagecontainer">
+				    	<div class="container demo-3">
+		   					<ul class="grid cs-style-4">
+								<li style="width:300px;">
+								    <figure>
+								    <div><img alt="Quizzero" src="images/events/quiz1.jpeg" height='200px' width='300px' /></div>
+										<figcaption style="width:100%;">
+									       <h3 style="background: rgba(0,0,0,0.45); text-align:center; padding:5px; border-radius:5px;">Quizzero</h3>
+									       <p style="color:white; margin-top:10px;">Are you connoisseur of trivia? Do you consume facts and figure with aninsatiable hunger? Then this is your stage. IEEE CSIS'17 presents you with Quizzero, the ultimate test of your general knowledge.</p>
+									    </figcaption>
+								    </figure>
+								</li>
+								<li style="width:300px;">
+								    <figure>
+								    <div><img alt="Coding Competition" src="images/events/coding.jpg" height='200px' width='300px' /></div>
+										<figcaption style="width:100%;">
+									       <h3 style="background: rgba(0,0,0,0.45); text-align:center; padding:5px; border-radius:5px;">Coding Competition</h3>
+									       <p style="color:white; margin-top:10px;">
+									       A coding extravaganza where you can develop and show off your coding skills to win exciting prizes!
+									       </p>
+									    </figcaption>
+								    </figure>
+								</li>
+								<li style="width:300px;">
+								    <figure>
+								    <div><img alt="Work Demonstration" src="images/events/work.png" height='200px' width='300px' /></div>
+										<figcaption style="width:100%;">
+									       <h3 style="background: rgba(0,0,0,0.45); text-align:center; padding:5px; border-radius:5px;">Work Demonstration</h3>
+									       <p style="color:white; margin-top:10px;">
+									       	Work demonstration is an event where you will be tested on the knowledge gained in the workshops and talks plus any prior knowledge in the field.
+									       </p>
+									    </figcaption>
+								    </figure>
+								</li> <br/>
+								<li style="width:300px;">
+								    <figure>
+								    <div><img alt="Project Demonstration" src="images/events/project.jpg" height='200px' width='300px' /></div>
+										<figcaption style="width:100%;">
+									       <h3 style="background: rgba(0,0,0,0.45); text-align:center; padding:5px; border-radius:5px;">Project Demonstration</h3>
+									       <p style="color:white; margin-top:10px;">
+									       It is a three phase event. You have to come up with some ideas and demonstrate your project through posters, hardware models and pdfs. This is the stage to showcase your creativity.
+									       <a href="https://docs.google.com/document/d/1bv_Fx6BaQZfCiqnUHNwcZNCGd6mb71CMc__sr0XVtw8/edit#">Details</a>
+									       </p>
+									    </figcaption>
+								    </figure>
+								</li>
+								<li style="width:300px;">
+								    <figure>
+								    <div><img alt="Suraksha" src="images/events/surksha.jpg" height='200px' width='300px' /></div>
+										<figcaption style="width:100%;">
+									       <h3 style="background: rgba(0,0,0,0.45); text-align:center; padding:5px; border-radius:5px;">Suraksha</h3>
+									       <p style="color:white; margin-top:10px;">
+									       This is a technical event, help geeks to learn and grow. The participants are required to search for an app in connection with Women safety and have to explore it.
+									       </p>
+									    </figcaption>
+								    </figure>
+								</li> 
+								<li style="width:300px;">
+								     <figure>
+								    <div><img alt="AdQueen" src="images/events/ad.jpeg" height='200px' width='300px' /></div>
+										<figcaption style="width:100%;">
+									       <h3 style="background: rgba(0,0,0,0.45); text-align:center; padding:5px; border-radius:5px;">AdQueen</h3>
+									       <p style="color:white; margin-top:10px;">
+									       This will be a non-tech event. You will be given a prop on the spot and you have to speak/act/improvise using that prop.
+									       </p>
+									    </figcaption>
+								    </figure>
+								</li> 
+								<br/>
+							</ul>
+						</div><!-- End of container demo-3 -->
+					</div> <!-- End of pagecontainer -->
+				</div> <!-- End of pageholder -->
 	    	</div> <!-- End of speakerBackground -->
-	    </div> <!-- End of Section10 -->
+	    </div> <!-- End of Section11 -->
 
 	    <div class="section" id="section5"> <!-- Linked with Registration Page -->
-	    	<div class="registerPage">
-	    		<h1 class="headings" style="color:black;">Registration</h1> <br/>
-	    		
-	    		<center>
-	    		<div style="width:900px; text-align:justify;">
-	    			<h2>The IEEE CSIS 2017 has a two phase registration process: </h2><br/>
-						<div style="font-size:18px;">
-						Phase 1 registration will require you to provide us with some basic information about yourself and a few questions related to your technical interests. Based on your response, you would be sent an invitation for Phase 2 registration, which will include the fee transaction process. 
-						<br/>The registration for IIIT-Allahabad students would be done offline.<br/><br/>
+	    	<div class="pagedata">
+	    		<h1 class="headings" style="color:black;">Registration</h1>
+	    		<div class="pageholder">
+		    		<div class="pagecontainer">
+			    		<center>
+			    		<div style="width:900px; text-align:justify;">
+			    			<h2>The IEEE CSIS 2017 has a two phase registration process: </h2><br/>
+							<div style="font-size:16px;">
+								<b>Phase 1</b> <br>
+								Phase 1 of registration will require you to provide us with some basic information about yourself and a few questions related to your technical interests. 
+								<br><b>Phase 2</b> <br>
+								Based on your response, you would be sent an invitation for Phase 2 registration, which will include the fee transaction process. 
+								<br/>The registration for IIIT-Allahabad students would be done offline.<br/><br/>
 
-						The registration fee is as follows:- <br/><br/>
-						&nbsp;&nbsp; 1. IEEE CS Members : INR 1200. <br/>
-						&nbsp;&nbsp; 2. IEEE Members : INR 1400. <br/>
-						&nbsp;&nbsp; 3. Non-IEEE Member : INR 1500. <br/> <br/>
+								The registration fee is as follows:- <br/><br/>
+								&nbsp;&nbsp; 1. IEEE CS Members : INR 1200. <br/>
+								&nbsp;&nbsp; 2. IEEE Members : INR 1400. <br/>
+								&nbsp;&nbsp; 3. Non-IEEE Member : INR 1500. <br/> <br/>
 
-						The registration fee includes <b>boarding</b> and <b>lodging</b> charges. <br/><br/>
+								The registration fee includes <b>boarding</b> and <b>lodging</b> charges. <br/><br/>
 
-						You can register by clicking any one of the below links: <br/>
-						<a href="https://in.explara.com/widget-new/ieee-csis-2017" target="_blank" style="color:black; text-decoration:underline">Click here</a>			
-						<br/><br/>
-						If you have any queries regarding how to reach IIITA, please contact the travel support team's member of your respective section. The list is attached below. <br/>
-						<a href="travel_plan.pdf" target="_blank" style="color:black; text-decoration:underline">Team list</a>	
-						</div>  
-				</div>
-	    		</center>
+								You can register by clicking the link provided below: <br/>
+								<a href="https://in.explara.com/widget-new/ieee-csis-2017" target="_blank" style="color:black; text-decoration:underline">Click here</a>			
+								<br/><br/>
+								If you have any queries regarding how to reach IIITA, please contact the travel support team's member of your respective section. The list is attached below. <br/>
+								<a href="travel_plan.pdf" target="_blank" style="color:black; text-decoration:underline">Team list</a>	
+							</div>  
+						</div>
+			    		</center>
+	    			</div> <!-- End of pagecontainer -->
+				</div> <!-- End of pageholder -->
 	    	</div> <!-- end of registerPage -->
 	    </div> <!-- End of Registration Page  -->
 
 	    <div class="section" id="section6"> <!-- Sponsors Page -->
-			<center><h1 style="color:white;">Our Sponsors</h1></center><br/>
-	    	<div id = "sponsorID" class="sonpsorPage">
-	    		<div class="top_div">
-		    		<div class="title_sponsors">
-			    		<div class="sponsor_header">
-			    			<h1>Title Sponsor</h1>
-			    		</div>
-			    		<img src="images/sponsers/tata_capital_logo.jpg" style="width:340px;" />
-			    	</div>
-			    </div>
-		    	</h1>
-		    	<div class="otherSponsors">
-	    			<div class="major_sponsors">
-			    		<div class="sponsor_header">
-			    			<h1>Major Sponsors</h1>
-			    		</div>
-			    		<img src='images/sponsers/upsection.png' style="height:100px; width:100px;">
-			    		<img src='images/sponsers/signal1.gif' style="height:120px; width:410px;">
-			    		<img src='images/sponsers/csLogo.jpg' style="height:100px; width:150px;">
-		    		</div>
-		    	</div>
+	    	<div class="pagedata">
+				<center><h1 class="headings" style="color:white;">Our Sponsors</h1></center>
+		    	<div class="pageholder">
+			    	<div class="pagecontainer">
+			    		<div class="top_div">
+				    		<div class="title_sponsors">
+					    		<div class="sponsor_header">
+					    			<h1>Title Sponsor</h1>
+					    		</div>
+					    		<img src="images/sponsers/tata_capital_logo.jpg" style="width:340px;" />
+					    	</div>
+					    </div>
+				    	
+				    	<div class="otherSponsors">
+			    			<div class="major_sponsors">
+					    		<div class="sponsor_header">
+					    			<h1>Major Sponsors</h1>
+					    		</div>
+					    		<img src='images/sponsers/upsection.png' style="height:100px; width:100px;">
+					    		<img src='images/sponsers/signal1.gif' style="height:120px; width:410px;">
+					    		<img src='images/sponsers/csLogo.jpg' style="height:100px; width:150px;">
+				    		</div>
+				    	</div>
 
-		    	<div class="otherSponsors">
-	    			<div class="education_partner" style="float:clear;">
-			    		<div class="sponsor_header">
-			    			<h1>Education Partner</h1>
-			    		</div>
-			    		<img src="images/sponsers/wiley_logo.png" style="width:200px; margin-top:40px;">
-		    		</div>
-	    			<div class="priting_partner">
-						<div class="sponsor_header">
-							<h1>3D Printing Partner</h1>
+				    	<div class="otherSponsors">
+			    			<div class="education_partner" style="float:clear;">
+					    		<div class="sponsor_header">
+					    			<h1>Education Partner</h1>
+					    		</div>
+					    		<img src="images/sponsers/wiley_logo.png" style="width:200px; margin-top:40px;">
+				    		</div>
+			    			<div class="priting_partner">
+								<div class="sponsor_header">
+									<h1>3D Printing Partner</h1>
+								</div>
+								<img src="images/sponsers/3dexter.jpg" style="width:200px; margin-top:40px;">
+							</div>
+							<div class="gold_sponsor">
+								<div class="sponsor_header">
+									<h1>Coding Partner</h1>
+								</div>
+								<img src="images/sponsers/code_buddy.png" style="width:300px;">
+							</div>
 						</div>
-						<img src="images/sponsers/3dexter.jpg" style="width:200px; margin-top:40px;">
-					</div>
-					<div class="gold_sponsor">
-						<div class="sponsor_header">
-							<h1>Coding Partner</h1>
-						</div>
-						<img src="images/sponsers/code_buddy.png" style="width:300px;">
-					</div>
-				</div>
 
-				<div class="otherSponsors">
-					<a href="http://www.i3indyatechnologies.com/" style="color:#383844;">
-					<div class="coding_partner">
-			    		<div class="sponsor_header">
-			    			<h1>Event Partner</h1>
-			    		</div>
-			    		<img src="images/sponsers/i3indyaTechnologies.png" style="width:150px;" />
-			    	</div>
-			    	</a>
-		    		<div class="coding_partner" style="float:right;">
-						<div class="sponsor_header">
-							<h1>Registration Partner</h1>
+						<div class="otherSponsors">
+							<a href="http://www.i3indyatechnologies.com/" style="color:#383844;">
+							<div class="coding_partner">
+					    		<div class="sponsor_header">
+					    			<h1>Event Partner</h1>
+					    		</div>
+					    		<img src="images/sponsers/i3indyaTechnologies.png" style="width:150px;" />
+					    	</div>
+					    	</a>
+				    		<div class="coding_partner" style="float:right;">
+								<div class="sponsor_header">
+									<h1>Registration Partner</h1>
+								</div>
+								<img src="images/sponsers/explara.png" style="width:280px; margin-top:50px" />
+							</div>
+							
+							<div class="gold_sponsor">
+								<div class="sponsor_header">
+									<h1>Other Sponsors</h1>
+								</div>
+								<img src="images/sponsers/silp.png" style="width:280px; height:140px;" />
+							</div>
 						</div>
-						<img src="images/sponsers/explara.png" style="width:280px; margin-top:50px" />
-					</div>
-					
-					<div class="gold_sponsor">
-						<div class="sponsor_header">
-							<h1>Other Sponsors</h1>
-						</div>
-						<img src="images/sponsers/silp.png" style="width:280px; height:100px;" />
-					</div>
-				</div>
-			</div> <!-- End of sonpsorPage -->
+					</div> <!-- End of sonpsorPage -->
+				</div> <!-- End of pagecontainer -->
+			</div>
 	    </div> <!-- End of Sponsor Page -->
 
 	    <div class="section" id="section7"> <!-- Linked with Team Page -->
-	    	<center><h1>Our Team</h1></center>
-	    	<div id = "teamID" class="aboutusPage">
-	    		<!-- for mentors-->
-		    		<div style="width:1000px; margin:0 auto; text-align:center; position:inline-block;">
-		    			<center><h1 style="margin-top:20px;">Mentors</h1></center>
-		    			<div class = "cardRow2" style="margin-top:4px;">
-			    			<a href="#">
-						    	<div class = "card2">
-						    		<img src='images/team/snsingh.jpg'>
-						    		<div class="card2-container">
-								    	<h4>Prof. S.N. Singth</h4>
-								    	<p>Chair Elect IEEE India Council</p>
-									</div>
-					    		</div>
-				    		</a>
-							<a href="#">
-						    	<div class = "card2">
-						    		<img src='images/team/ramkumar.JPG'>
-						    		<div class="card2-container">
-								    	<h4>Prof. J. Ramkumar</h4>
-								    	<p>Chairperson IEEE UP Section</p>
-									</div>
-					    		</div>
-				    		</a>
-			    			<a href="#">
-						    	<div class = "card2">
-						    		<img src='images/team/us_tiwari.jpg'>
-						    		<div class="card2-container">
-								    	<h4>Prof. U.S. Tiwary</h4>
-								    	<p>Chairperson IEEE SP/C Joint Chapter UP Section</p>
-									</div>
-					    		</div>
-				    		</a>
-				    		<a href="#">
-						    	<div class = "card2">
-						    		<img src='images/team/shekhar_verma.jpg'>
-						    		<div class="card2-container">
-								    	<h4>Prof. Shekhar Verma</h4>
-								    	<p>Faculty Advisor IEEE CS Chapter IIIT Allahabad</p>
-									</div>
-					    		</div>
-				    		</a>
-				    		<a href="#">
-						    	<div class = "card2">
-						    		<img src='images/team/kumar_vaibhav.jpg'>
-						    		<div class="card2-container">
-								    	<h4>Dr. Kumar Vaibhav Srivastav</h4>
-								    	<p>Vice Chair IEEE UP Section</p>
-									</div>
-					    		</div>
-				    		</a>
-				    	</div> <br/>
-			    		<div class="cardRow2">
-			    			<a href="#">
-						    	<div class = "card2" style="margin-left:100px;">
-						    		<img src='images/team/rajat_singh.jpg'>
-						    		<div class="card2-container">
-								    	<h4>Dr. Rajat Singh</h4>
-								    	<p>Faculty Counselor IEEE Student Branch IIITA</p>
-									</div>
-					    		</div>
-				    		</a>
-				    		<a href="#">
-						    	<div class = "card2">
-						    		<img src='images/team/sksingh.jpg'>
-						    		<div class="card2-container">
-								    	<h4>Dr. Satish Singh</h4>
-								    	<p>Secretary IEEE SP/C Joint Chapter UP Section</p>
-									</div>
-					    		</div>
-				    		</a>
-				    		<a href="#">
-						    	<div class = "card2">
-						    		<img src='images/team/amit_dhar.jpg'>
-						    		<div class="card2-container">
-								    	<h4>Dr. Amit Dhar</h4>
-								    	<p>IIIT Allahabad</p>
-									</div>
-					    		</div>
-				    		</a>
-							<a href="www.prasanth.xyz">
-						    	<div class = "card2">
-						    		<img src='images/team/Prasanth.jpg'>
-						    		<div class="card2-container">
-								    	<h4>Prasanth Mohan</h4>
-								    	<p>Student & Young Professional Activities IEEE Computer Society</p>
-									</div>
-					    		</div>
-				    		</a>
-				    	</div>
+	    	<div class="pagedata">
+	    		<h1 class="headings" style="color:black;">Our Team</h1>
+	    		<div class="pageholder">
+		    		<div class="pagecontainer">
+	    			<!-- for mentors-->
+			    		<div style="width:1000px; margin:0 auto; text-align:center; position:inline-block;">
+			    			<center><h1 style="margin-top:20px;">Mentors</h1></center>
+			    			<div class = "cardRow2" style="margin-top:4px;">
+				    			<a href="#">
+							    	<div class = "card2">
+							    		<img src='images/team/snsingh.jpg'>
+							    		<div class="card2-container">
+									    	<h4>Prof. S.N. Singth</h4>
+									    	<p>Chair Elect IEEE India Council</p>
+										</div>
+						    		</div>
+					    		</a>
+								<a href="#">
+							    	<div class = "card2">
+							    		<img src='images/team/ramkumar.JPG'>
+							    		<div class="card2-container">
+									    	<h4>Prof. J. Ramkumar</h4>
+									    	<p>Chairperson IEEE UP Section</p>
+										</div>
+						    		</div>
+					    		</a>
+				    			<a href="#">
+							    	<div class = "card2">
+							    		<img src='images/team/us_tiwari.jpg'>
+							    		<div class="card2-container">
+									    	<h4>Prof. U.S. Tiwary</h4>
+									    	<p>Chairperson IEEE SP/C Joint Chapter UP Section</p>
+										</div>
+						    		</div>
+					    		</a>
+					    		<a href="#">
+							    	<div class = "card2">
+							    		<img src='images/team/shekhar_verma.jpg'>
+							    		<div class="card2-container">
+									    	<h4>Prof. Shekhar Verma</h4>
+									    	<p>Faculty Advisor IEEE CS Chapter IIIT Allahabad</p>
+										</div>
+						    		</div>
+					    		</a>
+					    		<a href="#">
+							    	<div class = "card2">
+							    		<img src='images/team/kumar_vaibhav.jpg'>
+							    		<div class="card2-container">
+									    	<h4>Dr. Kumar Vaibhav Srivastav</h4>
+									    	<p>Vice Chair IEEE UP Section</p>
+										</div>
+						    		</div>
+					    		</a>
+					    	</div> <br/>
+				    		<div class="cardRow2">
+				    			<a href="#">
+							    	<div class = "card2">
+							    		<img src='images/team/rajat_singh.jpg'>
+							    		<div class="card2-container">
+									    	<h4>Dr. Rajat Singh</h4>
+									    	<p>Faculty Counselor IEEE Student Branch IIITA</p>
+										</div>
+						    		</div>
+					    		</a>
+					    		<a href="#">
+							    	<div class = "card2">
+							    		<img src='images/team/sksingh.jpg'>
+							    		<div class="card2-container">
+									    	<h4>Dr. Satish Singh</h4>
+									    	<p>Secretary IEEE SP/C Joint Chapter UP Section</p>
+										</div>
+						    		</div>
+					    		</a>
+					    		<a href="#">
+							    	<div class = "card2">
+							    		<img src='images/team/amit_dhar.jpg'>
+							    		<div class="card2-container">
+									    	<h4>Dr. Amit Dhar</h4>
+									    	<p>IIIT Allahabad</p>
+										</div>
+						    		</div>
+					    		</a>
+					    		<a href="#">
+							    	<div class = "card2">
+							    		<img src='images/team/manish.jpg'>
+							    		<div class="card2-container">
+									    	<h4>Dr. Manish Kumar</h4>
+									    	<p>IIIT Allahabad</p>
+										</div>
+						    		</div>
+					    		</a>
+								<a href="www.prasanth.xyz">
+							    	<div class = "card2">
+							    		<img src='images/team/Prasanth.jpg'>
+							    		<div class="card2-container">
+									    	<h4>Prasanth Mohan</h4>
+									    	<p>Student & Young Professional Activities IEEE Computer Society</p>
+										</div>
+						    		</div>
+					    		</a>
+					    	</div>
 
-			    	</div> <br/>
-		    		<!-- for team members -->
-		    		<div style="1000px; margin-top:4px;">
-		    			<center>
-		    			<h1>Event Coordinators</h1>
-		    			<div class = "cardRow2" style="margin-top:4px;">
-		    				<a href="https://www.linkedin.com/in/meghaben">
-					    		<div class = "card2" style="margin-left:200px;">
-						    		<img src='images/team/megha.jpg' >
-						    		<div class="card2-container">
-								    	<h4 class="card-title">Megha Ben</h4>
-	                            		<p>IEEE CS R-10 Ambassador</p>
-	                            		<p>+91-9048127456</p>
-									</div>
-					    		</div>
-				    		</a>
-			    			<a href="https://www.facebook.com/shivam.abhilash">
-					    		<div class = "card2">
-						    		<img src='images/team/shivam.jpg' >
-						    		<div class="card2-container">
-								    	<h4>Shivam</h4>
-								    	<p>IEEE CSSR UP India Council</p>
-								    	<p>+91-7839942679</p>
-									</div>
-					    		</div>
-				    		</a>
-				    		<a href="https://www.facebook.com/jtibrewal">
-					    		<div class = "card2" style="height:210px;">
-						    		<img src='images/team/jay.jpg' >
-						    		<div class="card2-container">
-								    	<h4>Jay Tibrewal</h4>
-								    	<p>Vice Chair IEEE CS SB Chapter, IIIT Allahabad</p>
-								    	<p>+91-919455776469</p>
-									</div>
-					    		</div>
-				    		</a>
-				    	</div>
-		    			</center>
-		    		</div>
-		    	
+				    	</div> <br/>
+			    		<!-- for team members -->
+			    		<div style="1000px; margin-top:4px;">
+			    			<center>
+			    			<h1>Event Coordinators</h1>
+			    			<div class = "cardRow2" style="margin-top:4px;">
+			    				<a href="https://www.linkedin.com/in/meghaben">
+						    		<div class = "card2" style="margin-left:200px;">
+							    		<img src='images/team/megha.jpg' >
+							    		<div class="card2-container">
+									    	<h4 class="card-title">Megha Ben</h4>
+		                            		<p>IEEE CS R-10 Ambassador</p>
+		                            		<p>+91-9048127456</p>
+										</div>
+						    		</div>
+					    		</a>
+				    			<a href="https://www.facebook.com/shivam.abhilash">
+						    		<div class = "card2">
+							    		<img src='images/team/shivam.jpg' >
+							    		<div class="card2-container">
+									    	<h4>Shivam</h4>
+									    	<p>IEEE CSSR UP India Council</p>
+									    	<p>+91-7839942679</p>
+										</div>
+						    		</div>
+					    		</a>
+					    		<a href="https://www.facebook.com/jtibrewal">
+						    		<div class = "card2" style="height:210px;">
+							    		<img src='images/team/jay.jpg' >
+							    		<div class="card2-container">
+									    	<h4>Jay Tibrewal</h4>
+									    	<p>Vice Chair IEEE CS SB Chapter, IIIT Allahabad</p>
+									    	<p>+91-919455776469</p>
+										</div>
+						    		</div>
+					    		</a>
+					    	</div>
+			    			</center>
+			    		</div>
+		    		</div> <!-- End of pagecontainer -->
+				</div> <!-- End of pageholder -->
 	    	</div> <!-- End of aboutusPage -->
 	    </div> <!-- End of Team Page -->
 
 	    <!-- No seperate page for how to reach (map) -->
 
 	    <div class="section" id="section9"> <!-- Linked with Faqs Page -->
-	    	<div class="faqPage">
+	    	<div class="pagedata">
 		    	<h1 class="headings" style="color:white;">FAQs</h1>
-		    	<div class="expandingFaq" style="width:80%;">
-			      <div class="faqElement">
-			        <h2 class="faqQuestion">
-			          What is CSIS?
-			        </h2>
-			        <p class="faqAnswer">
-			          CSIS stands for Computer Society India Symposium. It aims to bring together all the IEEE Computer Society chapters across the country and showcase the immense depth and complexity of the field that is Computer Science.
-			        </p>
-			      </div>
-			      <div class="faqElement">
-			        <h2 class="faqQuestion">
-			          What will happen during CSIS 2017?
-			        </h2>
-			        <p class="faqAnswer">
-			          This year&#39;s theme is &quot;Humans & Computers&quot;. As such, you can expect to find a variety of talks, workshops and other events which will focus on CS/IT domains such as Human Computer Interaction, Machine Learning, Network Security, 3D Printing and more! Please check out the Workshops page for more information.
-			        </p>
-			      </div>
-			      <div class="faqElement">
-			        <h2 class="faqQuestion">
-			          Who all can register for this event?
-			        </h2>
-			        <p class="faqAnswer">
-			          As long as you have graduated high school, you are welcome to register for the symposium!.
-			        </p>
-			      </div>
-			       <div class="faqElement">
-			        <h2 class="faqQuestion">
-			          When will the registrations start and how do I register?
-			        </h2>
-			        <p class="faqAnswer">
-			          Phase 1 Registrations will begin on the 28th of January. The registration link will be available on this website's registration page. You can make the fee transaction via the following media - e-wallets, debit card, credit card or netbanking.
-			        </p>
-			      </div>
-
-			      <div class="faqElement">
-			        <h2 class="faqQuestion">
-			          What is the selection criteria for second phase registration?
-			        </h2>
-			        <p class="faqAnswer">
-			          In Phase 2 Registration 50 percent Will Be Based On First Come First Serve Basis And The Rest 50 Percent Will Be Based On The Responses Made In The Phase 1 Registration.
-			        </p>
-			      </div>
-
-			    </div>
-		    </div> <!-- End of faqPage -->
+		    	<div class="pageholder">
+		    		<div class="pagecontainer">
+				    	<div class="expandingFaq" style="width:80%;">
+					    	<div class="faqElement">
+					    		<h2 class="faqQuestion">What is CSIS?</h2>
+								<p class="faqAnswer">
+									CSIS stands for Computer Society India Symposium. It aims to bring together all the IEEE Computer Society chapters across the country and showcase the immense depth and complexity of the field that is Computer Science.
+								</p>
+							</div>
+							<div class="faqElement">
+								<h2 class="faqQuestion">What will happen during CSIS 2017?</h2>
+								<p class="faqAnswer">
+									This year&#39;s theme is &quot;Humans & Computers&quot;. As such, you can expect to find a variety of talks, workshops and other events which will focus on CS/IT domains such as Human Computer Interaction, Machine Learning, Network Security, 3D Printing and more! Please check out the Workshops page for more information.
+								</p>
+							</div>
+							<div class="faqElement">
+								<h2 class="faqQuestion">Who all can register for this event?</h2>
+								<p class="faqAnswer">
+									As long as you have graduated high school, you are welcome to register for the symposium!.
+								</p>
+							</div>
+							<div class="faqElement">
+								<h2 class="faqQuestion">When will the registrations start and how do I register?</h2>
+								<p class="faqAnswer">
+									Phase 1 Registrations will begin on the 28th of January. The registration link will be available on this website's registration page. You can make the fee transaction via the following media : e-wallets, debit card, credit card or netbanking.
+								</p>
+							</div>
+							<div class="faqElement">
+								<h2 class="faqQuestion">What is the selection criteria for second phase registration?</h2>
+								<p class="faqAnswer">
+									In Phase 2 Registration 50 percent Will Be Based On First Come First Serve Basis And The Rest 50 Percent Will Be Based On The Responses Made In The Phase 1 Registration.
+								</p>
+							</div>
+					    </div>
+					</div> <!-- End of pagecontainer -->
+				</div> <!-- End of pageholder -->
+			</div> <!-- End of faqPage -->
 		</div> <!-- End of Section7 -->
 
-	<!--dock -->
-	<div class="dock" id="dock">
-	    <div class="dock-container">
-		  <a class="dock-item" style="text-decoration:none;" href="#home">
-		  	<span>Home</span>
-		  	<img src="images/home.png" alt="home" />
-		  </a>
-		  <a class="dock-item" style="text-decoration:none;" href="#aboutcsis">
-		  	<span>About CSIS</span>
-		  	<img src="images/team3.png" alt="about csis" />
-		  </a>
-		  <a class="dock-item" style="text-decoration:none;" href="#schedule">
-		  	<span>Schedule</span>
-		  	<img src="images/schedule.png" alt="schedule" />
-		  </a>
-		  <a class="dock-item" style="text-decoration:none;" href="#tracks">
-		  	<span>Tracks</span>
-		  	<img src="images/tracks.png" alt="tracks" />
-		  </a>
-		  <a class="dock-item" style="text-decoration:none;" href="#speakers">
-		  	<span>Speakers</span>
-		  	<img src="images/speaker5.png" alt="speaker" />
-		  </a>
-
-		  <a class="dock-item" style="text-decoration:none;" href="#workshop">
-		  	<span>Workshop</span>
-		  	<img src="images/workshop_logo.png" alt="speaker" />
-		  </a>
-
-		   <a class="dock-item" style="text-decoration:none;" href="#events">
-		  	<span>Events</span>
-		  	<img src="images/events.png" alt="speaker" />
-		  </a>
-
-		  <a class="dock-item" style="text-decoration:none;" href="#registration">
-		  	<span>Register</span>
-		  	<img src="images/register.png" alt="register" />
-		  </a>
-		  <a class="dock-item" style="text-decoration:none;" href="#sponsors">
-		  	<span>Sponsors</span>
-		  	<img src="images/sponsors1.png" alt="sponsors" />
-		  </a>
-		  <a class="dock-item" style="text-decoration:none;" href="#team">
-		  	<span>Team</span>
-		  	<img src="images/speaker.png" alt="team" />
-		  </a>
-		  <a class="dock-item" style="text-decoration:none;" href="https://www.google.co.in/maps/place/Indian+Institute+of+Information+Technology+Allahabad/@25.4302153,81.7681652,16.75z/data=!4m5!3m4!1s0x399acac768944451:0x1f0c03a031f74c3f!8m2!3d25.4304161!4d81.770679?hl=en" target="_blank">
-		  	<span>How to Reach</span>
-		  	<img src="images/maps.png" alt="maps" />
-		  </a>
-		  <a class="dock-item" style="text-decoration:none;" href="#faqs">
-		  	<span>FAQs</span>
-		  	<img src="images/faq.png" alt="faq" />
-		  </a>
-	    </div>
+		<!--dock -->
+		<div class="dock" id="dock">
+			<div class="dock-container">
+				<a class="dock-item" style="text-decoration:none;" href="#home">
+					<span>Home</span>
+					<img src="images/home.png" alt="home" />
+				</a>
+				<a class="dock-item" style="text-decoration:none;" href="#aboutcsis">
+					<span>About CSIS</span>
+					<img src="images/team3.png" alt="about csis" />
+				</a>
+				<a class="dock-item" style="text-decoration:none;" href="#schedule">
+					<span>Schedule</span>
+					<img src="images/schedule.png" alt="schedule" />
+				</a>
+				<a class="dock-item" style="text-decoration:none;" href="#tracks">
+					<span>Tracks</span>
+					<img src="images/tracks.png" alt="tracks" />
+				</a>
+				<a class="dock-item" style="text-decoration:none;" href="#speakers">
+					<span>Speakers</span>
+					<img src="images/speaker5.png" alt="speaker" />
+				</a>
+				<a class="dock-item" style="text-decoration:none;" href="#workshop">
+					<span>Workshop</span>
+					<img src="images/workshop_logo.png" alt="speaker" />
+				</a>
+				<a class="dock-item" style="text-decoration:none;" href="#events">
+					<span>Events</span>
+					<img src="images/events.png" alt="speaker" />
+				</a>
+				<a class="dock-item" style="text-decoration:none;" href="#registration">
+					<span>Register</span>
+					<img src="images/register.png" alt="register" />
+				</a>
+				<a class="dock-item" style="text-decoration:none;" href="#sponsors">
+					<span>Sponsors</span>
+					<img src="images/sponsors1.png" alt="sponsors" />
+				</a>
+				<a class="dock-item" style="text-decoration:none;" href="#team">
+					<span>Team</span>
+					<img src="images/speaker.png" alt="team" />
+				</a>
+				<a class="dock-item" style="text-decoration:none;" href="https://www.google.co.in/maps/place/Indian+Institute+of+Information+Technology+Allahabad/@25.4302153,81.7681652,16.75z/data=!4m5!3m4!1s0x399acac768944451:0x1f0c03a031f74c3f!8m2!3d25.4304161!4d81.770679?hl=en" target="_blank">
+					<span>How to Reach</span>
+					<img src="images/maps.png" alt="maps" />
+				</a>
+				<a class="dock-item" style="text-decoration:none;" href="#faqs">
+					<span>FAQs</span>
+					<img src="images/faq.png" alt="faq" />
+				</a>
+		    </div>
+		</div>
 	</div>
 
-<!--dock menu JS options -->
-<script type="text/javascript">
-	$(document).ready(
-		function()
-		{
-			$('#dock').Fisheye(
-				{
-					maxWidth: 95,
-					items: 'a',
-					itemsText: 'span',
-					container: '.dock-container',
-					itemWidth: 70,
-					proximity: 70,
-					alignment : 'left',
-					valign: 'bottom',
-					halign : 'center'
-				}
-			)
+	<!--dock menu JS options -->
+	<script type="text/javascript">
+		$(document).ready(
+			function()
+			{
+				$('#dock').Fisheye(
+					{
+						maxWidth: 95,
+						items: 'a',
+						itemsText: 'span',
+						container: '.dock-container',
+						itemWidth: 70,
+						proximity: 70,
+						alignment : 'left',
+						valign: 'bottom',
+						halign : 'center'
+					}
+				)
+			}
+		);
+	</script>
+
+	<!-- Script for handling FAQs -->
+	<script type="text/javascript">
+	      $(document).ready(function() {
+	          $('.faqElement').click(function() {
+	            var faqElement = $(this);
+	            var question = faqElement.find('.faqQuestion');
+	            var answer = faqElement.find('.faqAnswer');
+	            if (!answer.hasClass('activeFaqAnswer')) {
+	              $('.activeFaqAnswer').css('max-height', '');
+	              $('.faqAnswer').removeClass('activeFaqAnswer');
+	              answer.css('max-height', 'none');
+	              answer.css('max-height', answer.height()+10); //+100
+	              answer.addClass('activeFaqAnswer');
+	            } else {
+	              //console.log("yes");
+	              $('.faqElement').removeClass('flipButton');
+	              faqElement.addClass('flipButton');
+	              $('.activeFaqAnswer').css('max-height', '');
+	              $('.faqAnswer').removeClass('activeFaqAnswer');
+	            }
+	        });
+	      });
+	  </script>
+
+	<!-- Function to handle countdown timer -->
+	<script>
+		function countdown(){
+			var now = new Date();
+			var eventDate = new Date("2017-03-17"); //Event date
+
+			var currentTime = now.getTime();
+			var eventTime = eventDate.getTime();
+
+			var remTime = eventTime - currentTime;
+			var s = Math.floor(remTime / 1000);
+			var m = Math.floor(s / 60);
+			var h = Math.floor(m / 60);
+			var d = Math.floor(h / 24);
+
+			h %= 24;
+			m %= 60;
+			s %= 60;
+
+			h = (h < 10) ? "0" + h : h;
+			m = (m < 10) ? "0" + m : m;
+			s = (s < 10) ? "0" + s : s;
+
+			//var img = document.createElement("IMG");
+			//img.src = 'images/countdown/1.png';
+
+			document.getElementById("days").textContent = d;
+			//document.getElementById("days").innerText = d;
+			//document.getElementById("days").innerHTML = '<img src='+ img.src +'>';
+			document.getElementById("hours").textContent = h;
+			document.getElementById("minutes").textContent = m;
+			document.getElementById("seconds").textContent = s;
+			setTimeout(countdown, 1000);
 		}
-	);
-</script>
+		countdown();
+	</script>
 
-<!-- Script for handling FAQs -->
-<script type="text/javascript">
-      $(document).ready(function() {
-          $('.faqElement').click(function() {
-            var faqElement = $(this);
-            var question = faqElement.find('.faqQuestion');
-            var answer = faqElement.find('.faqAnswer');
-            if (!answer.hasClass('activeFaqAnswer')) {
-              $('.activeFaqAnswer').css('max-height', '');
-              $('.faqAnswer').removeClass('activeFaqAnswer');
-              answer.css('max-height', 'none');
-              answer.css('max-height', answer.height()+10); //+100
-              answer.addClass('activeFaqAnswer');
-            } else {
-              //console.log("yes");
-              $('.faqElement').removeClass('flipButton');
-              faqElement.addClass('flipButton');
-              $('.activeFaqAnswer').css('max-height', '');
-              $('.faqAnswer').removeClass('activeFaqAnswer');
-            }
-        });
-      });
-  </script>
-
-<!-- Function to handle countdown timer -->
-<script>
-	function countdown(){
-		var now = new Date();
-		var eventDate = new Date("2017-03-17"); //Event date
-
-		var currentTime = now.getTime();
-		var eventTime = eventDate.getTime();
-
-		var remTime = eventTime - currentTime;
-		var s = Math.floor(remTime / 1000);
-		var m = Math.floor(s / 60);
-		var h = Math.floor(m / 60);
-		var d = Math.floor(h / 24);
-
-		h %= 24;
-		m %= 60;
-		s %= 60;
-
-		h = (h < 10) ? "0" + h : h;
-		m = (m < 10) ? "0" + m : m;
-		s = (s < 10) ? "0" + s : s;
-
-		//var img = document.createElement("IMG");
-		//img.src = 'images/countdown/1.png';
-
-		document.getElementById("days").textContent = d;
-		//document.getElementById("days").innerText = d;
-		//document.getElementById("days").innerHTML = '<img src='+ img.src +'>';
-		document.getElementById("hours").textContent = h;
-		document.getElementById("minutes").textContent = m;
-		document.getElementById("seconds").textContent = s;
-		setTimeout(countdown, 1000);
-	}
-	countdown();
-</script>
-
-<!-- To redirect to mobile website -->
-<script type="text/javascript">
-	function check_for_mobile() {
-		var width = window.innerWidth
-		var height = window.innerHeight;
-		//console.log("width " + width + " height:" + height);
-
-		if( width <= 950 || height <= 550 ){
-			window.location = "http://ieeecsis.org/m/index.html";
-			//console.log("In Bmobile");
-		} else {
-			//console.log("In BBrowser");
+	<!-- To redirect to mobile website -->
+	<script type="text/javascript">
+		function check_for_mobile() {
+			var width = window.innerWidth
+			var height = window.innerHeight;
+			if( width <= 950 || height <= 550 ){
+				window.location = "http://ieeecsis.org/m/index.html";
+			} 
+			setTimeout(check_for_mobile, 1000); //check in every 1 seconds
 		}
-		setTimeout(check_for_mobile, 1000); //check in every 1 seconds
-	}
-	check_for_mobile();
-</script>
-
-<!-- For autoscroll of sponsors page -->
-<script>
-	var offset = 1;
-	var isDown = 1;
-	var team_isDown = 1;
-	var speaker_isDown = 1;
-	function doScroll(){
-		var sponsor_elem = document.getElementById("sponsorID");
-		var team_elem = document.getElementById("teamID");
-		var speaker_elem = document.getElementById("speakerID");
-		//for sponsors page
-		var sponsor_prev = sponsor_elem.scrollTop;
-		if( isDown == 1){
-			sponsor_elem.scrollTop += offset;
-			if( sponsor_elem.scrollTop <= sponsor_prev ){
-				isDown = 0;
-			}
-		} else {
-			sponsor_elem.scrollTop -= offset;
-			if( sponsor_elem.scrollTop <= 0 ){
-				isDown = 1;
-			}
+		check_for_mobile();
+	</script>
+	
+	<!-- For .pagedata height -->
+	<script type="text/javascript">
+		var page = document.getElementsByClassName("pagedata");
+		var pageholder = document.getElementsByClassName("pageholder");
+		var i, height, h2;
+		height = window.innerHeight-140; //140 height of dock + heading
+		h2 = window.innerHeight - 70; //70 height of dock
+		for (i = 0; i < page.length; i++) {
+		    //page[i].style.height = height + 'px';
+		    page[i].style.height = h2 + 'px';
+		    pageholder[i].style.height = height + 'px';
 		}
-
-		//for team page
-		var team_prev = team_elem.scrollTop;
-		if( team_isDown == 1){
-			team_elem.scrollTop += offset;
-			if( team_elem.scrollTop <= team_prev ){
-				team_isDown = 0;
-			}
-		} else {
-			team_elem.scrollTop -= offset;
-			if( team_elem.scrollTop <= 0 ){
-				team_isDown = 1;
-			}
-		}
-
-		//for speaker page
-		/*
-		var speaker_prev = speaker_elem.scrollTop;
-		if( speaker_isDown == 1){
-			speaker_elem.scrollTop += offset;
-			if( speaker_elem.scrollTop <= speaker_prev ){
-				speaker_isDown = 0;
-			}
-		} else {
-			speaker_elem.scrollTop -= offset;
-			if( speaker_elem.scrollTop <= 0 ){
-				speaker_isDown = 1;
-			}
-		}*/
-		setTimeout( doScroll, 50); //check in every .1 seconds
-	}
-	doScroll();
-</script>
-
+	</script>
 </body>
 </html>
