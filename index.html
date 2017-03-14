@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="css/dock.css"> <!-- Stylesheet for dock -->
 	<link rel="stylesheet" href="css/main.css">	<!-- Main stylesheet -->
 	<link rel="stylesheet" href="css/speaker.css"> <!-- Style for speaker page -->
+	<link rel="stylesheet" type="text/css" href="css/preloader.css">
 	
 	<script src="js/speaker.js"></script>
 	<script src="js/jquery-2.1.4.js"></script>
@@ -44,13 +45,13 @@
 			var height = window.innerHeight;
 			
 			if( width <= 950 || height <= 550 ){
-				//window.location = "http://ieeecsis.org/m/index.html";
+				window.location = "http://ieeecsis.org/m/index.html";
 			}
 		}
 		check_for_mobile();
 	</script>
 </head>
-<body>
+<body onload="myFunction()">
 	<!-- Main scrolling content -->
 	<div id="pagepiling">
 	    <div class="section" id="section1"> <!-- Home Page -->
@@ -667,7 +668,18 @@
 										</div>
 						    		</div>
 					    		</a>
-					    		<a href="#">
+					    	</div> <br/>
+				    		<div class="cardRow2">
+				    			<a href="#">
+							    	<div class = "card2">
+							    		<img src='images/team/pritish.jpg'>
+							    		<div class="card2-container">
+									    	<h4>Dr. Pritish Varadwaj</h4>
+									    	<p>Treasurer IEEE SP/C Joint Chapter UP Section.</p>
+										</div>
+						    		</div>
+					    		</a>
+				    			<a href="#">
 							    	<div class = "card2">
 							    		<img src='images/team/kumar_vaibhav.jpg'>
 							    		<div class="card2-container">
@@ -676,8 +688,6 @@
 										</div>
 						    		</div>
 					    		</a>
-					    	</div> <br/>
-				    		<div class="cardRow2">
 				    			<a href="#">
 							    	<div class = "card2">
 							    		<img src='images/team/rajat_singh.jpg'>
@@ -688,6 +698,17 @@
 						    		</div>
 					    		</a>
 					    		<a href="#">
+							    	<div class = "card2">
+							    		<img src='images/team/manish.jpg'>
+							    		<div class="card2-container">
+									    	<h4>Dr. Manish Kumar</h4>
+									    	<p>IIIT Allahabad</p>
+										</div>
+						    		</div>
+					    		</a>	
+					    	</div>
+					    	<div style="width:520px; height:250px; margin:0 auto;">
+				    			<a href="#">
 							    	<div class = "card2">
 							    		<img src='images/team/sksingh.jpg'>
 							    		<div class="card2-container">
@@ -705,27 +726,18 @@
 										</div>
 						    		</div>
 					    		</a>
-					    		<a href="#">
-							    	<div class = "card2">
-							    		<img src='images/team/manish.jpg'>
-							    		<div class="card2-container">
-									    	<h4>Dr. Manish Kumar</h4>
-									    	<p>IIIT Allahabad</p>
-										</div>
-						    		</div>
-					    		</a>
 								<a href="www.prasanth.xyz">
 							    	<div class = "card2">
 							    		<img src='images/team/Prasanth.jpg'>
 							    		<div class="card2-container">
 									    	<h4>Prasanth Mohan</h4>
-									    	<p>Student & Young Professional Activities IEEE Computer Society</p>
+									    	<p>Student & Young Professional Activities IEEE CS</p>
 										</div>
 						    		</div>
 					    		</a>
 					    	</div>
-
 				    	</div> 
+
 			    		<!-- for coordinator -->
 			    		<br>
 			    		<center><h1>Event Coordinators</h1></center>
@@ -773,28 +785,21 @@
 			    			<div style="width:850px; height:100%; margin:0 auto;">
 			    				<a href="#">
 						    		<div class = "card2">
-							    		<img src='images/team/team_heads/anushree.jpg' >
+							    		<img src='images/team/team_heads/suvitha.jpg' >
 							    		<div class="card2-container">
-									    	<h4 class="card-title">Anushree Goswami</h4>
-		                            		<p>Head Documentation Team</p>
+									    	<h4 class="card-title">Suvidha Tripathi</h4>
+		                            		<p>WIE Team</p>
+		                            		<p>+91 9451851905</p>
 										</div>
 						    		</div>
 					    		</a>
-				    			<a href="#">
-						    		<div class = "card2">
-							    		<img src='images/team/team_heads/arushi.jpg' >
-							    		<div class="card2-container">
-									    	<h4 class="card-title">Arushi Belan</h4>
-		                            		<p>Head Publication Team</p>
-										</div>
-						    		</div>
-					    		</a>
-					    		<a href="#">
+			    				<a href="#">
 						    		<div class = "card2">
 							    		<img src='images/team/team_heads/punit.jpg' >
 							    		<div class="card2-container">
 									    	<h4 class="card-title">Punit Singh</h4>
-		                            		<p>Head Hospitality Team</p>
+		                            		<p>Hospitality Team</p>
+		                            		<p>+91 9580090413</p>
 										</div>
 						    		</div>
 					    		</a>
@@ -803,7 +808,18 @@
 							    		<img src='images/team/team_heads/rohit.jpg' >
 							    		<div class="card2-container">
 									    	<h4 class="card-title">Rohit Mishra</h4>
-		                            		<p>Head Transport Team</p>
+		                            		<p>Transport Team</p>
+		                            		<p>+91 9415329539</p>
+										</div>
+						    		</div>
+					    		</a>
+					    		<a href="#">
+						    		<div class = "card2">
+							    		<img src='images/team/team_heads/shrikant.jpg' >
+							    		<div class="card2-container">
+									    	<h4 class="card-title">Shrikant Malviya</h4>
+		                            		<p>Registration Team</p>
+		                            		<p>+91 9451851905</p>
 										</div>
 						    		</div>
 					    		</a>
@@ -812,7 +828,8 @@
 							    		<img src='images/team/team_heads/avatar.png' >
 							    		<div class="card2-container">
 									    	<h4 class="card-title">Sumit Kumar</h4>
-		                            		<p>Head Finance Team</p>
+		                            		<p>Finance Team</p>
+		                            		<p>+91 8127710956</p>
 										</div>
 						    		</div>
 					    		</a>
@@ -823,19 +840,11 @@
 			    			<div style="width:850px; height:100%; margin:0 auto;">
 			    				<a href="#">
 						    		<div class = "card2">
-							    		<img src='images/team/team_heads/sapna.jpg' >
-							    		<div class="card2-container">
-									    	<h4 class="card-title">Sapna Nirapure</h4>
-		                            		<p>Head Registration Team</p>
-										</div>
-						    		</div>
-					    		</a>
-					    		<a href="#">
-						    		<div class = "card2">
-							    		<img src='images/team/team_heads/avatar.png' >
+							    		<img src='images/team/team_heads/pratik.jpg' >
 							    		<div class="card2-container">
 									    	<h4 class="card-title">Pratik Mangalore</h4>
-		                            		<p>Head Sponsorship Team</p>
+		                            		<p>Sponsorship Team</p>
+		                            		<p>+91 7703026714</p>
 										</div>
 						    		</div>
 					    		</a>
@@ -844,7 +853,8 @@
 							    		<img src='images/team/team_heads/avatar.png' >
 							    		<div class="card2-container">
 									    	<h4 class="card-title">Kundan Sen</h4>
-		                            		<p>Head Web-Development Team</p>
+		                            		<p>Web-Development Team</p>
+		                            		<p>+91 8756344801</p>
 										</div>
 						    		</div>
 					    		</a>
@@ -852,17 +862,29 @@
 						    		<div class = "card2">
 							    		<img src='images/team/team_heads/avatar.png' >
 							    		<div class="card2-container">
-									    	<h4 class="card-title">Aryaan Aditya Singh</h4>
-		                            		<p>Head Event Management Team</p>
+									    	<h4 class="card-title">Swapnaneel Nandy</h4>
+		                            		<p>Web-Development Team</p>
+		                            		<p>+91 8756438637</p>
 										</div>
 						    		</div>
 					    		</a>
 					    		<a href="#">
 						    		<div class = "card2">
+							    		<img src='images/team/team_heads/jay.jpg' >
+							    		<div class="card2-container">
+									    	<h4 class="card-title">Jay Tibrewal</h4>
+		                            		<p>Local Design Team</p>
+		                            		<p>+91 9455776469</p>
+										</div>
+						    		</div>
+					    		</a>
+			    				<a href="#">
+						    		<div class = "card2">
 							    		<img src='images/team/team_heads/avatar.png' >
 							    		<div class="card2-container">
-									    	<h4 class="card-title">Rakesh Menon</h4>
-		                            		<p>Head Documentation Team</p>
+									    	<h4 class="card-title">Anand P S</h4>
+		                            		<p>Design Team</p>
+		                            		<p>+91 9061193652</p>
 										</div>
 						    		</div>
 					    		</a>
@@ -870,28 +892,60 @@
 			    		</div>
 
 			    		<div style="width:1000px; height:220px; margin:0 auto">
-			    			<div style="width:350px; height:100%; margin:0 auto;">
+			    			<div style="width:850px; height:100%; margin:0 auto;">
 			    				<a href="#">
 						    		<div class = "card2">
-							    		<img src='images/team/team_heads/avatar.png' >
+							    		<img src='images/team/team_heads/aryan.jpg' >
 							    		<div class="card2-container">
-									    	<h4 class="card-title">Anand P S</h4>
-		                            		<p>Head Design Team</p>
+									    	<h4 class="card-title">Aryaan Aditya Singh</h4>
+		                            		<p>Event Management Team</p>
+		                            		<p>+91 9022851987</p>
+										</div>
+						    		</div>
+					    		</a>
+			    				<a href="#">
+						    		<div class = "card2">
+							    		<img src='images/team/team_heads/anushree.jpg' >
+							    		<div class="card2-container">
+									    	<h4 class="card-title">Anushree Goswami</h4>
+		                            		<p>Documentation Team</p>
+		                            		<p>+91 7007340376</p>
+										</div>
+						    		</div>
+					    		</a>
+			    				<a href="#">
+						    		<div class = "card2">
+							    		<img src='images/team/team_heads/rakesh1.jpg' >
+							    		<div class="card2-container">
+									    	<h4 class="card-title">Rakesh Menon</h4>
+		                            		<p>Documentation Team</p>
+		                            		<p>+91 9497227509</p>
+										</div>
+						    		</div>
+					    		</a>
+					    		
+					    		<a href="#">
+						    		<div class = "card2">
+							    		<img src='images/team/team_heads/arushi.jpg' >
+							    		<div class="card2-container">
+									    	<h4 class="card-title">Arushi Relan</h4>
+		                            		<p>Publicity Team</p>
+		                            		<p>+91 96560515118</p>
 										</div>
 						    		</div>
 					    		</a>
 					    		<a href="#">
 						    		<div class = "card2">
-							    		<img src='images/team/team_heads/suvitha.jpg' >
+							    		<img src='images/team/team_heads/sagar.jpg' >
 							    		<div class="card2-container">
-									    	<h4 class="card-title">Suvidha Tripathi</h4>
-		                            		<p>Head WIE Team</p>
+									    	<h4 class="card-title">Sagar Kumar</h4>
+		                            		<p>Local Publicity</p>
+		                            		<p>+91 7706926127</p>
 										</div>
 						    		</div>
 					    		</a>
 					    	</div>	
 			    		</div>
-
 		    		</div> <!-- End of pagecontainer -->
 				</div> <!-- End of pageholder -->
 	    	</div> <!-- End of aboutusPage -->
@@ -1085,7 +1139,7 @@
 			var width = window.innerWidth
 			var height = window.innerHeight;
 			if( width <= 950 || height <= 550 ){
-				//window.location = "http://ieeecsis.org/m/index.html";
+				window.location = "http://ieeecsis.org/m/index.html";
 			} 
 			setTimeout(check_for_mobile, 1000); //check in every 1 seconds
 		}
@@ -1106,4 +1160,18 @@
 		}
 	</script>
 </body>
+
+<div id="loader-wrapper">
+	<div id="loader"></div>
+</div>
+<script type="text/javascript">
+	var myVar;
+	function myFunction() {
+		myVar = setTimeout(showPage, 1000);
+	}
+	function showPage() {
+		document.getElementById("loader-wrapper").style.display = "none";
+	}
+</script>
+
 </html>
