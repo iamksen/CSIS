@@ -96,6 +96,15 @@ ul#countdown li p {
 }
 /* End of scrollbar style */
 
+#section4, #section6 {
+    background: -moz-radial-gradient(50% 50%, circle cover, #2daeae 0%, #006666 100%);
+    background: -webkit-gradient(radial, 50% 50%, 0px, center center, 100%, color-stop(0%, #2daeae), color-stop(100%, #006666));
+    background: -webkit-radial-gradient(0% 0%, circle cover, #2daeae 0%, #006666 100%);
+    background: -o-radial-gradient(50% 50%, circle cover, #2daeae 0%, #006666 100%);
+    background: -ms-radial-gradient(50% 50%, circle cover, #2daeae 0%, #006666 100%);
+    background: radial-gradient(circle at 50% 50%, #2daeae 0%, #006666 100%);
+}
+
 /* Team Page Style */
 .cardRow2 {
    width: 700px;
@@ -211,7 +220,7 @@ ul#countdown li p {
 }
 
 .headings{
-    font-size: 40px;
+    font-size: 35px;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: bold;
     text-align: center;

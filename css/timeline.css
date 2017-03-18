@@ -1,0 +1,83 @@
+button.accordion {
+  background-color: #006666;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 600px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  transition: 0.4s;
+}
+
+button.accordion1 {
+  margin-top: 10px;
+  background-color: #006666;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 600px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  transition: 0.4s;
+}
+
+button.accordion:hover {
+  background-color: #053131;
+}
+
+button.accordion.active {
+  background-color: #006666;
+  box-shadow: 0 4px 40px #053131;
+}
+
+button.accordion1:after, button.accordion:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px; 
+}
+
+button.accordion1.active:after, button.accordion.active:after {
+  content: "\2212";
+}
+
+span.clock-container {
+  background: #053131;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+div.panel1 {
+  width: 600px;
+  background-color: #006666;
+  max-height: 0;
+  overflow: hidden;
+  text-align: left;
+  z-index: 2px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: max-height 0.2s ease-out;
+}
+
+div.panel {
+  padding: 0 18px;
+  width: 600px;
+  background-color: #006666;
+  max-height: 0;
+  overflow: hidden;
+  text-align: left;
+  z-index: 2px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: max-height 0.2s ease-out;
+}
+
+.panel-content {
+  padding : 10px;
+  color:white;
+}

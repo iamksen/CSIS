@@ -17,12 +17,19 @@
 	<link rel="stylesheet" href="css/main.css">	<!-- Main stylesheet -->
 	<link rel="stylesheet" href="css/speaker.css"> <!-- Style for speaker page -->
 	<link rel="stylesheet" type="text/css" href="css/preloader.css">
+	<link rel="stylesheet" href="css/timeline.css">
+
+	<!-- stylsheet for slider -->
+	<link rel="stylesheet" href="css/swiper.css">
+	<link rel="stylesheet" href="css/test_main.css">
 	
 	<script src="js/speaker.js"></script>
 	<script src="js/jquery-2.1.4.js"></script>
+
 	<script src="js/main.js"></script> <!-- Resource jQuery -->
   	<script src="js/jquery.pagepiling.min.js"></script> <!-- For horizontal scroll -->
 	<script src="js/interface.js"></script> <!-- For dock -->
+	<script src="js/timeline.js"></script>
 
     <script type="text/javascript">
 		$(document).ready(function() {
@@ -30,9 +37,8 @@
 	    	$('#pagepiling').pagepiling({
 	          	direction: 'horizontal',
 	    		anchors: ['home', 'aboutcsis', 'schedule', 'tracks', 'speakers', 'workshop', 'events', 'registration','sponsors', 'team', 'faqs'],
-			    sectionsColor: ['black', 'white', 'white', '#262626', '#262626', '#262626', '#2b333b', 'white', '#2b333b', 'white', '#262626']
+			    sectionsColor: ['black', 'white', 'white', '#006666', '#053131', '#006666', '#215f5f', 'white', '#053131', 'white', '#006666']
 			});
-
 			// stop scrolling through sections by using the mouse wheel/trackpad or touch gestures
 			$.fn.pagepiling.setAllowScrolling(false);
 	    });
@@ -51,6 +57,20 @@
 		check_for_mobile();
 	</script>
 </head>
+
+<script type="text/javascript">
+	var myVar;
+	function myFunction() {
+		myVar = setTimeout(showPage, 1000);
+	}
+	function showPage() {
+		document.getElementById("loader-wrapper").style.display = "none";
+	}
+</script>
+<div id="loader-wrapper">
+	<div id="loader"></div>
+</div>
+
 <body onload="myFunction()">
 	<!-- Main scrolling content -->
 	<div id="pagepiling">
@@ -65,12 +85,13 @@
 		    			<img src="images/logos/CSISLogo_with_tc.png" style="width:320px; margin-right:20px; float:right" />
 		    		</a>
 
-		    		<div class="mainDialog"> <!-- Style for Caption Box -->
+		    		<div class="mainDialog" style="margin-top:20%;"> <!-- Style for Caption Box -->
 		    			<h1 style="color:white">CSIS'17</h1>
 		    			<p class="schedule_date" style="margin-top:10px;">17th March,2017 - 19th March, 2017</p>
 		    			<p class="schedule_address" style="margin-bottom:20px;">IIIT Allahabad, UttarPradesh, India</p>
-
-			    		<center> <!-- CountDown Timer -->
+		    			
+		    			<!-- CountDown Timer -->
+			    		<center> <!--
 			    			<ul id="countdown">
 			    				<li>
 			    					<span id="days"></span>
@@ -90,6 +111,7 @@
 			    				</li>
 			    			</ul>
 						</center>
+						-->
 					</div>
 				</div><!-- End of homeBackground -->
 			</div> <!-- End of homePage -->
@@ -121,142 +143,495 @@
 	    		<h1 class="headings" style="color:black;">Schedule</h1>
 	    		<div class="pageholder">
 			    	<div class="pagecontainer">
-			    		<!-- horizontal timeline -->
-			    		<section class="cd-horizontal-timeline"> <!-- Horizontal timeline -->
-							<div class="timeline">
-								<div class="events-wrapper">
-									<div class="events">
-										<ol>
-											<li><a href="#0" data-date="14/01/2017">14 Jan</a></li>
-											<li><a href="#0" data-date="28/01/2017" class="selected">28 Jan</a></li>
-											<li><a href="#0" data-date="17/03/2017">17 Mar</a></li>
-										</ol>
-										<span class="filling-line" aria-hidden="true"></span>
-									</div> <!-- End of events -->
-								</div> <!-- End of events-wrapper -->
+			    			
+		    			<div style="width:40%; float:left">
+							<div style="margin-top:50px; padding:10px;">
+								<h2>Notices:</h2> <br>
+								<ul>
+									<li>1. The event has already started.</li>
+									<li>2. Delegate registrations have started at CC3.</li>
+									<li>3. Delegates attending the workshops are requested to bring laptops.</li>
+									<li>4. Click <a href="CSIS-2017-Schedule.pdf">here</a> to download the full schedule of CSIS'17.</li>
+									<li>5. In case of any query contact the CSIS <a href="#team">team</a> members.
+								</ul>
+								<br><br>
+								<h3>Campus Guide : </h3>
+								<img src="images/campus_map.png" style="padding:10px; width:500px; height:400px;" />
+							</div>
+						</div>
+			    		<div style="width:55%; float:right">
+				    		<!-- horizontal timeline -->
+				    		<section class="cd-horizontal-timeline"> <!-- Horizontal timeline -->
+								<div class="timeline">
+									<div class="events-wrapper">
+										<div class="events">
+											<ol>
+												<li><a href="#0" data-date="08/03/2017">14 Jan</a></li>
+												<li><a href="#0" data-date="12/03/2017">28 Jan</a></li>
+												<li><a href="#0" data-date="17/03/2017">17 Mar</a></li>
+												<li><a href="#0" data-date="18/03/2017" class="selected">18 Mar</a></li>
+												<li><a href="#0" data-date="19/03/2017">19 Mar</a></li>
+											</ol>
+											<span class="filling-line" aria-hidden="true"></span>
+										</div> <!-- End of events -->
+									</div> <!-- End of events-wrapper -->
 
-								<ul class="cd-timeline-navigation">
-									<li><a href="#0" class="prev inactive">Prev</a></li>
-									<li><a href="#0" class="next">Next</a></li>
-								</ul> <!-- End cd-timeline-navigation -->
-							</div> <!-- End of timeline -->
+									<ul class="cd-timeline-navigation">
+										<li><a href="#0" class="prev inactive">Prev</a></li>
+										<li><a href="#0" class="next">Next</a></li>
+									</ul> <!-- End cd-timeline-navigation -->
+								</div> <!-- End of timeline -->
 
-							<div class="events-content">
-								<ol>
-									<li data-date="14/01/2017">
-										<h2 style="font-size:35px;">List of selected volunteers</h2>
-										<em style="font-size:15px;">January 14th, 2017</em>
-										<p style="font-size:25px;">
-											Following is the attached list of shortlisted volunteers for CSIS'17
-										</p>
-										<p style="font-size:20px;"><a href="shortlistedvolunteers.pdf">Click here to see list</a></p>
-									</li>
-									<li class="selected" data-date="28/01/2017">
-										<h2 style="font-size:35px;">Registrations</h2>
-										<em style="font-size:15px;">January 28th, 2017</em>
-										<p style="font-size:25px;">
-										Registrations have already begun!
-										</p>
-										<p style="font-size:20px;"><a href="#registration">Click here to register</a></p>
-									</li>
-									<li data-date="17/03/2017">
-										<h2 style="font-size:35px;">Symposium Launch</h2>
-										<em style="font-size:15px;">March 17th, 2017</em>
-										<p style="font-size:25px;">
-											 The event is scheduled to be held from 17-19 March 2017.
-										</p>
-									</li>
-								</ol>
-							</div> <!-- End of events-content -->
-						</section> <!-- End of horizontal timeline -->
+								<div class="events-content">
+									<ol>
+										<li data-date="08/03/2017">
+											<h2 style="font-size:35px;">List of selected volunteers</h2>
+											<em style="font-size:15px;">January 14th, 2017</em>
+											<p style="font-size:25px;">
+												Following is the attached list of shortlisted volunteers for CSIS'17
+											</p>
+											<p style="font-size:20px;"><a href="shortlistedvolunteers.pdf">Click here to see list</a></p>
+										</li>
+										<li data-date="12/03/2017">
+											<h2 style="font-size:35px;">Registrations</h2>
+											<em style="font-size:15px;">January 28th, 2017</em>
+											<p style="font-size:25px;">
+											Registrations have already begun!
+											</p>
+											<p style="font-size:20px;"><a href="#registration">Click here to register</a></p>
+										</li>
+
+										<!-- Start of Day 1 -->
+										<li data-date="17/03/2017">
+											<center>
+											<h2>Day 1</h2>
+											
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">18:00 - 18:30</span> &nbsp; &nbsp; Inauguration ceremony</button>
+											<div class="panel">
+												<div class="panel-content">Inauguration ceremony for CSIS 2017.
+												<br>Venue : Main Audi</div>
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">18:30 - 19:15 </span>&nbsp; &nbsp; Keynote address by Prof G.C. Nandi</button>
+											<div class="panel">
+												<div class="panel-content">A Keynote address by the director of IIITA, Prof G.C. Nandi.
+												<br>Venue : Main Audi</div>
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">19:15 - 20:15 </span>&nbsp; &nbsp; Keynote address by IEEE CS DVP</button>
+											<div class="panel">
+												<div class="panel-content">A Keynote address by a distinguished IEEE Computer Society visitor on the topic of "Gamification".
+												<br>Venue : Main Audi</div>
+											</div>
+											<br>
+											
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">20:15 - 20:45 </span>&nbsp; &nbsp; Sponsors Talk</button>
+											<div class="panel">
+												<div class="panel-content">Talks by the generous sponsors of CSIS 2017 who made the event possible.
+												<br>Venue : Main Audi</div>
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">20:45 - 21:30 </span>&nbsp; &nbsp; Keynote address on "Journey with IEEE"</button>
+											<div class="panel">
+												<div class="panel-content">A Keynote address on Journey with IEEE.
+												<br>Venue : Main Audi</div>
+											</div>
+											<br>
+
+											<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+											</center>
+										</li>
+										<!-- End of Day 1-->
+
+										<!-- Start of Day 2 -->
+										<li class="selected" data-date="18/03/2017">
+											<center>
+											<h2>Day 2</h2>
+															
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">09:00 - 10:30 </span> &nbsp; &nbsp; Talks</button>
+											<div class="panel">
+												<div class="panel-content">CS Track :
+													<br> "Smart Grid" By Prof. M.M. Gore
+													<br> Venue : CC3 5006
+												</div>
+												<hr>
+												<div class="panel-content">CS + ECE Track :
+													<br>"3D and complex object recognition" By Dr. Rahul Kala
+													<br> Venue : CC3 5007
+												</div>
+												<hr>
+												<div class="panel-content">IT Track : 
+													<br>"Network Security" By Dr. S.Venkateshan
+													<br>Venue : CC3 5054
+												</div>
+												<hr>
+												<div class="panel-content">YP/WIE Track : 
+													<br>"Dissolve the box" By Mr. Santosh Sharma 
+													<br>Venue : CC3 5055
+												</div>
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">10:30 - 10:45 </span> &nbsp; &nbsp; Break</button>
+											<div class="panel">
+												<div class="panel-content">Break</div>
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">10:45 - 12:15 </span> &nbsp; &nbsp; Talks</button>
+											<div class="panel">
+												<div class="panel-content">CS Track : 
+													<br>"Semi-Supervised Machine Learning" By Prof Sudip Sanyal
+													<br>Venue : CC3 5006
+												</div>
+												<hr>
+												<div class="panel-content">CS + ECE Track : 
+													<br>3-D Printing by 3Dexter
+													<br>Venue : CC3 5007
+												</div>
+												<hr>
+												<div class="panel-content">IT Track : 
+													<br>"Social and Complex Network Analysis" By Dr Amitabha Bagchi
+													<br>Venue : CC3 5054
+												</div>
+												<hr>
+												<div class="panel-content">YP/WIE Track : 
+													<br>"App to help pregnant women" By Mr Senthil Kumar
+													<br>Venue : CC3 5055
+												</div>
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">12:30 - 14:15</span> &nbsp; &nbsp; Lunch Break</button>
+											<div class="panel">
+												<div class="panel-content">Lunch Break</div>
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">14:30 - 18:45 </span> &nbsp; &nbsp; Workshops</button>
+											<div class="panel">
+												<div class="panel-content">CS Track : 
+													<br>"Semi-Supervised Machine Learning" By Prof Sudip Sanyal
+													<br>Venue : CC3 5006
+												</div>
+												<hr>
+												<div class="panel-content">CS + ECE Track : 
+													<br>3-D Printing by 3Dexter
+													<br>Venue : CC3 5007
+												</div>
+												<hr>
+												<div class="panel-content">WIE Track : 
+													<br>"Building your own IOT development board with openwrt" By Mr. Senthil Kumar
+													<br>Venue : CC3 Lab-5403
+												</div>
+												<hr>
+												<div class="panel-content">YP Track : 
+													<br>"Dissolve the Box" By Mr Santhosh Sharma
+													<br>Venue : CC3 5055
+												</div>
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">20:00 - ..:..</span> &nbsp; &nbsp; Cultural Night & GALA Dinner</button>
+											<div class="panel">
+												<div class="panel-content">Venue: Main Audi</div>
+											</div>
+
+											<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+											<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+											<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+											<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+											<center>
+											<!-- end of day 2-->
+										</li>
+
+										<!-- Day 3-->
+										<li data-date="19/03/2017">
+											<center>
+											<h2>Day 3</h2>
+												
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">05:00 - 08:00</span> &nbsp; &nbsp; City Tour</button>
+											<div class="panel">
+												<div class="panel-content">A tour of Allahabad city with CSIS team.</div>
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">09:30 - 11:00 </span> &nbsp; &nbsp; Events</button>
+											<div class="panel">
+												<div class="panel-content">Track 1:
+													<br> Coding Competition
+													<br> Venue : CC3 5006, Lab-5403
+												</div>
+												<hr>
+												<div class="panel-content">Track 2:
+													<br>QUIZZERO
+													<br> Venue : CC3 5054
+												</div>
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">11:00 - 11:15 </span> &nbsp; &nbsp; Break</button>
+											<div class="panel">
+												<div class="panel-content">Break</div>
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">11:15 - 12:30 </span> &nbsp; &nbsp; Events</button>
+											<div class="panel">
+												<div class="panel-content">Track 1:
+													<br> Workshop Demonstration
+													<br> Venue : CC3 5006, Lab-5403
+												</div>
+												<!--
+												<hr>
+												<div class="panel-content">Track 2:
+													<br>Project Demonstration
+													<br> Venue : CC3 5054
+												</div>
+												-->
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">12:30 - 13:45 </span> &nbsp; &nbsp; Lunch Break</button>
+											<div class="panel">
+												<div class="panel-content">Venue will be announced!</div>
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">14:00 - 18:00 </span> &nbsp; &nbsp; Workshops</button>
+											<div class="panel">
+												<div class="panel-content">CS Track : 
+													<br>"Talk and Workshop on Cognitive Science" By Prof. U.S. Tiwary
+													<br>Venue : CC2 SILP Lab 
+												</div>
+												<hr>
+												<div class="panel-content">CS + ECE Track : 
+													<br>"3-D and Complex Object Recognition" By Rahul Kala
+													<br>Venue : CC3 Lab-5403
+												</div>
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">14:00 - 17:45 </span> &nbsp; &nbsp; WIE Track</button>
+											<div class="panel">
+												<div class="panel-content">14:00 - 15:00 : 
+													<br>Talk on "Mars orbit Mission" By Moumita Dutta
+													<br>Venue : CC3 5007
+												</div>
+												<hr>
+												<div class="panel-content">15:00 - 16:00 : 
+													<br>Suraksha (App Presentation)
+													<br>Venue : CC3 5007
+												</div>
+												<hr>
+												<div class="panel-content">16:00 - 16:15 : 
+													<br>Break
+												</div>
+												<hr>
+												<div class="panel-content">16:15 - 17:45 : 
+													<br>AdQueen (Informal Event)
+													<br>Venue : CC3 5007
+												</div>
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">18:00 - 19:15</span> &nbsp; &nbsp; Closing Ceremony & Prize Distribution</button>
+											<div class="panel">
+												<div class="panel-content">Venue: Main Audi</div>
+											</div>
+											<br>
+
+											<button class="accordion"><span class="clock-container"><img src="images/c.png" style="width:17px; height:17px; margin-right:4px;">19:15 - 20:00</span> &nbsp; &nbsp; Vote of Thanks</button>
+											<div class="panel">
+												<div class="panel-content">Thank You!</div>
+											</div>
+											<br>
+
+											<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+											<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+											<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+											<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+											<center>
+										</li>
+										<!-- end of Day 3-->
+										<script>
+												var acc = document.getElementsByClassName("accordion");
+												var i;
+												var pn11 = document.getElementById("pn1");
+												var pn22 = document.getElementById("pn2");
+												var pn33 = document.getElementById("pn3");
+												var pn44 = document.getElementById("pn4");
+												var height = 0;
+												for (i = 0; i < acc.length; i++) {
+													acc[i].onclick = function() {
+														this.classList.toggle("active");
+														var panel = this.nextElementSibling;
+
+														if (panel.style.maxHeight){
+															height = height - panel.style.maxHeight;
+															panel.style.maxHeight = null;
+														} else {
+															panel.style.maxHeight = panel.scrollHeight + "px";
+															height = height + panel.scrollHeight;
+														} 
+														pn11.style.maxHeight = height + 'px';
+														pn22.style.maxHeight = height + 'px';
+														pn33.style.maxHeight = height + 'px';
+														pn44.style.maxHeight = height + 'px';
+													}
+												}
+
+												var acc = document.getElementsByClassName("accordion1");
+												var i;
+												for (i = 0; i < acc.length; i++) {
+													acc[i].onclick = function() {
+														this.classList.toggle("active");
+														var panel = this.nextElementSibling;
+														/*var c = document.getElementById("pn1").childNodes;
+														for(var j = 0 ; j < c.length;j++){
+															console.log(c[j]);
+														}*/
+														var h1 = document.getElementById("t1").scrollHeight;
+														var h2 = document.getElementById("t2").scrollHeight;
+														var h3 = document.getElementById("t3").scrollHeight;
+														var h4 = document.getElementById("t4").scrollHeight;
+
+														//console.log("h1" + h1 + " h2 " + h2 + " h3 " + h3 + " h4 " + h4);
+
+
+														var pn11 = document.getElementById("pn1");
+														var i, height, h2;
+														height = h1 + h2 + h3 + h4 + 480;
+														console.log(height);
+														//pn11.style.height = height + 'px';
+														
+														if (panel.style.maxHeight){
+															panel.style.maxHeight = null;
+														} else {
+															panel.style.maxHeight = panel.scrollHeight + "px";
+														} 
+													}
+												}
+										</script>
+										
+									</ol>
+								</div> <!-- End of events-content -->
+							</section> <!-- End of horizontal timeline -->
+						</div>
+
 					</div> <!-- End of pagecontainer -->
 				</div> <!-- End of pageholder -->
 			</div>
 	    </div> <!-- End of Schedule Page -->
 
-	    <div class="section" id="section13"> <!-- Track Page -->
+	    <div class="section" id="section4"> <!-- Track Page -->
 	    	<div class="pagedata">
 	    		<h1 class="headings">Tracks</h1>
 	    		<div class="pageholder">
 		    		<div class="pagecontainer">
-			    		<div style="width:1000px; margin:0 auto;">
-			    			<center>
-				    			<div style="margin-top:20px;">
-					    			<img class="tt" src="images/tracks/cs.jpg" data-id="divId1" id="one" style="width:200px; height:200px;"/>
-									<img class="tt" src="images/tracks/cs_ec.jpg" data-id="divId2"  style="width:200px; height:200px; margin-left:10px;"/>
-									<img class="tt" src="images/tracks/wie2.jpeg" data-id="divId3"  style="width:200px; height:200px; margin-left:10px;"/>
-									<img class="tt" src="images/tracks/yp1.jpeg" data-id="divId4"  style="width:200px; height:200px; margin-left:10px;"/>
-								</div>
-							</center>
-							<br/>
-							<div id="outerbox" style="height:200px; width:840px; padding-top:30px; margin:0 auto; background:white; padding-left:40px; font-family:'Lora', serif; box-shadow: 0 10px 20px 0 rgba(0,0,0,1);">
-								<div id="divId0">
-									<b style="font-size:20px; margin-top:10px;">IEEE CSIS'17 contains the following four tracks: </b><br><br>
-									<ul style="list-style-type:square; list-style-position:inside;">
-										<li>Core Computer Science</li>
-										<li>Computer Science + Electronics</li>
-										<li>Women in Engineering (WIE) </li>
-										<li>Young Professionals</li>
-									</ul>
-								</div>
-								<div id="divId1" class="hideDivs">
-									<h1>Core Computer Science</h1>
-									The core computer science track will include workshops and events such as : <br>
-									<ul style="list-style-type:square; list-style-position:inside;">
-										<li>Talk and workshop on Unsupervised Machine Learning</li>
-										<li>Talk and workshop on 3D Object Recognition</li>
-										<li>Quizzero - A trivia extravaganza</li>
-										<li>Coding tutorial and competition</li>
-									</ul>
-								</div>
-								<div id="divId2" class="hideDivs">
-									<h1>Computer Science + Electronics</h1>
-									This track will include workshops and events such as: <br>
-									<ul style="list-style-type:square; list-style-position:inside;">
-										<li>Talk and workshop on Internet of Things</li>
-										<li>Talk and workshop on 3D Printing</li>
-										<li>Work Demonstration</li>
-									</ul>
-								</div>
-								<div id="divId3" class="hideDivs">
-									<h1>Women in Engineering (WIE)</h1>
-									This track will include talks and events such as: <br>
-									<ul style="list-style-type:square; list-style-position:inside;">
-										<li>Talk and workshop on building your own IoT development board with openwrt</li>
-										<li>Suraksha - An app for women safety </li>
-										<li>AdQueen</li>
-									</ul>
-								</div>
-								<div id="divId4" class="hideDivs">
-									<h1>Young Professionals</h1>
-									This track will include workshops and events such as: <br>
-									<ul style="list-style-type:square; list-style-position:inside;">
-										<li>Talk and workshop on "Dissolve the Box" paradigm of thought</li>
-										<li>Project Demonstration</li>
-									</ul>
-								</div>
+		    			
+		    			<div class="swiper_box"> 
+							<div class="header-swipers"> 
+							    <div class="swiper-container header-swiper-back-2-tracks"> <!-- vertical slider --> 
+							        <div class="swiper-wrapper">
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							        </div>
+							   </div>
+							    <div class="swiper-container header-swiper-back-1-tracks"> <!-- background horizontal slider --> 
+							        <div class="swiper-wrapper">
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							        </div>
+							    </div>
+							    <div class="swiper-container header-swiper-front-tracks">
+							        <div class="swiper-pagination swiper-pagination-white"></div>
+							        <div class="swiper-button-next swiper-button-white"></div>
+							        <div class="swiper-button-prev swiper-button-white"></div>
+							        <div class="swiper-wrapper">
+							            <div class="swiper-slide">
+							                <div class="logo" style="background:#fff url(images/tracks/cs.jpg) no-repeat center; "></div>
+							                <div class="titles">
+							                    <h1 class="title">Core Computer Science</h1>
+							                    <br>
+							                    <h2 class="subtitle">This track will include workshops and events such as:</h2>
+							                    <br>
+							                   	<ul class="slide-features-list">
+							                   		<li>Talk and workshop on Unsupervised Machine Learning.<br><br></li>
+													<li>Talk and workshop on Three Dimensional Object Recognition.<br><br></li>
+													<li>Quizzero - A trivia extravaganza.<br></li>
+													<li>Coding tutorial and competition.<br></li>
+							                   	</ul>
+							                    <div class="clearfix"></div>
+							                </div>
+							                
+							            </div>
+							            <div class="swiper-slide">
+							                <div class="logo" style="background:#fff url(images/tracks/cs_ec.jpg) no-repeat center; "></div>
+							                <div class="titles">
+							                    <h1 class="title">Computer Science & Electronics</h1>
+							                    <br>
+							                    <h2 class="subtitle">This track will include workshops and events such as: </h2>
+							                    <br>
+							                   	<ul class="slide-features-list">
+							                   		<li>Talk and workshop on Internet of Things.<br><br></li>
+													<li>Talk and workshop on 3D Printing.<br><br></li>
+													<li>Work Demonstration.<br><br></li>
+							                   	</ul>
+							                    <div class="clearfix"></div>
+							                </div>
+							                
+							            </div>
+							            <div class="swiper-slide">
+							                <div class="logo" style="background:#fff url(images/tracks/wie2.jpeg) no-repeat center; "></div>
+							                <div class="titles">
+							                    <h1 class="title">Women in Engineering (WIE)</h1>
+							                    <br>
+							                    <h2 class="subtitle">This track will include workshops and events such as: </h2>
+							                    <br>
+							                   	<ul class="slide-features-list">
+							                   		<li>Talk and workshop on building on IOT.<br><br></li>
+													<li>Suraksha - An app for women safety .<br><br></li>
+													<li>AdQueen.<br><br></li>
+							                   	</ul>
+							                    <div class="clearfix"></div>
+							                </div>
+							                
+							            </div>
+							            <div class="swiper-slide">
+							                <div class="logo" style="background:#fff url(images/tracks/yp1.jpeg) no-repeat center; "></div>
+							                <div class="titles">
+							                    <h1 class="title">Young Professionals</h1>
+							                    <br>
+							                    <h2 class="subtitle">This track will include workshops and events such as: </h2>
+							                    <br>
+							                   	<ul class="slide-features-list">
+							                   		<li>Talk and workshop on "Dissolve the Box" paradigm of thought.<br><br></li>
+													<!--
+													<li>Project Demonstration.<br><br></li>
+													-->
+							                   	</ul>
+							                    <div class="clearfix"></div>
+							                </div>
+							                
+							            </div>
+							        </div>
+							    </div>
 							</div>
-			    		</div>
+						</div>
 	    			</div> <!-- End of pagecontainer -->
 				</div> <!-- End of pageholder -->
-	    		<style type="text/css">
-	    			.hideDivs{
-					    display:none;
-					}
-	    		</style>
-	    		<!-- Script to handle click on images -->
-	    		<script type="text/javascript"> 
-	    			$(".tt").on('click',function(){
-					   var hello = $(this).attr('data-id');
-					   $('.hideDivs').hide();
-					   $('#divId0').hide();
-					   $('#'+hello).show();
-					});
-	    		</script>
 	    	</div>
 	    </div> <!-- End of Schedule Page -->
 
-	    <div class="section" id="section4"> <!-- Linked with Speakers Page -->
+	    <div class="section" id="section5"> <!-- Linked with Speakers Page -->
 	    	<!-- Main card holder class-->
 	    	<div class="pagedata">
 		    	<h1 class="headings">Speakers</h1> <!-- change cardHolder Height-->
@@ -371,14 +746,104 @@
 					</div> <!-- End of pagecontainer -->
 				</div> <!-- End of pageholder -->
 	    	</div> <!-- End of speakerBackground -->
-	    </div> <!-- End of Section4 -->
+	    </div> <!-- End of Section5 -->
 	    <!-- End of new added code -->
 
-	    <div class="section" id="section10"> <!-- Linked with Workshop Page -->
+	    <div class="section" id="section6"> <!-- Linked with Workshop Page -->
 	    	<div class="pagedata">
 		    	<h1 class="headings">Workshops</h1> <!-- change cardHolder Height-->
 		    	<div class="pageholder">
 		    		<div class="pagecontainer">
+				    	
+				    	<div class="swiper_box"> 
+							<div class="header-swipers"> 
+							    <div class="swiper-container header-swiper-back-2-workshops"> <!-- vertical slider --> 
+							        <div class="swiper-wrapper">
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							        </div>
+							   </div>
+							    <div class="swiper-container header-swiper-back-1-workshops"> <!-- background horizontal slider --> 
+							        <div class="swiper-wrapper">
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							            <div class="swiper-slide"></div>
+							        </div>
+							    </div>
+							    <div class="swiper-container header-swiper-front-workshops">
+							        <div class="swiper-pagination swiper-pagination-white"></div>
+							        <div class="swiper-button-next swiper-button-white"></div>
+							        <div class="swiper-button-prev swiper-button-white"></div>
+							        <div class="swiper-wrapper">
+							            <div class="swiper-slide">
+							                <div class="logo" style="background:#fff url(images/workshops/iot.jpg) no-repeat center; background-size:180px 180px"></div>
+							                <div class="titles">
+							                    <h1 class="title">Building your own IoT development board</h1>
+							                    <h2 class="subtitle">Internet Of Things is the concept of basically connecting any device with an on and off switch to the Internet (and/or to each other). A simple example could be, alarm clock waking you up at 6 in the morning while also notifying your coffee maker to create your favorite coffee. Come explore IoT by developing your own network using OpenWRT platform.</h2>
+							                    <div class="by"><a href="https://www.linkedin.com/in/senthil-kumar-08088a19">by Mr. Senthil Kumar </a></div>
+							                    <div class="clearfix"></div>
+							                </div>
+							           
+							            </div>
+							            <div class="swiper-slide">
+							                <div class="logo" style="background:#fff url(images/workshops/ml.png) no-repeat center; background-size:180px 180px"></div>
+							                <div class="titles">
+							                    <h1 class="title">Semiupervised Machine Learning</h1>
+							                    <h2 class="subtitle">Problems where you have a large amount of input data and only some of the data is labeled i.e. have some known attributes, are called semi-supervised learning problems. Many real world machine learning problems fall into this area. This is because it can be expensive or time-consuming to label data as it may require access to domain experts. Whereas unlabeled data is cheap and easy to collect and store.</h2>
+							                    <div class="by"><a href="https://www.linkedin.com/in/sudip-sanyal-76439b100">by Sudip Sanyal</a></div>
+							                    <div class="clearfix"></div>
+							                </div>
+							                
+							            </div>
+							            <div class="swiper-slide">
+							                <div class="logo" style="background:#fff url(images/workshops/3d.png) no-repeat center; background-size:180px 180px"></div>
+							                <div class="titles">
+							                    <h1 class="title">3D Object Recognition</h1>
+							                    <h2 class="subtitle">The Point Cloud Library (PCL) is an open-source library of algorithms for point cloud processing tasks and 3D geometry processing, which usually occur as important tasks in three-dimensional computer vision. The library contains algorithms for feature estimation, surface reconstruction, registration, model fitting, and segmentation.</h2>
+							                    <div class="by"><a href="https://in.linkedin.com/in/rahul-kala-3b918822">by Rahul Kala</a></div>
+							                    <div class="clearfix"></div>
+							                </div>							                
+							            </div>
+							             <div class="swiper-slide">
+							                <div class="logo" style="background:#fff url(images/workshops/3dp.png) no-repeat center; background-size:180px 180px"></div>
+							                <div class="titles">
+							                    <h1 class="title">3D Printing</h1>
+							                    <h2 class="subtitle">3D Printing has transformed into one of the hottest technologies of the decade. The process of 3D Printing is simple yet creative: adding desired materials layer-by- layer to form three dimensional physical objects. This decade has seen 3D Printing expand its scope to a multitude of domains all over the globe: ranging from the use of 3D Printers by surgeons in super-specialities to rapid prototyping in aeronautics and automation, their use by fashion designers as well as its capabilities to ‘print’ chocolate in bakeries.</h2>
+							                    <div class="by"><a href="https://3dexter.com/">by 3Dexter</a></div>
+							                    <div class="clearfix"></div>
+							                </div>							                
+							            </div>
+							             <div class="swiper-slide">
+							                <div class="logo" style="background:#fff url(images/workshops/dtb.png) no-repeat center; background-size:180px 180px"></div>
+							                <div class="titles">
+							                    <h1 class="title">Dissolve the Box Thinking</h1>
+							                    <h2 class="subtitle">"Thinking out of the box" is not enough....Dissolve the box!</h2>
+							                    <div class="by"><a href="https://in.linkedin.com/in/santoshcas">by Santosh Sharma</a></div>
+							                    <div class="clearfix"></div>
+							                </div>							                
+							            </div>
+							            <div class="swiper-slide">
+							                <div class="logo" style="background:#fff url(images/workshops/cog.jpg) no-repeat center; background-size:180px 180px"></div>
+							                <div class="titles">
+							                    <h1 class="title">Cognitive Science</h1>
+							                    <h2 class="subtitle">Cognitive science is the interdisciplinary, scientific study of the mind and its processes. It examines the nature, the tasks, and the functions of cognition. Cognitive scientists study intelligence and behavior, with a focus on how nervous systems represent, process, and transform information.</h2>
+							                    <div class="by"><a href="http://www.silp.iiita.ac.in">by Prof. U.S. Tiwary</a></div>
+							                    <div class="clearfix"></div>
+							                </div>
+							              
+							            </div>
+							        </div>
+							    </div>
+							</div>
+						</div>
+				    	<!--
 				    	<div class="container demo-3">
 		   					<ul class="grid cs-style-4">
 								<li style="width:300px;">
@@ -429,12 +894,13 @@
 								</li>
 							</ul>
 						</div><!-- End of container demo-3 -->
+						-->
 					</div> <!-- End of pagecontainer -->
 				</div> <!-- End of pageholder -->
 	    	</div> <!-- End of speakerBackground -->
-	    </div> <!-- End of Section10 -->
+	    </div> <!-- End of Section6 -->
 
-	    <div class="section" id="section11"> <!-- Linked with Workshop Page -->
+	    <div class="section" id="section7"> <!-- Linked with Event Page -->
 	    	<div class="pagedata">
 		    	<h1 class="headings">Events</h1> <!-- change cardHolder Height-->
 		    	<div class="pageholder">
@@ -472,6 +938,7 @@
 									    </figcaption>
 								    </figure>
 								</li> <br/>
+								<!--
 								<li style="width:300px;">
 								    <figure>
 								    <div><img alt="Project Demonstration" src="images/events/project.jpg" height='200px' width='300px' /></div>
@@ -484,6 +951,7 @@
 									    </figcaption>
 								    </figure>
 								</li>
+								-->
 								<li style="width:300px;">
 								    <figure>
 								    <div><img alt="Suraksha" src="images/events/surksha.jpg" height='200px' width='300px' /></div>
@@ -512,9 +980,9 @@
 					</div> <!-- End of pagecontainer -->
 				</div> <!-- End of pageholder -->
 	    	</div> <!-- End of speakerBackground -->
-	    </div> <!-- End of Section11 -->
+	    </div> <!-- End of Section7 -->
 
-	    <div class="section" id="section5"> <!-- Linked with Registration Page -->
+	    <div class="section" id="section8"> <!-- Linked with Registration Page -->
 	    	<div class="pagedata">
 	    		<h1 class="headings" style="color:black;">Registration</h1>
 	    		<div class="pageholder">
@@ -549,7 +1017,7 @@
 	    	</div> <!-- end of registerPage -->
 	    </div> <!-- End of Registration Page  -->
 
-	    <div class="section" id="section6"> <!-- Sponsors Page -->
+	    <div class="section" id="section9"> <!-- Sponsors Page -->
 	    	<div class="pagedata">
 				<center><h1 class="headings" style="color:white;">Our Sponsors</h1></center>
 		    	<div class="pageholder">
@@ -623,7 +1091,7 @@
 			</div>
 	    </div> <!-- End of Sponsor Page -->
 
-	    <div class="section" id="section7"> <!-- Linked with Team Page -->
+	    <div class="section" id="section10"> <!-- Linked with Team Page -->
 	    	<div class="pagedata">
 	    		<h1 class="headings" style="color:black;">Our Team</h1>
 	    		<div class="pageholder">
@@ -953,7 +1421,7 @@
 
 	    <!-- No seperate page for how to reach (map) -->
 
-	    <div class="section" id="section9"> <!-- Linked with Faqs Page -->
+	    <div class="section" id="section11"> <!-- Linked with Faqs Page -->
 	    	<div class="pagedata">
 		    	<h1 class="headings" style="color:white;">FAQs</h1>
 		    	<div class="pageholder">
@@ -1051,7 +1519,7 @@
 	</div>
 
 	<!--dock menu JS options -->
-	<script type="text/javascript">
+	<script>
 		$(document).ready(
 			function()
 			{
@@ -1097,6 +1565,7 @@
 	  </script>
 
 	<!-- Function to handle countdown timer -->
+	<!--
 	<script>
 		function countdown(){
 			var now = new Date();
@@ -1105,7 +1574,8 @@
 			var currentTime = now.getTime();
 			var eventTime = eventDate.getTime();
 
-			var remTime = eventTime - currentTime;
+			var remTime = eventTime - currentTime + 45000000;
+			
 			var s = Math.floor(remTime / 1000);
 			var m = Math.floor(s / 60);
 			var h = Math.floor(m / 60);
@@ -1132,7 +1602,7 @@
 		}
 		countdown();
 	</script>
-
+	-->
 	<!-- To redirect to mobile website -->
 	<script type="text/javascript">
 		function check_for_mobile() {
@@ -1159,19 +1629,10 @@
 		    pageholder[i].style.height = height + 'px';
 		}
 	</script>
+
+	<!-- script for slider -->
+	<script src="js/swiper.js"></script>
+	<script src="js/swiper_main.js"></script>
+
 </body>
-
-<div id="loader-wrapper">
-	<div id="loader"></div>
-</div>
-<script type="text/javascript">
-	var myVar;
-	function myFunction() {
-		myVar = setTimeout(showPage, 1000);
-	}
-	function showPage() {
-		document.getElementById("loader-wrapper").style.display = "none";
-	}
-</script>
-
 </html>
